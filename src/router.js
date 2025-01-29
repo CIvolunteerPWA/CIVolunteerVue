@@ -8,6 +8,8 @@ import ProfileOrg from './views/Profile-Org.vue';
 import Activities from './views/Activities.vue';
 import Verifications from './views/Verifications.vue';
 import Search from './views/Search.vue';
+import Chat from './views/Chat.vue';
+import Community from './views/Community.vue';
 
 // Base URL should come from import.meta.env for Vite
 const router = createRouter({
@@ -29,6 +31,18 @@ const router = createRouter({
       path: '/search',
       name: 'search',
       component: Search,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: Chat,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/community',
+      name: 'community',
+      component: Community,
       meta: { requiresAuth: true },
     },
     {

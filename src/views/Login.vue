@@ -33,14 +33,11 @@
 
 <script setup>
 
-import { useRouter } from 'vue-router';
 import { ref } from 'vue';
-
 import Fingerprint from '@/components/Fingerprint.vue';
 
 const email = ref('');
 const password = ref('');
-const router = useRouter();
 
 function login() {
     localStorage.setItem('authToken', 'your-auth-token');

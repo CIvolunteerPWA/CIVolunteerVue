@@ -30,8 +30,7 @@ import Footer from '@/components/Footer.vue';
 
         <h2 class="p-2">Deine Nachweise</h2>
         <List></List>
-        <h2 class="p-2">Offene Nachweisanträge</h2>
-        <CardCarousell></CardCarousell>
+       
 
     </div>
 <Footer></Footer>

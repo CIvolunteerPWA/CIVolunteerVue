@@ -10,6 +10,7 @@ const text = ref('Die Nachbarschaftshilfe ist eine Gemeinschaftsinitiative, die 
 const toggleEdit = () => {
     isEditable.value = !isEditable.value;
 };
+
 </script>
 <template>
     <Navbar title="Organisation"></Navbar>
@@ -104,6 +105,5 @@ const toggleEdit = () => {
         <CardCarousell></CardCarousell>
     </div>
     <br>
-    
     <Accordion></Accordion>
 </template>
