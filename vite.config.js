@@ -18,7 +18,7 @@ export default defineConfig({
       manifest: {
         name: 'Freiwilligen Pass',
         short_name: 'DFP',
-        description: 'Eine Progressive Web App mit Vue und Vite',
+        description: 'Eine Progressive Web App',
         theme_color: '#42b883',
         background_color: '#ffffff',
         display: 'standalone',
