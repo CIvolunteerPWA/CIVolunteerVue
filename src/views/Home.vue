@@ -11,7 +11,7 @@ import StatNavbar from '@/components/StatNavbar.vue';
   <StatNavbar></StatNavbar>
  
   <div class="container p-2">
-    <img src="/src/assets/images/statistik.png" class="p-0 img-fluid" >
+    <img src="/src/assets/images/statistik.png" class="mx-auto d-block p-0 img-fluid">
     <h2 class="p-2">Deine aktuellen Aktivitäten</h2>
     <List></List>
     <h2 class="p-2">Empfehlungen</h2>

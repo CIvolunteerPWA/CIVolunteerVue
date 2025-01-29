@@ -24,13 +24,13 @@ const toggleEdit = () => {
                     <a class="nav-link text-primary  active" aria-current="page" href="#">Übersicht</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#">Nachweise</a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link" href="#">Organisationen</a>
+                    <a class="nav-link" href="#">QR-Code</a>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="#">Stammdaten</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Einstellungen</a>
                 </div>
             </div>
         </div>

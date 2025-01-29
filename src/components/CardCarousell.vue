@@ -9,7 +9,7 @@
             <div v-for="(item, index) in items" :key="index" class="carousel-item" :class="{ 'active': index === 0 }">
                 <div class="card">
                     <div class="img-with-date">
-                        <img src="/src/assets/images/imgPlaceholder.png" class="card-img-top" alt="...">
+                        <img src="/src/assets/images/imgPlaceholder.png" class="card-img-top img-fluid" height="auto">
                         <div class="date text-center text-dark opacity-75 col-3">
                             <small>{{ item.club }}</small>
                             <h1 class="m-0">{{ item.day }}</h1>
