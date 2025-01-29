@@ -1,0 +1,66 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "Thomas Mustermann",
+    "givenName": "Thomas",
+    "familyName": "Mustermann",
+    "additionalName": "tom007",
+    "url": "https://www.test.at",
+    "image": "https://www.test.at/test.jpg",
+    "birthDate": "2000-07-07",
+    "description": "Hallo, ich bin Tom und seit meinem 12 Lebensjahr Teil der Freiwilligen Community. Ich fahre seit kurzem in einer Blaulichtorganisation und finde es großartig wie Österreich in Extremsituationen zusammenhalten kann",
+    "jobTitle": "Volunteer",
+    "email": "thomas@mustermann.at",
+    "telephone": "123456789",
+    "gender": "male",
+    "awards": ["test award 1", "test award 2"],
+    "sameAs": [
+      "https://www.facebook.com",
+      "https://www.twitter.com",
+      "https://www.instagram.com",
+      "https://www.linkedin.com"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Test Company"
+    },
+    "knowsAbout": ["Brandschutz", "erste Hilfe"],
+    "knowsLanguage": ["Deutsch", "Englisch", "Spanisch"],
+    "hasCredential": [
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalCredential",
+        "@id": "EducationalOccupationalCredential",
+        "educationalLevel": ["Englisch A2", "https://www.tirol.wifi.at/kurs/20113x-englisch-a2-fortgeschrittene"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalCredential",
+        "@id": "EducationalOccupationalCredential1",
+        "educationalLevel": ["Erste Hilfe", "https://www.roteskreuz.at/aktuelle-kurse/detail/307714"]
+      }
+    ],
+    "hasOccupation": {
+      "@context": "https://schema.org",
+      "@type": "Occupation",
+      "@id": "Occupation",
+      "name": "Krankenpflege",
+      "description": "Krankenpflege im Bereich Notfall",
+      "occupationalCategory": "Medizin",
+      "qualifications": [
+        "Wundmanagement und Stomaversorgung",
+        "Pflege in Krisensituationen",
+        "Führungsaufgaben"
+      ],
+      "skills": ["Flexibilität", "Eigeninitiative", "soziale Kompetenz"]
+    },
+    "address": {
+      "@context": "https://schema.org",
+      "@type": "PostalAddress",
+      "addressCountry": "Österreich",
+      "addressRegion": "Wien",
+      "postalCode": "1010",
+      "streetAddress": "Strasse 222"
+    }
+  }
+  

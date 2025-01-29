@@ -1,0 +1,46 @@
+///Color
+$primary: #0783cb;
+
+
+
+
+
+
+//margins and paddings
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 1.75,
+  6: $spacer * 3,
+) !default;
+
+//typography
+$font-size-base:1rem;
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+$h7-font-size:                $font-size-base * 0.75 !default;
+
+
+$font-sizes: (
+  1: $h1-font-size, //h1
+  2: $h4-font-size, //h2
+  3: $h5-font-size, //h3
+  4: $h6-font-size, //h4
+  5: $h7-font-size, //h5 formulare
+  6: $h2-font-size,
+  7: $h3-font-size
+ 
+) !default;
+
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
