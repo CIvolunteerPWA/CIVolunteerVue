@@ -1,12 +1,12 @@
 <script setup>
-import { useRoute,useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+import user from "@/assets/data/volunteer"
 
 const route = useRoute()
 const isHomePage = route.path === '/'
 
 const router = useRouter()
 const handleLogout = () => {
-
   localStorage.removeItem('authToken');
   localStorage.removeItem('userData');
   router.push('/login');
@@ -51,9 +51,9 @@ const handleLogout = () => {
             </div>
             <div class="d-flex text-light text-end d-flex align-items-start justify-content-end">
               <div>
-                <span>Pipilotta Lechner</span>
+                <span>{{ user.name }}</span>
                 <br>
-                <small class="text-top">Rolle: Freiwillige</small>
+                <small class="text-top">Rolle: {{ user.jobTitle }}</small>
               </div>
               <div class="btn-group ms-2">
                 <button class="btn btn-lg btn-light-outline btn-lg active  rounded-2" type="button"
@@ -67,8 +67,8 @@ const handleLogout = () => {
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li>  <button class="dropdown-item" @click="handleLogout">Abmelden</button>
-                     </li>
+                  <li> <button class="dropdown-item" @click="handleLogout">Abmelden</button>
+                  </li>
                 </ul>
               </div>
             </div>

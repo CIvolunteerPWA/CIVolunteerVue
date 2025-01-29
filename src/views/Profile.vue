@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-8 ps-0 text-light">
                     <div class="p-2 text-center">
-                        Mag. <strong class="fs-5">Pipilotta Lechner</strong>, PhD
+                        {{ user.honorificPrefix }} <strong>{{ user.name }}</strong>, {{ user.honorificSuffix }}
                     </div>
                     <div class="row pb-3 text-center">
                         <div class="col">
@@ -82,7 +82,7 @@
                         rows="6"></textarea>
                 </template>
                 <template v-else>
-                    <p class="mb-5">{{ text }}</p>
+                    <p class="mb-5">{{ user.description }}</p>
                 </template>
 
                 <small>
@@ -94,7 +94,7 @@
         <div class="mx-3 my-3">
             <h5 class="mb-0">Dein Code in der Krise</h5>
             <div class="text-center">
-                <img class="m-3 bg-light" src="/src/assets/images/qrCode.png" >
+                <img class="m-3 bg-light" src="/src/assets/images/qrCode.png">
                 <br>
                 <small>
                     erstellt am 14.6.2024, gültig bis 14.8.2024;
@@ -116,9 +116,9 @@ import Accordion from "@/components/Accordion.vue";
 import NavbarSecondary from "@/components/NavbarSecondary.vue";
 import { ref } from 'vue';
 
+import user from "@/assets/data/volunteer"
 
 const isEditable = ref(false);
-const text = ref(' Hallo, ich bin Pipilotta und seit meinem 12 Lebensjahr Teil der Freiwilligen Community. Ich fahre seit kurzem in einer Blaulichtorganisation und finde es großartig wie Österreich in Extremsituationen zusammenhalten kann.');
 const toggleEdit = () => {
     isEditable.value = !isEditable.value;
 };

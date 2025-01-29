@@ -5,7 +5,7 @@
 }
 </style>
 <script setup>
-import { ref,watchEffect,computed } from "vue";
+import { ref, watchEffect, computed } from "vue";
 import volunteer from "@/assets/data/volunteer.json"
 // Initialize the data model for user details
 const user = ref({
