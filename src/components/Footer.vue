@@ -30,19 +30,19 @@
       <!-- Home -->
       <router-link to="/" class="navbar-brand text-center position-relative text-light">
         <i class="bi bi-house-door text-light">
-          <div>Home</div>
+          <div class="fs-4">Home</div>
         </i>
       </router-link>
       <!-- Nachweise -->
       <router-link to="/verifications" class="navbar-brand text-center position-relative text-light">
         <i class="bi bi-card-checklist text-light">
-          <div>Nachweise</div>
+          <div class="fs-4">Nachweise</div>
         </i>
       </router-link>
       <!-- Aktivitäten -->
       <router-link to="/activities" class="navbar-brand text-center position-relative text-primary">
         <i class="bi bi-zoom-in ">
-          <div>Aktivitäten</div>
+          <div class="fs-4">Aktivitäten</div>
         </i>
       </router-link>
       <!-- Chat -->
@@ -52,26 +52,15 @@
           <span class="visually-hidden">unread messages</span>
         </span>
         <i class="bi bi-chat">
-          <div>Chat</div>
+          <div class="fs-4">Chat</div>
         </i>
       </router-link>
       <!-- Community -->
       <router-link to="/community" class="navbar-brand text-center position-relative text-light">
         <i class="bi bi-emoji-sunglasses">
-          <div>Community</div>
+          <div class="fs-4">Community</div>
         </i>
       </router-link>
     </div>
   </nav>
 </template>
-
-<script setup>
-
-
-import { useRoute } from 'vue-router';
-
-// Get current route to determine if it's the home page
-const route = useRoute();
-const isHomePage = route.path === '/';
-
-</script>

@@ -1,68 +1,49 @@
-@media (max-width: 576px) {
-  .jumbotron {
-    min-width: 100% !important;
-  }
-}
-
-@media (max-width: 1200px) {
-  .jumbotron {
-    min-width: 50%;
-  }
-}
-@media (min-width: 1200px) {
-  .jumbotron {
-    min-width: 25%;
-  }
-}
-
-
-@media (max-width: 403px) {
+@media (max-width: 360px) {
   .navbar-brand div {
     display: none;
   }
-
-  .row.col-7 {
-    margin-right: 1rem;
-  }
 }
-.footer-logo {
-    height: 40px;
-}
-
-.jumbotron-container {
-  max-width: 100%;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0 1rem;
-}
-
-.profile-head {
-  transform: translateY(1rem);
-}
-
-.cover {
-  background-color: var(--bs-primary);
-  height: 100px;
-}
-
-
-.btn.no-outline {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-
 .navbar-brand {
   margin-right: 0 !important;
 }
 
+/* search-navbar */
 .scrollmenu{
   overflow-x: auto;     
   width: 100%;
   white-space: nowrap;
 }
+.nav {
+  flex-wrap: unset !important;
+}
 
 
+/* Profil */
+.profile-img {
+  position: absolute;
+  top: -1.5rem;
+  left: 0
+}
+
+.cover {
+  position: relative;
+  margin-top: 1.5rem;
+  height: 100%;
+  background-color: var(--bs-primary);
+
+}
+.cover-subtext {
+  border-radius: 0rem 0rem 1.0625rem 1.0625rem;
+}
+.row {
+  margin: 0;
+}
+
+/*Accordion coloring*/
+.accordion-button:not(.collapsed) {
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+}
 
 
 

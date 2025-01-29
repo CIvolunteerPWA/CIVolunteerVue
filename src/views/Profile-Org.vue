@@ -1,7 +1,41 @@
+<script setup>
+import Navbar from "@/components/Navbar.vue";
+import Accordion from "@/components/Accordion.vue";
+import CardCarousell from "@/components/CardCarousell.vue";
+import { ref } from 'vue';
 
+const isEditable = ref(false);
+const text = ref('Die Nachbarschaftshilfe ist eine Gemeinschaftsinitiative, die Lebensmittel und Gegenstände des täglichen Bedarfs für Senioren bereitstellt. Engagierte Freiwillige liefern die Artikel frei Haus und ermöglichen soziale Kontakte und Unterstützung.');
+
+const toggleEdit = () => {
+    isEditable.value = !isEditable.value;
+};
+</script>
 <template>
     <Navbar title="Organisation"></Navbar>
-    <NavbarSecondary></NavbarSecondary>
+    <nav class="navbar ">
+        <div class="container scrollmenu">
+            <div class="nav nav-underline d-inline-flex">
+                <div class="nav-item">
+                    <RouterLink class="nav-link" to="/search">
+                        <i class="bi bi-search"></i>
+                    </RouterLink>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link text-primary  active" aria-current="page" href="#">Übersicht</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Nachweise</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Organisationen</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Stammdaten</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="cover bg-secondary">
         <div class="row">
             <div class="col-4 ">
@@ -36,7 +70,6 @@
         </div>
     </div>
 
-
     <div class="card cover-subtext bg-secondary-subtle shadow-sm">
         <div class="card-body ">
             <div class="d-flex justify-content-between  align-items-center ">
@@ -57,43 +90,20 @@
             <template v-else>
                 <p class="mb-5">{{ text }}</p>
             </template>
-
-
             <div class="d-flex gap-2 justify-content-end ">
                 <button class="btn btn-outline-primary" type="submit">Empfehlen</button>
                 <button class="btn btn-primary text-light" type="submit">Jetzt Beitreten</button>
             </div>
-
             <small>
                 #Feuerwehr #Tierrettung #Organisationstalent
             </small>
         </div>
     </div>
-
-
     <div class="m-2">
         <h5 class="m-1">Offene Aufgaben</h5>
         <CardCarousell></CardCarousell>
     </div>
     <br>
-
-
+    
     <Accordion></Accordion>
 </template>
-
-<script setup>
-import Navbar from "@/components/Navbar.vue";
-import Accordion from "@/components/Accordion.vue";
-import NavbarSecondary from "@/components/NavbarSecondary.vue";
-import CardCarousell from "@/components/CardCarousell.vue";
-import { ref } from 'vue';
-
-
-const isEditable = ref(false);
-const text = ref('Die Nachbarschaftshilfe ist eine Gemeinschaftsinitiative, die Lebensmittel und Gegenstände des täglichen Bedarfs für Senioren bereitstellt. Engagierte Freiwillige liefern die Artikel frei Haus und ermöglichen soziale Kontakte und Unterstützung.');
-
-
-const toggleEdit = () => {
-    isEditable.value = !isEditable.value;
-};
-</script>

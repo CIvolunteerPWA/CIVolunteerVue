@@ -18,8 +18,8 @@ import Navbar from '@/components/Navbar.vue';
             <button type="button" class=" btn btn-outline-primary"><i class="bi bi-arrow-clockwise"></i> <br>
                 Aktualisieren</button>
             <div class="mt-4 d-grid gap-2">
-                <button class="btn btn-primary" type="button"> Zu meinem Phone Wallet hinzufügen</button>
-                <button class="btn btn-primary" type="button"> Zu meinem EU Wallet hinzufügen</button>
+                <button class="btn btn-primary text-light" type="button">Zu meinem Phone Wallet hinzufügen</button>
+                <button class="btn btn-primary text-light" type="button">Zu meinem EU Wallet hinzufügen</button>
             </div>
         </div>
     </div>

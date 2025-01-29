@@ -1,6 +1,3 @@
-<style scoped>
-
-</style>
 <template>
     <div class="card bottom bg-primary m-1 mt-auto">
             <div class="card-body text-light">

@@ -4,8 +4,6 @@
 }
 </style>
 <template>
-
-
   <div class="list-group list-group-flush">
     <a v-for="(item, index) in items" :key="index"
       class="list-group-item list-group-item-action d-flex gap-2 align-items-center" aria-current="true">
@@ -28,10 +26,14 @@
       </div>
     </a>
 
-    <!-- Load more button -->
-    <a href="#" class="list-group-item list-group-item-action" @click.prevent="toggleLoadMore">
+    <a v-if="loadedItemsCount < allItems.length" class="list-group-item list-group-item-action" @click.prevent="toggleLoadMore">
       <div class="text-center nav-item text-secondary">
         mehr anzeigen
+      </div>
+    </a>
+    <a v-if="loadedItemsCount > 3"class="list-group-item list-group-item-action" @click.prevent="showLess">
+      <div class="text-center nav-item text-secondary">
+        weniger
       </div>
     </a>
   </div>
@@ -40,28 +42,27 @@
 
 <script>
 // Import the JSON file
-import organizationData from '@/assets/data/activitylist.json'; // Adjust path as needed
+import organizationData from '@/assets/data/activitylist.json';
 
 export default {
   data() {
     return {
-      items: [], // Empty initially, to be filled with job postings
-      loadedItemsCount: 0, // Track the number of items currently loaded
-      allItems: [], // Store all items from the JSON
+      items: [], 
+      loadedItemsCount: 0, 
+      allItems: [],
     };
   },
   created() {
     // Mapping the JSON to your template format
     this.allItems = organizationData.itemListElement.map(job => ({
-      club: job.hiringOrganization.name,  // Use the job posting date
-      day: new Date(job.datePosted).getDate(),  // Extract the day from the date
-      month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),  // Extract the month name
-      location: job.jobLocation.address.addressLocality ,  // Job location
-      title: job.title,  // Job title
-      jobs: '0/'+job.totalJobOpenings , // Placeholder, as the JSON doesn't have message counts
+      club: job.hiringOrganization.name, 
+      day: new Date(job.datePosted).getDate(),  
+      month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }), 
+      location: job.jobLocation.address.addressLocality , 
+      title: job.title,  
+      jobs: '0/'+job.totalJobOpenings,
       industry:job.industry
     }));
-
     // Initially load 3 items
     this.toggleLoadMore();
   },
@@ -71,6 +72,11 @@ export default {
       const nextItems = this.allItems.slice(this.loadedItemsCount, this.loadedItemsCount + 3);
       this.items.push(...nextItems);
       this.loadedItemsCount += nextItems.length;
+    },
+    showLess() {
+      // Reduce the number of items displayed back to the initial 3
+      this.items = this.allItems.slice(0, 3);
+      this.loadedItemsCount = 3;
     },
   }
 };

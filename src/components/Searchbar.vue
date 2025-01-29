@@ -1,13 +1,6 @@
-<style scoped>
-.form-control {
-    width: auto;
-    margin-right: 0.5rem;
-}
-</style>
-
 <template>
     <nav class="navbar ">
-        <div class="container  scrollmenu">
+        <div class="container scrollmenu">
             <div class="nav nav-underline d-inline-flex">
                 <div class="nav-item">
                     <RouterLink class="nav-link" to="/search">

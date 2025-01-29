@@ -1,32 +1,40 @@
-<style>
-.profile-img {
-    position: absolute;
-    top: -1.5rem;
-    left: 0
-}
+<script setup>
+import Navbar from "@/components/Navbar.vue";
+import Accordion from "@/components/Accordion.vue";
+import { ref } from 'vue';
+import user from "@/assets/data/volunteer"
 
-.cover {
-    position: relative;
-    margin-top: 1.5rem;
-    height: 100%;
-}
-
-.cover-subtext {
-    border-radius: 0rem 0rem 1.0625rem 1.0625rem;
-}
-
-.row {
-    margin: 0;
-}
-
-.nav {
-    flex-wrap: unset !important;
-}
-</style>
+const isEditable = ref(false);
+const toggleEdit = () => {
+    isEditable.value = !isEditable.value;
+};
+</script>
 
 <template>
     <Navbar title="Profil"></Navbar>
-    <NavbarSecondary></NavbarSecondary>
+    <nav class="navbar ">
+        <div class="container scrollmenu">
+            <div class="nav nav-underline d-inline-flex">
+                <div class="nav-item">
+                    <RouterLink class="nav-link" to="/search">
+                        <i class="bi bi-search"></i>
+                    </RouterLink>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link text-primary  active" aria-current="page" href="#">Übersicht</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Nachweise</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Organisationen</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Stammdaten</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="container p-0">
         <div class="cover bg-primary">
             <div class="row">
@@ -109,17 +117,3 @@
 
     </div>
 </template>
-
-<script setup>
-import Navbar from "@/components/Navbar.vue";
-import Accordion from "@/components/Accordion.vue";
-import NavbarSecondary from "@/components/NavbarSecondary.vue";
-import { ref } from 'vue';
-
-import user from "@/assets/data/volunteer"
-
-const isEditable = ref(false);
-const toggleEdit = () => {
-    isEditable.value = !isEditable.value;
-};
-</script>
