@@ -214,14 +214,14 @@ const toggleEdit = () => {
     isEditable.value = !isEditable.value;
 };
 
-// Save function to persist changes (for demonstration purposes)
+
 const saveChanges = () => {
-    // Here, you can handle saving the changes (e.g., send data to the server or save locally)
+
     console.log("Changes saved:", user.value);
-    isEditable.value = false; // After saving, stop edit mode
+    isEditable.value = false; 
 };
 
-// Reset changes if accordion closes
+
 const resetChanges = () => {
     // Reset user data to original values when accordion closes
     if (isEditable.value) {

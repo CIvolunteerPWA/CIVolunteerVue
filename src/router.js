@@ -4,16 +4,16 @@ import Login from '@/views/Login.vue';
 import Profile from '@/views/Profile.vue';
 import Registry from './views/Registry.vue';
 import QRcode from './views/QRcode.vue';
-import ProfileOrg from './views/Profile-Org.vue';
+import Organisation from './views/Organisation.vue';
 import Activities from './views/Activities.vue';
 import Verifications from './views/Verifications.vue';
 import Search from './views/Search.vue';
 import Chat from './views/Chat.vue';
 import Community from './views/Community.vue';
-
+import Activity from './views/Activity.vue';
 // Base URL should come from import.meta.env for Vite
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_BASE_URL || '/'), 
+  history: createWebHistory(import.meta.env.VITE_BASE_URL || '/'),
   routes: [
     {
       path: '/',
@@ -68,18 +68,28 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
+      path: '/activity/:itemId',
+      name: 'activity',
+      component: Activity,
+      meta: { requiresAuth: true },
+      props: true,
+    },
+    {
       path: '/verifications',
       name: 'verifications',
       component: Verifications,
       meta: { requiresAuth: true },
     },
     {
-      path: '/profileOrg',
-      name: 'profileOrg',
-      component: ProfileOrg,
+      path: '/organisation',
+      name: 'organisation',
+      component: Organisation,
       meta: { requiresAuth: true },
     },
   ],
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 // Navigation guards

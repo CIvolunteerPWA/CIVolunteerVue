@@ -23,8 +23,14 @@ const toggleEdit = () => {
                 <div class="nav-item">
                     <a class="nav-link text-primary  active" aria-current="page" href="#">Übersicht</a>
                 </div>
+              
                 <div class="nav-item">
-                    <a class="nav-link" href="#">QR-Code</a>
+                    <a class="nav-link" href="#">Nachweise</a>
+                </div>
+                <div class="nav-item">
+                    <RouterLink class="nav-link" to="/organisation">
+                        Organisation
+                    </RouterLink>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="#">Stammdaten</a>
@@ -32,6 +38,7 @@ const toggleEdit = () => {
                 <div class="nav-item">
                     <a class="nav-link" href="#">Einstellungen</a>
                 </div>
+        
             </div>
         </div>
     </nav>
@@ -86,7 +93,7 @@ const toggleEdit = () => {
                     </button>
                 </div>
                 <template v-if="isEditable">
-                    <textarea v-model="text" class="mb-5 form-control" id="exampleFormControlTextarea1"
+                    <textarea v-model="user.description" class="mb-5 form-control" id="exampleFormControlTextarea1"
                         rows="6"></textarea>
                 </template>
                 <template v-else>

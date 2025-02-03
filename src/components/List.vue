@@ -1,12 +1,12 @@
-<style>
+<style scoped>
 .list-group-item+.list-group-item {
   border-top: var(--bs-list-group-border-width) solid var(--bs-secondary);
 }
 </style>
 <template>
   <div class="list-group list-group-flush">
-    <a v-for="(item, index) in items" :key="index"
-      class="list-group-item list-group-item-action d-flex gap-2 align-items-center" aria-current="true">
+    <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }" v-for="(item, index) in items"
+      :key="index" class="list-group-item list-group-item-action d-flex gap-2 align-items-center" aria-current="true">
       <div class="col-3 text-body-secondary text-center">
         <small>{{ item.club }}</small>
         <h1 class="m-0">{{ item.day }}</h1>
@@ -24,14 +24,15 @@
           <small><i class="bi bi-chat me-1"></i>messages</small>
         </div>
       </div>
-    </a>
+    </RouterLink>
 
-    <a v-if="loadedItemsCount < allItems.length" class="list-group-item list-group-item-action" @click.prevent="toggleLoadMore">
+    <a v-if="loadedItemsCount < allItems.length" class="list-group-item list-group-item-action"
+      @click.prevent="toggleLoadMore">
       <div class="text-center nav-item text-secondary">
         mehr anzeigen
       </div>
     </a>
-    <a v-if="loadedItemsCount > 3"class="list-group-item list-group-item-action" @click.prevent="showLess">
+    <a v-if="loadedItemsCount > 3" class="list-group-item list-group-item-action" @click.prevent="showLess">
       <div class="text-center nav-item text-secondary">
         weniger
       </div>
@@ -47,21 +48,22 @@ import organizationData from '@/assets/data/activitylist.json';
 export default {
   data() {
     return {
-      items: [], 
-      loadedItemsCount: 0, 
+      items: [],
+      loadedItemsCount: 0,
       allItems: [],
     };
   },
   created() {
     // Mapping the JSON to your template format
     this.allItems = organizationData.itemListElement.map(job => ({
-      club: job.hiringOrganization.name, 
-      day: new Date(job.datePosted).getDate(),  
-      month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }), 
-      location: job.jobLocation.address.addressLocality , 
-      title: job.title,  
-      jobs: '0/'+job.totalJobOpenings,
-      industry:job.industry
+      club: job.hiringOrganization.name,
+      day: new Date(job.datePosted).getDate(),
+      month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),
+      location: job.jobLocation.address.addressLocality,
+      title: job.title,
+      jobs: '0/' + job.totalJobOpenings,
+      industry: job.industry,
+      id:job.identifier.value
     }));
     // Initially load 3 items
     this.toggleLoadMore();

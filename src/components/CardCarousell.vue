@@ -7,7 +7,8 @@
         </div>
         <div class="carousel-inner">
             <div v-for="(item, index) in items" :key="index" class="carousel-item" :class="{ 'active': index === 0 }">
-                <div class="card">
+                <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }"
+                    class="card text-decoration-none">
                     <div class="img-with-date">
                         <img src="/src/assets/images/imgPlaceholder.png" class="card-img-top img-fluid" height="auto">
                         <div class="date text-center text-dark opacity-75 col-3">
@@ -18,11 +19,11 @@
                     </div>
                     <div class="card-body">
                         <small class="opacity-50">{{ item.location }}, {{ item.industry }}</small>
-                       <div class="card-text">
-                        <h3>{{ item.title }}</h3>
-                        <p>{{ item.description }}</p>
-                       </div>
-                         
+                        <div class="card-text">
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.description }}</p>
+                        </div>
+
                         <div class="d-flex align-items-center text-muted gap-6">
                             <small>
                                 <img src="/src/assets/images/profile.jpg" alt="twbs" width="20" height="20"
@@ -34,7 +35,7 @@
                             </small>
                         </div>
                     </div>
-                </div>
+                </RouterLink>
             </div>
         </div>
 
@@ -73,6 +74,7 @@ export default {
             month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),  // Displaying the month
             jobs: job.totalJobOpenings,
             image: job.hiringOrganization.logo, // Assuming the logo represents the image
+            id: job.identifier.value
         }));
     },
 };
@@ -107,9 +109,10 @@ export default {
     bottom: 0;
 }
 
-.card-text{
+.card-text {
     height: 9.5rem;
 }
+
 .card-body p {
     display: -webkit-box;
     -webkit-line-clamp: 3;

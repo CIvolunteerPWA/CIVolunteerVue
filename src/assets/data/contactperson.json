@@ -1,0 +1,16 @@
+{
+	"@context": "https://schema.org/",
+	"@type": "Person",
+	"name": "Thomas Mustermann",
+	"givenName": "Thomas",
+	"familyName": "Mustermann",
+	"url": "https://www.test.at",
+	"image": "https://www.test.at/test.jpg",
+	"jobTitle": "HR",
+	"email": "test@test.at",
+	"telephone": "123456789",
+	"worksFor": {
+	  "@type": "Organization",
+	  "name": "Test Company"
+	}
+}

@@ -23,13 +23,13 @@ const toggleEdit = () => {
                     </RouterLink>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link text-primary  active" aria-current="page" href="#">Übersicht</a>
+                    <RouterLink class="nav-link" aria-current="page" to="/profile">Übersicht</RouterLink>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="#">Nachweise</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#">Organisationen</a>
+                    <a class="nav-link  text-primary active" href="#">Organisation</a>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="#">Stammdaten</a>
