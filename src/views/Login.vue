@@ -1,6 +1,6 @@
 
 <template>
-    <div class="container p-3 ps-5 pe-5">
+    <div class="container p-3">
         <img src="/src/assets/images/logo.png " class="w-50">
         <h1 class="mt-5">Anmelden</h1>
         <strong> Wilkommen in der Freiwilligen App. Lorem ipsum dolor sit</strong>

@@ -1,8 +1,5 @@
-<style>
-.custom-fixed {}
-</style>
 <template>
-    <div class="bg-primary-subtle container p-3 ps-5 pe-5 vh-100 ">
+    <div class="bg-primary-subtle container p-3 vh-100 ">
         <img src="/src/assets/images/logo.png " class="w-50">
         <h1 class="mt-5">Onboarding</h1>
         <p>Schön, dass sie sich freiwillig Engagieren möchten. Verfeinern Sie Ihr Profil, damit wir Sie über Sie über

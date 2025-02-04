@@ -50,24 +50,24 @@ const toggleEdit = () => {
                         class="profile-img rounded-circle">
                 </div>
                 <div class="col-8 ps-0 text-light">
-                    <div class="p-2 text-center">
+                    <div class=" fs-3 p-2 text-center">
                         {{ user.honorificPrefix }} <strong>{{ user.name }}</strong>, {{ user.honorificSuffix }}
                     </div>
                     <div class="row pb-3 text-center">
                         <div class="col">
-                            <i class="fs-3 bi bi-command"></i><br>
+                            <i class="fs-2 bi bi-command"></i><br>
                             <small>
                                 QR-Code
                             </small>
                         </div>
                         <div class="col">
-                            <i class="fs-3 bi bi-envelope-fill"></i><br>
+                            <i class="fs-2 bi bi-envelope-fill"></i><br>
                             <small>
                                 email
                             </small>
                         </div>
                         <div class="col">
-                            <i class="fs-3 bi bi-telephone-fill"></i><br>
+                            <i class="fs-2 bi bi-telephone-fill"></i><br>
                             <small>
                                 Phone
                             </small>

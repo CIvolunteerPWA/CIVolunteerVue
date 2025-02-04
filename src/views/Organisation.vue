@@ -31,25 +31,25 @@
             </div>
             <div class="col-8 ps-0 text-light">
                 <div class="p-2 text-center">
-                    <h5>{{ org.name }}</h5>
+                    <h4>{{ org.name }}</h4>
                 </div>
                 <div class="row pb-3 text-center">
                     <div class="col">
-                        <i class="fs-3 bi bi-command"></i><br>
+                        <i class="fs-2 bi bi-command"></i><br>
                         <small>
                             QR-Code
                         </small>
                     </div>
                     <div class="col">
-                        <a class="text-decoration-none" :href="'mailto:' + org.contactPoint.email">
-                            <i class="fs-3 bi bi-envelope-fill"></i><br>
+                        <a class="text-white text-decoration-none" :href="'mailto:' + org.contactPoint.email">
+                            <i class="fs-2 bi bi-envelope-fill"></i><br>
                             <small>Email</small>
                         </a>
 
                     </div>
                     <div class="col">
-                        <a class="text-decoration-none" :href="'tel:' + org.contactPoint.telephone">
-                            <i class="fs-3 bi bi-telephone-fill"></i><br>
+                        <a class="text-white text-decoration-none":href="'tel:' + org.contactPoint.telephone">
+                            <i class="fs-2 bi bi-telephone-fill"></i><br>
                             <small>Phone</small>
                         </a>
 

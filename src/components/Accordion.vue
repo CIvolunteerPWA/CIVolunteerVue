@@ -66,9 +66,9 @@
                                 <td>
                                     <template v-if="isEditable">
                                         <select v-model="volunteer.gender" class="form-control">
-                                            <option value="Männlich">Männlich</option>
-                                            <option value="Weiblich">Weiblich</option>
-                                            <option value="other">Andere</option>
+                                            <option value="männlich">männlich</option>
+                                            <option value="weiblich">weiblich</option>
+                                            <option value="diverse">diverse</option>
                                         </select>
                                     </template>
                                     <template v-else>
