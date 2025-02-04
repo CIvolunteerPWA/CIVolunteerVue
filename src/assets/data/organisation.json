@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "identifier": "UID-DE123456789",
+    "name": "Nachbarschaftshilfe",
+    "description": "Die Nachbarschaftshilfe ist eine Gemeinschaftsinitiative, die Lebensmittel und Gegenstände des täglichen Bedarfs für Senioren bereitstellt. Engagierte Freiwillige liefern die Artikel frei Haus und ermöglichen soziale Kontakte und Unterstützung.",
+    "url": "https://www.nachbarschaftshilfe-example.org",
+    "logo": "https://www.nachbarschaftshilfe-example.org/logo.png",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Musterstraße 12",
+        "addressLocality": "Musterstadt",
+        "postalCode": "1234",
+        "addressCountry": "AT"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49 123 456789",
+        "contactType": "customer service",
+        "email": "info@nachbarschaftshilfe-example.org"
+    },
+    "founder": {
+        "@type": "Person",
+        "name": "Max Mustermann"
+    },
+    "foundingDate": "2020-05-15",
+    "memberOf": {
+        "@type": "NGO",
+        "name": "Gemeinnütziger Dachverband e.V."
+    },
+    "areaServed": {
+        "@type": "Place",
+        "name": "Deutschland"
+    },
+    "sameAs": [
+        "https://www.facebook.com/nachbarschaftshilfe",
+        "https://www.twitter.com/nachbarschaftshilfe"
+    ]
+}

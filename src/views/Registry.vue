@@ -119,7 +119,7 @@
             </div>
             <div class="d-flex gap-2 justify-content-end ">
             <router-link to="/login" class="btn btn-outline-primary" type="submit">Abbrechen</router-link>
-            <router-link type="submit" class="btn btn-primary text-light"  to="/" aria-current="page">Registrieren</router-link>
+            <router-link type="submit" class="btn btn-primary text-light"  to="/onboarding" aria-current="page">Registrieren</router-link>
         </div>
         </form>
     </div>

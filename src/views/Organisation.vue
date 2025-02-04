@@ -1,17 +1,3 @@
-<script setup>
-import Navbar from "@/components/Navbar.vue";
-import Accordion from "@/components/Accordion.vue";
-import CardCarousell from "@/components/CardCarousell.vue";
-import { ref } from 'vue';
-
-const isEditable = ref(false);
-const text = ref('Die Nachbarschaftshilfe ist eine Gemeinschaftsinitiative, die Lebensmittel und Gegenstände des täglichen Bedarfs für Senioren bereitstellt. Engagierte Freiwillige liefern die Artikel frei Haus und ermöglichen soziale Kontakte und Unterstützung.');
-
-const toggleEdit = () => {
-    isEditable.value = !isEditable.value;
-};
-
-</script>
 <template>
     <Navbar title="Organisation"></Navbar>
     <nav class="navbar ">
@@ -45,7 +31,7 @@ const toggleEdit = () => {
             </div>
             <div class="col-8 ps-0 text-light">
                 <div class="p-2 text-center">
-                    <h5>Nachbarschaftshilfe</h5>
+                    <h5>{{ org.name }}</h5>
                 </div>
                 <div class="row pb-3 text-center">
                     <div class="col">
@@ -55,16 +41,18 @@ const toggleEdit = () => {
                         </small>
                     </div>
                     <div class="col">
-                        <i class="fs-3 bi bi-envelope-fill"></i><br>
-                        <small>
-                            email
-                        </small>
+                        <a class="text-decoration-none" :href="'mailto:' + org.contactPoint.email">
+                            <i class="fs-3 bi bi-envelope-fill"></i><br>
+                            <small>Email</small>
+                        </a>
+
                     </div>
                     <div class="col">
-                        <i class="fs-3 bi bi-telephone-fill"></i><br>
-                        <small>
-                            Phone
-                        </small>
+                        <a class="text-decoration-none" :href="'tel:' + org.contactPoint.telephone">
+                            <i class="fs-3 bi bi-telephone-fill"></i><br>
+                            <small>Phone</small>
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -77,7 +65,7 @@ const toggleEdit = () => {
                 <h5>Über Uns</h5>
                 <button class="btn text-primary" @click="toggleEdit">
                     <template v-if="isEditable">
-                        <i class="bi bi-check fs-3"></i>
+                        <i class="bi bi-check fs-2"></i>
                     </template>
                     <template v-else>
                         <i class="bi bi-pen fs-3"></i>
@@ -86,10 +74,11 @@ const toggleEdit = () => {
                 </button>
             </div>
             <template v-if="isEditable">
-                <textarea v-model="text" class="mb-5 form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                <textarea v-model="org.description" class="mb-5 form-control" id="exampleFormControlTextarea1"
+                    rows="6"></textarea>
             </template>
             <template v-else>
-                <p class="mb-5">{{ text }}</p>
+                <p class="mb-5">{{ org.description }}</p>
             </template>
             <div class="d-flex gap-2 justify-content-end ">
                 <button class="btn btn-outline-primary" type="submit">Empfehlen</button>
@@ -105,5 +94,91 @@ const toggleEdit = () => {
         <CardCarousell></CardCarousell>
     </div>
     <br>
-    <Accordion></Accordion>
+
+
+
+    <div class="accordion p-2" id="accordionExample">
+        <h5 class="m-1">Informationen</h5>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Allgemeine Angaben
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td scope="row">Adresse</td>
+                                <td>
+                                    {{ org.address.streetAddress }}<br>
+                                    {{ org.address.postalCode }} {{ org.address.addressLocality }}<br>
+                                    {{ org.address.addressCountry }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Mobile</td>
+                                <td>{{ org.contactPoint.telephone }}</td>
+
+                            </tr>
+                            <tr>
+                                <td scope="row">UID Nr.</td>
+                                <td>{{ org.identifier }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">gegründet</td>
+                                <td>{{ org.foundingDate }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">registiert seit</td>
+                                <td> ... </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Mitglieder
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Liste aller Mitglieder</strong>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Zusatzinfo
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Zusatzinfo ....
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
+<script setup>
+import Navbar from "@/components/Navbar.vue";
+import org from "@/assets/data/organisation.json";
+import CardCarousell from "@/components/CardCarousell.vue";
+import { ref } from 'vue';
+
+const isEditable = ref(false);
+
+const toggleEdit = () => {
+    isEditable.value = !isEditable.value;
+};
+
+
+</script>

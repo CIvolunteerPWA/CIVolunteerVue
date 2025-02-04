@@ -84,7 +84,7 @@ const toggleEdit = () => {
                     <h5>Über mich</h5>
                     <button class="btn text-primary" @click="toggleEdit">
                         <template v-if="isEditable">
-                            <i class="bi bi-check fs-3"></i>
+                            <i class="bi bi-check fs-2"></i>
                         </template>
                         <template v-else>
                             <i class="bi bi-pen fs-3"></i>

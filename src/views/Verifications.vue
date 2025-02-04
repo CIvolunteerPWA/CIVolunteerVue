@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Navbar from '@/components/Navbar.vue';
 import List from '@/components/List.vue';
-import CardCarousell from '@/components/CardCarousell.vue';
 import Footer from '@/components/Footer.vue';
 </script>
 
@@ -26,7 +25,7 @@ import Footer from '@/components/Footer.vue';
         </div>
     </nav>
 
-    <div class="container p-2">
+    <div class="container p-2  vh-100">
 
         <h2 class="p-2">Deine Nachweise</h2>
         <List></List>

@@ -11,6 +11,7 @@ import Search from './views/Search.vue';
 import Chat from './views/Chat.vue';
 import Community from './views/Community.vue';
 import Activity from './views/Activity.vue';
+import Onboarding from './views/Onboarding.vue';
 // Base URL should come from import.meta.env for Vite
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL || '/'),
@@ -54,6 +55,11 @@ const router = createRouter({
       path: '/registry',
       name: 'registry',
       component: Registry,
+    },
+    {
+      path: '/onboarding',
+      name: 'onboarding',
+      component: Onboarding,
     },
     {
       path: '/profile',

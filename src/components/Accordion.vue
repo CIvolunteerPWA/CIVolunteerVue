@@ -10,52 +10,85 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Adresse</p>
-                        </div>
-                        <div class="col-8">
-                            <p>
-                                {{ volunteer.address.streetAddress }}
-                                <br>{{ volunteer.address.postalCode }} {{ volunteer.address.addressRegion }}
-                                <br>{{ volunteer.address.addressCountry }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Mobile</p>
-                        </div>
-                        <div class="col-8">
-                            <p>{{ volunteer.telephone }}</p> <!-- Use volunteer.telephone for dynamic data -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Vers. Nr.</p>
-                        </div>
-                        <div class="col-8">
-                            <p>{{ volunteer.insuranceNumber }}</p> <!-- Use volunteer.insuranceNumber -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>GebDatum</p>
-                        </div>
-                        <div class="col-8">
-                            <p>{{ volunteer.birthDate }}</p> <!-- Use volunteer.birthDate -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Geschlecht</p>
-                        </div>
-                        <div class="col-8">
-                            <p>{{ volunteer.gender }}</p> <!-- Use volunteer.gender -->
-                        </div>
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td scope="row">Adresse</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <input type="text" v-model="volunteer.address.streetAddress" class="form-control" />
+                                        <input type="text" v-model="volunteer.address.postalCode" class="form-control" />
+                                        <input type="text" v-model="volunteer.address.addressRegion" class="form-control" />
+                                        <input type="text" v-model="volunteer.address.addressCountry" class="form-control" />
+                                    </template>
+                                    <template v-else>
+                                        {{ volunteer.address.streetAddress }}<br>
+                                        {{ volunteer.address.postalCode }} {{ volunteer.address.addressRegion }}<br>
+                                        {{ volunteer.address.addressCountry }}
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Mobile</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <input type="text" v-model="volunteer.telephone" class="form-control" />
+                                    </template>
+                                    <template v-else>
+                                        {{ volunteer.telephone }}
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Vers. Nr.</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <input type="text" v-model="volunteer.insuranceNumber" class="form-control" />
+                                    </template>
+                                    <template v-else>
+                                        {{ volunteer.insuranceNumber }}
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">GebDatum</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <input type="date" v-model="volunteer.birthDate" class="form-control" />
+                                    </template>
+                                    <template v-else>
+                                        {{ volunteer.birthDate }}
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Geschlecht</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <select v-model="volunteer.gender" class="form-control">
+                                            <option value="Männlich">Männlich</option>
+                                            <option value="Weiblich">Weiblich</option>
+                                            <option value="other">Andere</option>
+                                        </select>
+                                    </template>
+                                    <template v-else>
+                                        {{ volunteer.gender }}
+                                    </template>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div v-show="isAccordionOpen" class="d-flex justify-content-end">
+                        <button v-if="!isEditable" @click="toggleEdit" class="btn btn-primary">
+                            <i class="bi bi-pen text-light"></i>
+                        </button>
+                        <button v-if="isEditable" @click="saveChanges" class="btn btn-success me-2">
+                            <i class="bi bi-check text-light"></i>
+                        </button>
                     </div>
                 </div>
             </div>
+         
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
@@ -79,7 +112,7 @@
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <img src="/src/assets/images/calender.png" class="img-fluid">
+        
                 </div>
             </div>
         </div>
@@ -105,65 +138,49 @@
             </h2>
             <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Username</p>
-                        </div>
-                        <div class="col-8">
-                            <template v-if="isEditable">
-                                <input type="text" v-model="user.username" class="form-control" />
-                            </template>
-                            <template v-else>
-                                <p>{{ user.username }}</p>
-                            </template>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Email 1</p>
-                        </div>
-                        <div class="col-8">
-                            <template v-if="isEditable">
-                                <input type="email" v-model="user.email1" class="form-control" />
-                            </template>
-                            <template v-else>
-                                <p>{{ user.email1 }}</p>
-                            </template>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Email 2</p>
-                        </div>
-                        <div class="col-8">
-                            <template v-if="isEditable">
-                                <input type="email" v-model="user.email2" class="form-control" />
-                            </template>
-                            <template v-else>
-                                <p>{{ user.email2 }}</p>
-                            </template>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>PWD</p>
-                        </div>
-                        <div class="col-8">
-                            <template v-if="isEditable">
-                                <input type="password" v-model="user.password" class="form-control" />
-                            </template>
-                            <template v-else>
-                                <p>*******</p>
-                            </template>
-                        </div>
-                    </div>
-
-                    <div v-show="isAccordionOpen" class="d-flex justify-content-end">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td scope="row">Username</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <input type="text" v-model="user.username" class="form-control" />
+                                    </template>
+                                    <template v-else>
+                                        <p>{{ user.username }}</p>
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Email</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <input type="email" v-model="user.email1" class="form-control" />
+                                    </template>
+                                    <template v-else>
+                                        <p>{{ user.email1 }}</p>
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">PWD</td>
+                                <td>
+                                    <template v-if="isEditable">
+                                        <input type="password" v-model="user.password" class="form-control" />
+                                    </template>
+                                    <template v-else>
+                                        <p>*******</p>
+                                    </template>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div v-show="isAccordionOpen" class="d-flex justify-content-end  me-2">
                         <button v-if="!isEditable" @click="toggleEdit" class="btn btn-primary">
                             <i class="bi bi-pen text-light"></i>
                         </button>
-                        <button v-if="isEditable" @click="saveChanges" class="btn btn-success me-2 ">
-                            Save
+                        <button v-if="isEditable" @click="saveChanges" class="btn btn-success">
+                            <i class="bi bi-check fs-§"></i>
                         </button>
                     </div>
                 </div>
@@ -193,6 +210,7 @@
     </div>
 </template>
 
+
 <script setup>
 import { ref, watchEffect, computed } from "vue";
 import volunteer from "@/assets/data/volunteer.json";
@@ -201,33 +219,29 @@ import volunteer from "@/assets/data/volunteer.json";
 const user = ref({
     username: volunteer.additionalName,
     email1: volunteer.email,
-    email2: "sophia_star@email.com",
     password: "*******",
 });
 
-// State to toggle between editable and non-editable mode
-const isEditable = ref(false);
-const originalUser = { ...user.value }; // To track original values
 
-// Toggle function for edit mode
+const isEditable = ref(false);
+const originalUser = { ...user.value };
+
 const toggleEdit = () => {
     isEditable.value = !isEditable.value;
 };
 
 
 const saveChanges = () => {
-
     console.log("Changes saved:", user.value);
-    isEditable.value = false; 
+    isEditable.value = false;
 };
 
 
 const resetChanges = () => {
-    // Reset user data to original values when accordion closes
     if (isEditable.value) {
         user.value = { ...originalUser };
     }
-    isEditable.value = false; // Ensure we exit edit mode
+    isEditable.value = false;
 };
 
 const theme = ref(localStorage.getItem('theme') || 'light');
@@ -236,7 +250,7 @@ watchEffect(() => {
     localStorage.setItem('theme', theme.value);
 });
 
-// Function to toggle between themes
+
 const toggleTheme = () => {
     theme.value = theme.value == 'dark' ? 'light' : 'dark';
 };
