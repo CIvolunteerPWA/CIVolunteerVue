@@ -122,7 +122,7 @@
     </div>
 
     <nav class="position-fixed bottom-0 start-0 end-0 ">
-            <div class="container p-3 ps-5 pe-5 col-lg-3 d-flex justify-content-between ">
+            <div class="container p-3 col-lg-3 d-flex justify-content-between ">
                 <ul class="pagination" id="activityTabs" role="tablist">
                     <li class="page-item " aria-current="page">
                         <button class="page-link rounded active " id="interests-page" data-bs-toggle="tab"
