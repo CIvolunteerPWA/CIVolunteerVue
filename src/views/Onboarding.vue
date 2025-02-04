@@ -101,7 +101,7 @@
                         <label class="form-check-label">Tage</label>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="firstRadio"
+                        <input class="form-check-input me-1" type="radio" name="listGroupRadio"  id="firstRadio"
                             checked>
                         <label class="form-check-label" for="firstRadio">1-2</label>
                     </li>

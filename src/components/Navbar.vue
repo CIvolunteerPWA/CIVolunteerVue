@@ -32,7 +32,7 @@ const handleLogout = () => {
         <template v-if="isHomePage">
 
           <div class="row w-100">
-            <div class="col ps-5 text-light navbar-brand">
+            <div class="col ps-0 text-light navbar-brand">
               {{ title }}
             </div>
             <div class="col text-end me-5 ">
@@ -43,12 +43,11 @@ const handleLogout = () => {
             </div>
           </div>
 
-          <div class="d-flex justify-content-between  w-100">
-            <div class=" mr-auto  flex-shrink-1 px-5">
+          <div class="d-flex justify-content-between w-100">
               <router-link to="/qrCode">
                 <img src="/src/assets/images/qrCode.png" width="79" height="79" class="bg-light" alt="">
               </router-link>
-            </div>
+              
             <div class="d-flex text-light text-end d-flex align-items-start justify-content-end">
               <div>
                 <span>{{ user.name }}</span>

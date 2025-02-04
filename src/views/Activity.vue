@@ -3,31 +3,45 @@ import { useRoute } from 'vue-router';
 import Navbar from '@/components/Navbar.vue';
 import activitylist from '@/assets/data/activitylist.json';
 
-// Access the route parameters
 const route = useRoute();
 
-// Get the activity based on the itemId from the route parameters
+// Find job posting by identifier from the route parameters
 const jobPosting = activitylist.itemListElement.find(a => a.identifier.value === route.params.itemId);
-console.log(activitylist.itemListElement);
 </script>
 
 <template>
-    <Navbar title="Aktivität"></Navbar>
-    <div class="container p-0">
-        <h1>{{ jobPosting ? jobPosting.title : 'Job Not Found' }}</h1>
+  <Navbar title="Aktivität"></Navbar>
+  <div class="container py-4">
+    <h2>{{ jobPosting ? jobPosting.title : 'Aktivität nicht gefunden' }}</h2>
 
-        <div v-if="jobPosting">
-            <!-- Important Job Data -->
-            <p><strong>Description:</strong> {{ jobPosting.description }}</p>
-            <p><strong>Location:</strong> {{ jobPosting.jobLocation.address.streetAddress }}, {{
-                jobPosting.jobLocation.address.addressLocality }}</p>
-            <p><strong>Industry:</strong> {{ jobPosting.industry }}</p>
-            <p><strong>Application Link:</strong> <a :href="jobPosting.applicationContact.url" target="_blank">Apply
-                    Here</a></p>
-        </div>
+    <div v-if="jobPosting" class="mt-3">
+      <!-- Job Description -->
+      <p class="text-muted">{{ jobPosting.description }}</p>
 
-        <div v-else>
-            <p>Job posting not found. Please check the itemId in the URL.</p>
-        </div>
+      <h3 class="mt-4">Unternehmen</h3>
+      <p>
+        <a class="link-primary" :href="jobPosting.hiringOrganization.sameAs" target="_blank">
+          {{ jobPosting.hiringOrganization.name }}
+        </a>
+      </p>
+
+      <h4>Standort</h4>
+      <p>{{ jobPosting.jobLocation.address.streetAddress }}, {{ jobPosting.jobLocation.address.addressLocality }}</p>
+
+      <h4>Kontaktdaten</h4>
+      <p><strong>Email:</strong> <a :href="'mailto:' + jobPosting.applicationContact.email">{{ jobPosting.applicationContact.email }}</a></p>
+      <p><strong>Telefon:</strong> {{ jobPosting.applicationContact.telephone }}</p>
+
+      <h4>Weitere Informationen</h4>
+      <p><strong>Branche:</strong> {{ jobPosting.industry }}</p>
+      <p><strong>Kategorie:</strong> {{ jobPosting.occupationalCategory }}</p>
+      <p><strong>Bewerbung:</strong> 
+        <a :href="jobPosting.applicationContact.url" target="_blank" class="btn btn-outline-primary btn-sm">Hier bewerben</a>
+      </p>
     </div>
+
+    <div v-else>
+      <p class="text-danger">Diese Aktivität gibt es nicht!</p>
+    </div>
+  </div>
 </template>

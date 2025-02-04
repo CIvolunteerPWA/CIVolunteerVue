@@ -27,7 +27,7 @@ import Footer from '@/components/Footer.vue';
 
     <div class="container p-2  vh-100">
 
-        <h2 class="p-2">Deine Nachweise</h2>
+        <h2>Deine Nachweise</h2>
         <List></List>
        
 

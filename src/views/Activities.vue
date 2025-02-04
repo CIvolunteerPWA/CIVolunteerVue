@@ -30,9 +30,9 @@ import Footer from '@/components/Footer.vue';
     </nav>
     <StatNavbar></StatNavbar>
     <div class="container p-2">
-        <h2 class="p-2">Deine nächsten Aktivitäten</h2>
+        <h2>Deine nächsten Aktivitäten</h2>
         <List></List>
-        <h2 class="p-2">Offene Aufgaben</h2>
+        <h2>Offene Aufgaben</h2>
         <CardCarousell></CardCarousell>
     </div>
     <Footer></Footer>

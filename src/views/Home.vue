@@ -9,12 +9,13 @@ import StatNavbar from '@/components/StatNavbar.vue';
 <template>
   <Navbar title="Home"></Navbar>
   <StatNavbar></StatNavbar>
- 
+  
+  <img src="/src/assets/images/statistik.png" class="mx-auto d-block img-fluid">
+
   <div class="container p-2">
-    <img src="/src/assets/images/statistik.png" class="mx-auto d-block p-0 img-fluid">
-    <h2 class="p-2">Deine aktuellen Aktivitäten</h2>
+    <h2>Deine aktuellen Aktivitäten</h2>
     <List></List>
-    <h2 class="p-2">Empfehlungen</h2>
+    <h2>Empfehlungen</h2>
     <CardCarousell></CardCarousell>
   </div>
   

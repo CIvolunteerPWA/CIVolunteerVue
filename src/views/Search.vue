@@ -14,9 +14,9 @@ import Navbar from '@/components/Navbar.vue';
     <Navbar title="Aktivitäten Suche"></Navbar>
 
     <nav class="navbar bg-primary shadow">
-        <div class="container pb-3">
+        <div class="container py-2 p-0 ">
             <form class="d-flex w-100" role="search">
-                <button type="submit" class="btn "><i class="bi bi-search text-light"></i></button>
+                <button type="submit" class="btn "><i class="bi bi-search fs-2 text-light"></i></button>
                 <input class="form-control me-3" type="search" placeholder="Was möchtest du machen?"
                     aria-label="Search">
             </form>
@@ -25,16 +25,9 @@ import Navbar from '@/components/Navbar.vue';
 
     <!-- Suchfeld -->
     <div class="container p-2">
-
-
-
         <!-- Vorschläge -->
         <h3 class="mt-1">Aktivitäten die du mögen könntest</h3>
         <ul class="mb-3 tags gap-2">
-            <li class="btn badge bg-light text-dark">#Soziales</li>
-            <li class="btn badge bg-light text-dark">#Organisatorisches</li>
-            <li class="btn badge bg-light text-dark">#Websites</li>
-            <li class="btn badge bg-light text-dark">#Kommunikation</li>
             <li class="btn badge bg-light text-dark">#Soziales</li>
             <li class="btn badge bg-light text-dark">#Organisatorisches</li>
             <li class="btn badge bg-light text-dark">#Websites</li>
@@ -43,8 +36,6 @@ import Navbar from '@/components/Navbar.vue';
 
         <!-- Kategorien -->
         <h3>Kategorien</h3>
-
-
 
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
