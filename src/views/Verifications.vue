@@ -25,9 +25,8 @@ import Footer from '@/components/Footer.vue';
         </div>
     </nav>
 
-    <div class="container p-2  vh-100">
-        <h2>Deine Nachweise</h2>
-        <List></List>
+    <div class="container vh-100">
+        <List title="Deine Nachweise"></List>
     </div>
 <Footer></Footer>
 

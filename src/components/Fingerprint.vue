@@ -1,5 +1,6 @@
 <template>
-    <div class="card bottom bg-primary m-1 mt-auto">
+    <div class="d-flex justify-content-center">
+        <div class="position-fixed bottom-0 card bg-primary m-1  shadow">
             <div class="card-body text-light">
                 <h3 class="card-title">Anmelden Freiwilligenpass</h3>
                 <p class="card-text">Identifizieren Sie sich mit ihrem Fingerprint.</p>
@@ -9,4 +10,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </template>

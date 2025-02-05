@@ -1,5 +1,6 @@
 <template>
-    <div id="carouselExampleIndicators" class="mb-4 carousel slide">
+    <div id="carouselExampleIndicators" class="space carousel slide">
+        <h2>{{title}}</h2>
         <div class="carousel-indicators">
             <button v-for="(item, index) in items" :key="index" :data-bs-target="'#carouselExampleIndicators'"
                 :data-bs-slide-to="index" :class="{ 'active': index === 0 }" class="form-check-input"
@@ -7,13 +8,12 @@
         </div>
         <div class="carousel-inner">
             <div v-for="(item, index) in items" :key="index" class="carousel-item" :class="{ 'active': index === 0 }">
-                <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }"
-                    class="card text-decoration-none">
+                <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }" class="card text-decoration-none">
                     <div class="img-with-date">
                         <img src="/src/assets/images/imgPlaceholder.png" class="card-img-top img-fluid" height="auto">
-                        <div class="date text-center text-dark opacity-75 col-3">
+                        <div class="date date-box col-3">
                             <small>{{ item.club }}</small>
-                            <h1 class="m-0">{{ item.day }}</h1>
+                            <h1>{{ item.day }}</h1>
                             <small>{{ item.month }}</small>
                         </div>
                     </div>
@@ -23,9 +23,10 @@
                             <h3>{{ item.title }}</h3>
                             <p>{{ item.description }}</p>
                         </div>
+                        <p class=""><small class="text-muted">Last updated 3 mins ago</small></p>
 
                         <div class="d-flex align-items-center text-muted gap-6">
-                            <small>
+                            <small class="col-3">
                                 <img src="/src/assets/images/profile.jpg" alt="twbs" width="20" height="20"
                                     class="rounded-circle flex-shrink-0">
                                 {{ item.jobs }}+
@@ -39,14 +40,14 @@
             </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        <button class="carousel-control-prev bs-primary" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
@@ -57,6 +58,12 @@
 import organizationData from '@/assets/data/activitylist.json';
 
 export default {
+    props: {
+        title: {
+            type: String,
+            required: true,
+        },
+    },
     data() {
         return {
             items: [], // Holds the carousel items dynamically
@@ -102,15 +109,13 @@ export default {
 .img-with-date {
     position: relative;
 }
-
 .date {
-    background-color: #eef9ff;
     position: absolute;
     bottom: 0;
 }
 
 .card-text {
-    height: 9.5rem;
+    height: 8rem;
 }
 
 .card-body p {

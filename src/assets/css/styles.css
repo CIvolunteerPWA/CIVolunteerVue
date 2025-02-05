@@ -1,3 +1,42 @@
+
+:root{
+  --llblue: #EEF9FF
+}
+
+.body{
+  line-height: 125% !important;
+}
+
+.bg-dark {
+  color: var(--bs-light); /* Weiß */
+}
+.bg-primary{
+  color: var(--bs-light); /* Weiß */
+}
+.navbar-brand {
+  color:inherit;
+}
+
+h1{
+  letter-spacing: -0.005rem;
+}
+
+small{
+  font-size: 0.75rem !important;
+}
+
+
+/* Profil */
+.profile-img {
+  position: absolute;
+  top: -1.5rem;
+  left: 0
+}
+
+.space{
+  margin: 1.75rem 0 1.75rem 0
+}
+
 .btn-outline-primary:hover, .btn-outline-primary:active {
   color: white;
 }
@@ -21,14 +60,6 @@
   flex-wrap: unset !important;
 }
 
-
-/* Profil */
-.profile-img {
-  position: absolute;
-  top: -1.5rem;
-  left: 0
-}
-
 .cover {
   position: relative;
   margin-top: 1.5rem;
@@ -50,4 +81,77 @@
 }
 
 
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 0rem !important;
+}
+
+.form-group label {
+  position: absolute;
+  top: -0.75rem;
+  left: 0.5rem;
+  background: white;
+  padding: 0 0.25rem;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.form-group label {
+  position: absolute;
+  top: -0.75rem;
+  left: 0.5rem;
+  background: white;
+  padding: 0 0.25rem;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+[data-bs-theme="dark"] {
+  .form-group label {
+    background: var(--bs-body-bg);
+  }
+}
+
+.form-text {
+  padding-left: 0.5rem;
+}
+
+
+
+.card-text .h3{
+  font-size: 1.25rem !important;
+}
+
+
+/*list*/
+.date-box {
+  line-height: 110%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  align-content: center;
+  text-align: center !important;
+  padding: 0.2rem 0;
+  background-color: var(--llblue)
+}
+
+.date-box small {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+.date-box h1 {
+  letter-spacing: -0.1rem;
+  margin: 0.75rem
+}
+.content h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.5em;
+}
 

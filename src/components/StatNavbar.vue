@@ -1,18 +1,26 @@
-<style></style>
+<style scoped>
+h4,
+h1 {
+    margin-bottom: 0 !important;
+}
+</style>
 
 <template>
-    <nav class="shadow navbar bg-primary text-light">
+    <nav class="shadow navbar bg-primary">
         <div class="container text-center">
             <div>
-                <h1 class="mb-0">221</h1>
+                <h1>221</h1>
                 <h4>Badges</h4>
             </div>
             <div>
-                <h1 class="mb-0">6</h1>
+                <h1>6</h1>
                 <h4>Funktionen</h4>
             </div>
             <div>
-                <h1 class="mb-0">21</h1>
+                <div class="d-flex align-items-baseline justify-content-center">
+                    <h1>21</h1>
+                    <small>k</small>
+                </div>
                 <h4>Aktivitäten</h4>
             </div>
         </div>

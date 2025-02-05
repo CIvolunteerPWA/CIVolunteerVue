@@ -29,7 +29,7 @@
             },
             "hiringOrganization": {
                 "@type": "Organization",
-                "name": "Gemeinde Graz",
+                "name": "FFOÖ",
                 "sameAs": "https://www.katastrophenschutz.at",
                 "logo": "https://www.katastrophenschutz.at/logo.png"
             },

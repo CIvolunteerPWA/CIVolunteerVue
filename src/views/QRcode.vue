@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar.vue';
 
 <template>
     <Navbar title="QR-Code"></Navbar>
-    <div class="container p-2 ps-3 pe-3 ">
+    <div class="container py-2">
         <img src="/src/assets/images/logo.png " class="w-50 ">
 
         <h1 class="mt-4 text-left">Dein Code in der Krise</h1>
@@ -15,9 +15,9 @@ import Navbar from '@/components/Navbar.vue';
                 Marianne Lechner; 18051978; marianne.lechner@kunstuni-linz.at; +436506006670; 2411; Strafregisterauszug
                 super!; Gruppenleiterin St. Isidor; 1= Führerschein B, 12= Sprengmeisterin, Englisch, Deutsch</p>
 
-            <button type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-clockwise"></i> <br>
+            <button type="button" class="btn btn-outline-primary "><i class="bi bi-arrow-clockwise fs-2 fw-bold "></i> <br>
                 Aktualisieren</button>
-            <div class="mt-4 d-grid gap-2">
+            <div class="mt-4 d-grid gap-3">
                 <button class="btn btn-primary text-light" type="button">Zu meinem Phone Wallet hinzufügen</button>
                 <button class="btn btn-primary text-light" type="button">Zu meinem EU Wallet hinzufügen</button>
             </div>

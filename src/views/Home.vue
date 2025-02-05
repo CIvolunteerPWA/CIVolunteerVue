@@ -9,16 +9,17 @@ import StatNavbar from '@/components/StatNavbar.vue';
 <template>
   <Navbar title="Home"></Navbar>
   <StatNavbar></StatNavbar>
-  
-  <img src="/src/assets/images/statistik.png" class="mx-auto d-block img-fluid">
 
-  <div class="container p-2">
-    <h2>Deine aktuellen Aktivitäten</h2>
-    <List></List>
-    <h2>Empfehlungen</h2>
-    <CardCarousell></CardCarousell>
+  <div class="container mb-6">
+    <div class="space">
+      <h1>Du warst diese Woche top engagiert!</h1>
+      <img src="/src/assets/images/statistik.png" class="mx-auto d-block img-fluid">
+    </div>
+
+    <List title="Deine aktuellen Aktivitäten"></List>
+    <CardCarousell title="Deine aktuellen Aktivitäten"></CardCarousell>
+
   </div>
   
   <Footer></Footer>
-
 </template>

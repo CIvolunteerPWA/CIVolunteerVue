@@ -204,8 +204,8 @@ import Navbar from '@/components/Navbar.vue';
             </div>
         </div>
 
-        <h3>Empfehlungen</h3>
-        <CardCarousell></CardCarousell>
+    
+        <CardCarousell title="Empfehlungen"></CardCarousell>
     </div>
 
     <Footer></Footer>

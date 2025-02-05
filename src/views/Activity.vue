@@ -25,18 +25,22 @@ const jobPosting = activitylist.itemListElement.find(a => a.identifier.value ===
         </a>
       </p>
 
-      <h4>Standort</h4>
+      <h3>Standort</h3>
       <p>{{ jobPosting.jobLocation.address.streetAddress }}, {{ jobPosting.jobLocation.address.addressLocality }}</p>
 
-      <h4>Kontaktdaten</h4>
-      <p><strong>Email:</strong> <a :href="'mailto:' + jobPosting.applicationContact.email">{{ jobPosting.applicationContact.email }}</a></p>
-      <p><strong>Telefon:</strong> {{ jobPosting.applicationContact.telephone }}</p>
+      <h3>Kontaktdaten</h3>
+      <p><strong>Email:</strong> <a :href="'mailto:' + jobPosting.applicationContact.email">{{
+        jobPosting.applicationContact.email }}</a> <br>
+        <strong>Telefon:</strong> {{ jobPosting.applicationContact.telephone }}
+      </p>
 
-      <h4>Weitere Informationen</h4>
-      <p><strong>Branche:</strong> {{ jobPosting.industry }}</p>
-      <p><strong>Kategorie:</strong> {{ jobPosting.occupationalCategory }}</p>
+      <h3>Weitere Informationen</h3>
+      <p><strong>Branche:</strong> {{ jobPosting.industry }}<br>
+      <strong>Kategorie:</strong> {{ jobPosting.occupationalCategory }}</p>
       <p><strong>Bewerbung:</strong> 
-        <a :href="jobPosting.applicationContact.url" target="_blank" class="btn btn-outline-primary btn-sm">Hier bewerben</a>
+        
+        <a :href="jobPosting.applicationContact.url" target="_blank" class="btn btn-outline-primary btn-sm">Hier
+          bewerben</a>
       </p>
     </div>
 
