@@ -9,6 +9,14 @@ import Navbar from '@/components/Navbar.vue';
     display: flex;
     flex-flow: wrap;
 }
+
+#activities-nearby::after {
+    content: "\f285";
+    background-image: none;
+    font-family: bootstrap-icons !important;
+    font-weight:500 !important; 
+    padding: 0.1rem;
+}
 </style>
 <template>
     <Navbar title="Aktivitäten Suche"></Navbar>
@@ -40,10 +48,12 @@ import Navbar from '@/components/Navbar.vue';
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button href="#alle_Aktivitäten_in_der_Nähe" class="text-decoration-none accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapse">
+                    <button href="#alle_Aktivitäten_in_der_Nähe"
+                        class="text-decoration-none  accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        id="activities-nearby" data-bs-target="#flush-collapse" aria-expanded="false"
+                        aria-controls="flush-collapse">
                         Aktivitäten in der Nähe
-                </button>
+                    </button>
                 </h2>
             </div>
             <div class="accordion-item">
@@ -105,101 +115,98 @@ import Navbar from '@/components/Navbar.vue';
                     </div>
                 </div>
             </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree" aria-expanded="false"
-                            aria-controls="flush-collapseThree">
-                            Blaulichteinsätze
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="list-group list-group-flush">
-                            <a href="#alle_Blaulichteinsätze"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Alle Anzeigen in Blaulichteinsätze <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Polizei"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Polizei <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Feuerwehr"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Feuerwehr <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Rettungsdienst"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Rettungsdienst <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFour" aria-expanded="false"
-                            aria-controls="flush-collapseFour">
-                            Soziales
-                        </button>
-                    </h2>
-                    <div id="flush-collapseFour" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="list-group list-group-flush">
-                            <a href="#alle_Soziales"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Alle Anzeigen in Soziales <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Nachbarschaftshilfe"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Nachbarschaftshilfe <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Wohltätigkeit"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Wohltätigkeit <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Freiwilligenarbeit"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Freiwilligenarbeit <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFive" aria-expanded="false"
-                            aria-controls="flush-collapseFive">
-                            Kinder und Jugendliche
-                        </button>
-                    </h2>
-                    <div id="flush-collapseFive" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="list-group list-group-flush">
-                            <a href="#alle_Kinder_und_Jugendliche"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Alle Anzeigen in Kinder und Jugendliche <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Spielgruppen"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Spielgruppen <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Jugendtreffs"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Jugendtreffs <i class="bi bi-chevron-right"></i>
-                            </a>
-                            <a href="#Bildung_und_Nachhilfe"
-                                class="list-group-item list-group-item-action d-flex justify-content-between">
-                                Bildung und Nachhilfe <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Blaulichteinsätze
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="list-group list-group-flush">
+                        <a href="#alle_Blaulichteinsätze"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Alle Anzeigen in Blaulichteinsätze <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Polizei"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Polizei <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Feuerwehr"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Feuerwehr <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Rettungsdienst"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Rettungsdienst <i class="bi bi-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <h3>Empfehlungen</h3>
-            <CardCarousell></CardCarousell>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Soziales
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="list-group list-group-flush">
+                        <a href="#alle_Soziales"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Alle Anzeigen in Soziales <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Nachbarschaftshilfe"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Nachbarschaftshilfe <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Wohltätigkeit"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Wohltätigkeit <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Freiwilligenarbeit"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Freiwilligenarbeit <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        Kinder und Jugendliche
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="list-group list-group-flush">
+                        <a href="#alle_Kinder_und_Jugendliche"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Alle Anzeigen in Kinder und Jugendliche <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Spielgruppen"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Spielgruppen <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Jugendtreffs"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Jugendtreffs <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <a href="#Bildung_und_Nachhilfe"
+                            class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Bildung und Nachhilfe <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <h3>Empfehlungen</h3>
+        <CardCarousell></CardCarousell>
+    </div>
 
     <Footer></Footer>
 

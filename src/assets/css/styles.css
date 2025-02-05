@@ -1,3 +1,7 @@
+.btn-outline-primary:hover, .btn-outline-primary:active {
+  color: white;
+}
+
 @media (max-width: 360px) {
   .navbar-brand div {
     display: none;

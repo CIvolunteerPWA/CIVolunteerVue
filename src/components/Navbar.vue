@@ -60,13 +60,13 @@ const handleLogout = () => {
                   <i class="bi bi-arrow-down-short text-light"></i>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Einstellungen</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item disabled" href="#">Einstellungen</a></li>
+                  <li><a class="dropdown-item disabled" href="#">Another action</a></li>
+                  <li><a class="dropdown-item disabled" href="#">Something else here</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li> <button class="dropdown-item" @click="handleLogout">Abmelden</button>
+                  <li> <button class="dropdown-item" @click="handleLogout">Abmelden <i class="bi bi-box-arrow-right"></i></button>
                   </li>
                 </ul>
               </div>

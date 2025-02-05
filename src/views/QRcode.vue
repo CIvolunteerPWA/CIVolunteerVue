@@ -15,7 +15,7 @@ import Navbar from '@/components/Navbar.vue';
                 Marianne Lechner; 18051978; marianne.lechner@kunstuni-linz.at; +436506006670; 2411; Strafregisterauszug
                 super!; Gruppenleiterin St. Isidor; 1= Führerschein B, 12= Sprengmeisterin, Englisch, Deutsch</p>
 
-            <button type="button" class=" btn btn-outline-primary"><i class="bi bi-arrow-clockwise"></i> <br>
+            <button type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-clockwise"></i> <br>
                 Aktualisieren</button>
             <div class="mt-4 d-grid gap-2">
                 <button class="btn btn-primary text-light" type="button">Zu meinem Phone Wallet hinzufügen</button>
