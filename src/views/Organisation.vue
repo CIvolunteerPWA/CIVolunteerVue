@@ -31,7 +31,7 @@
             </div>
             <div class="col-8 ps-0 text-light">
                 <div class="p-2 text-center">
-                    <h4>{{ org.name }}</h4>
+                    <h3>{{ org.name }}</h3>
                 </div>
                 <div class="row pb-3 text-center">
                     <div class="col">

@@ -42,7 +42,7 @@ const toggleEdit = () => {
             </div>
         </div>
     </nav>
-    <div class="container p-0">
+
         <div class="cover bg-primary">
             <div class="row">
                 <div class="col-4 ">
@@ -50,7 +50,7 @@ const toggleEdit = () => {
                         class="profile-img rounded-circle">
                 </div>
                 <div class="col-8 ps-0 text-light">
-                    <div class=" fs-3 p-2 text-center">
+                    <div class="fs-3 p-2 text-center">
                         {{ user.honorificPrefix }} <strong>{{ user.name }}</strong>, {{ user.honorificSuffix }}
                     </div>
                     <div class="row pb-3 text-center">
@@ -122,5 +122,5 @@ const toggleEdit = () => {
 
         <Accordion> </Accordion>
 
-    </div>
+ 
 </template>
