@@ -1,27 +1,18 @@
-<style lang="css" scoped>
-.btn-outline-secondary {
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-left: 0;
-    --bs-btn-hover-bg: white;
-    --bs-btn-active-color: gray;
-    --bs-btn-hover-color: gray
-}
-</style>
+
 <template>
     <div class="container p-3 vh-100">
         <img src="/src/assets/images/logo.png " class="w-50">
         <h1 class="mt-5">Anmelden</h1>
         <strong> Wilkommen in der Freiwilligen App. Lorem ipsum dolor sit</strong>
-        <form class="mt-3 text-primary" @submit.prevent="login">
+        <form class="mt-5 text-primary" @submit.prevent="login">
             <div class="form-group">
                 <label for="inputField">Benutzer</label>
                 <input type="text" required id="inputEmail" class="form-control" aria-describedby="passwordHelpBlock"
                     v-model="email" />
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                    else.</small>
+                    <small id="emailHelp" class="form-text text-muted">Some Info</small>
             </div>
 
-            <div class="form-group"><!-- titel näher to input-->
+            <div class="form-group">
                 <label for="inputPassword">Passwort</label>
                 <input type="password" id="inputPassword" class="form-control" aria-describedby="passwordHelpBlock"
                     v-model="password">
@@ -35,18 +26,16 @@
         <a class="d-flex justify-content-end mt-2 small text-decoration-none text-muted" href="#">
             Haben Sie ihr Passwort vergessen?
         </a>
-
-            <Fingerprint></Fingerprint>
-     
-
+        <RegisterCard></RegisterCard>
+       
+            <!--    <Fingerprint></Fingerprint> -->
     </div>
-
 </template>
 
 <script setup>
-
 import { ref } from 'vue';
 import Fingerprint from '@/components/Fingerprint.vue';
+import RegisterCard from '@/components/RegisterCard.vue';
 
 const email = ref('');
 const password = ref('');

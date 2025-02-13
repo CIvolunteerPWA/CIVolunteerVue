@@ -1,13 +1,11 @@
-<style scoped>
-
-</style>
+<style scoped></style>
 <template>
 
     <div class="container p-3">
         <img src="/src/assets/images/logo.png " class="w-50">
         <h1 class="mt-5">Registrierung</h1>
         <strong> Bitte registrieren Sie sich.</strong>
-        <form class="mt-3 row text-primary">
+        <form class="mt-5 row text-primary">
             <div class="form-group col-6">
                 <label for="titel" class="form-label">Titel</label>
                 <input type="text" class="form-control" id="inputTitel">
@@ -115,10 +113,7 @@
                     </label>
                 </div>
             </div>
-            <!-- Submit Button -->
-            <div class="text-end mb-3">
-
-            </div>
+            
             <div class="d-flex gap-2 justify-content-end ">
                 <router-link to="/login" class="btn btn-outline-primary" type="submit">Abbrechen</router-link>
                 <router-link type="submit" class="btn btn-primary text-light" to="/onboarding"

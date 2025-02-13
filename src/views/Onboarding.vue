@@ -7,40 +7,53 @@
 
 
         <div class="tab-content" id="myTabContent">
-            <!-- Tab 1: All Activities -->
+            <!-- Tab 1 -->
             <div class="tab-pane fade show active mx-auto " id="interests" role="tabpanel"
                 aria-labelledby="interests-page">
-                <h4>Interessen</h4>
+                <h3>Interessen</h3>
                 <p>
                     Bitte wählen Sie Kategorien aus in denen Sie freiwillig tätig sein möchten.
                 </p>
                 <ul class="list-group responsive">
                     <li class="list-group-item list-group-item-action">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="1CheckboxStretched">
-                        <label class="form-check-label stretched-link" for="1CheckboxStretched">Flüchtlingshilfe</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="1CheckboxStretched">
+                            <label class="form-check-label stretched-link"
+                                for="1CheckboxStretched">Flüchtlingshilfe</label>
+                        </div>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="2CheckboxStretched">
-                        <label class="form-check-label stretched-link" for="2CheckboxStretched">Altenbetreuung</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="2CheckboxStretched">
+                            <label class="form-check-label stretched-link"
+                                for="2CheckboxStretched">Altenbetreuung</label>
+                        </div>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="3CheckboxStretched">
-                        <label class="form-check-label stretched-link" for="3CheckboxStretched">Kinderbetreuung</label>
+                        <div class="form-check">
+                            <input class="form-check-input " type="checkbox" value="" id="3CheckboxStretched">
+                            <label class="form-check-label stretched-link"
+                                for="3CheckboxStretched">Kinderbetreuung</label>
+                        </div>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="4CheckboxStretched">
-                        <label class="form-check-label stretched-link" for="4CheckboxStretched">Sport</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="4CheckboxStretched">
+                            <label class="form-check-label stretched-link" for="4CheckboxStretched">Sport</label>
+                        </div>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="5CheckboxStretched">
-                        <label class="form-check-label stretched-link" for="5CheckboxStretched">Umwelt</label>
+                        <div class="form-check">
+                            <input class="form-check-input " type="checkbox" value="" id="5CheckboxStretched">
+                            <label class="form-check-label stretched-link" for="5CheckboxStretched">Umwelt</label>
+                        </div>
                     </li>
                 </ul>
             </div>
 
             <!-- Tab 2-->
             <div class="tab-pane fade mx-auto" id="competences" role="tabpanel" aria-labelledby="competences-page">
-                <h4>Kompetenzen</h4>
+                <h3>Kompetenzen</h3>
                 <p> Welche Kompetenzen können Sie in Ihre Tätigkeit einbringen?</p>
                 <ul class="list-group ">
                     <div class="mt-1">
@@ -91,15 +104,14 @@
 
             <!-- Tab 3 -->
             <div class="tab-pane fade mx-auto" id="availability" role="tabpanel" aria-labelledby="availability-page">
-                <h4>Verfügbarkeit</h4>
+                <h3>Verfügbarkeit</h3>
                 <p> Bitte wählen Sie die Anzahl an Tagen an denen Sie Zeit haben.</p>
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-action">
                         <label class="form-check-label">Tage</label>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <input class="form-check-input me-1" type="radio" name="listGroupRadio"  id="firstRadio"
-                            checked>
+                        <input class="form-check-input me-1" type="radio" name="listGroupRadio" id="firstRadio" checked>
                         <label class="form-check-label" for="firstRadio">1-2</label>
                     </li>
                     <li class="list-group-item list-group-item-action">
@@ -122,42 +134,42 @@
     </div>
 
     <nav class="position-fixed bottom-0 start-0 end-0 ">
-            <div class="container p-3 col-lg-3 d-flex justify-content-between ">
-                <ul class="pagination" id="activityTabs" role="tablist">
-                    <li class="page-item " aria-current="page">
-                        <button class="page-link rounded active " id="interests-page" data-bs-toggle="tab"
-                            @click="updateCurrentIndex(0)" data-bs-target="#interests" type="button" role="tab"
-                            aria-controls="interests" aria-selected="true">
-                            1
-                        </button>
-                    </li>
-                    <li class="page-item  mx-4">
-                        <button class="page-link rounded" id="competences-page" data-bs-toggle="tab"
-                            data-bs-target="#competences" type="button" role="tab" aria-controls="competences"
-                            @click="updateCurrentIndex(1)" aria-selected="false">
-                            2
-                        </button>
-                    </li>
-                    <li class="page-item ">
-                        <button class="page-link rounded" id="availability-page" data-bs-toggle="tab"
-                            data-bs-target="#availability" type="button" role="tab" aria-controls="availability"
-                            @click="updateCurrentIndex(2)" aria-selected="false">
-                            3
-                        </button>
-                    </li>
-                </ul>
+        <div class="container p-3 col-lg-3 d-flex justify-content-between ">
+            <ul class="pagination" id="activityTabs" role="tablist">
+                <li class="page-item " aria-current="page">
+                    <button class="page-link rounded active " id="interests-page" data-bs-toggle="tab"
+                        @click="updateCurrentIndex(0)" data-bs-target="#interests" type="button" role="tab"
+                        aria-controls="interests" aria-selected="true">
+                        1
+                    </button>
+                </li>
+                <li class="page-item  mx-4">
+                    <button class="page-link rounded" id="competences-page" data-bs-toggle="tab"
+                        data-bs-target="#competences" type="button" role="tab" aria-controls="competences"
+                        @click="updateCurrentIndex(1)" aria-selected="false">
+                        2
+                    </button>
+                </li>
+                <li class="page-item ">
+                    <button class="page-link rounded" id="availability-page" data-bs-toggle="tab"
+                        data-bs-target="#availability" type="button" role="tab" aria-controls="availability"
+                        @click="updateCurrentIndex(2)" aria-selected="false">
+                        3
+                    </button>
+                </li>
+            </ul>
 
-                <div>
-                    <button v-if="!isReady" @click="goNext" id="goNextBtn" class="btn btn-primary text-light"
-                        type="button">Weiter</button>
-                    <template v-else>
-                        <router-link to="/" class="btn btn-primary text-light" @click="login()"
-                            type="submit">Fertig</router-link>
-                    </template>
-                </div>
-
+            <div>
+                <button v-if="!isReady" @click="goNext" id="goNextBtn" class="btn btn-primary text-light"
+                    type="button">Weiter</button>
+                <template v-else>
+                    <router-link to="/" class="btn btn-primary text-light" @click="login()"
+                        type="submit">Fertig</router-link>
+                </template>
             </div>
-        </nav>
+
+        </div>
+    </nav>
 </template>
 <script>
 

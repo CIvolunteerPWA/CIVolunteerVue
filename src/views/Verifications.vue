@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Navbar from '@/components/Navbar.vue';
 import List from '@/components/List.vue';
 import Footer from '@/components/Footer.vue';

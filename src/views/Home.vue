@@ -13,7 +13,7 @@ import StatNavbar from '@/components/StatNavbar.vue';
   <div class="container mb-6">
     <div class="space">
       <h1>Du warst diese Woche top engagiert!</h1>
-      <img src="/src/assets/images/statistik.png" class="mx-auto d-block img-fluid">
+      <img src="/src/assets/images/statistik.png" alt="statistic" class="mx-auto d-block img-fluid">
     </div>
 
     <List title="Deine aktuellen Aktivitäten"></List>

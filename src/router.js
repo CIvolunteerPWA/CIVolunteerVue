@@ -101,6 +101,11 @@ const router = createRouter({
 // Navigation guards
 
 router.beforeEach((to, from, next) => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-bs-theme', savedTheme); // Apply theme on route change
+  }
+ 
   const isAuthenticated = !!localStorage.getItem('authToken'); // Check if logged in
   if (to.meta.requiresAuth && !isAuthenticated) {
     next('/login'); // Redirect to login if not authenticated
@@ -109,6 +114,7 @@ router.beforeEach((to, from, next) => {
   } else {
     next(); // Proceed normally
   }
+
 });
 
 export default router;

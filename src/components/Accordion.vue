@@ -1,6 +1,6 @@
 <template>
     <div class="accordion p-2" id="accordionExample">
-        <h5 class="m-1">Informationen</h5>
+        <h3 class="m-1">Informationen</h3>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -196,14 +196,8 @@
             </h2>
             <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-moon"></i>
-                        <label class="me-2" for="flexSwitchCheckDefault">Dark Mode</label>
-                        <div class="form-check form-switch">
-                            <input id="darkModeToggle" class="form-check-input" type="checkbox" role="switch"
-                                @click="toggleTheme()" v-model="isDarkMode">
-                        </div>
-                    </div>
+                   <ToggleMode></ToggleMode>
+                   <ChangeTheme></ChangeTheme>
                 </div>
             </div>
         </div>
@@ -212,8 +206,11 @@
 
 
 <script setup>
-import { ref, watchEffect, computed } from "vue";
+import { ref } from "vue";
+import ToggleMode from "./ToggleMode.vue";
+import ChangeTheme from "./ChangeTheme.vue";
 import volunteer from "@/assets/data/volunteer.json";
+import ResizeText from "./ResizeText.vue";
 
 // Initialize the data model for user details
 const user = ref({
@@ -243,24 +240,4 @@ const resetChanges = () => {
     }
     isEditable.value = false;
 };
-
-const theme = ref(localStorage.getItem('theme') || 'light');
-watchEffect(() => {
-    document.documentElement.setAttribute('data-bs-theme', theme.value);
-    localStorage.setItem('theme', theme.value);
-});
-
-
-const toggleTheme = () => {
-    theme.value = theme.value == 'dark' ? 'light' : 'dark';
-};
-
-const isDarkMode = computed({
-    get() {
-        return theme.value === 'dark'; //
-    },
-    set(value) {
-        theme.value = value ? 'dark' : 'light';
-    }
-});
 </script>

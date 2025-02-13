@@ -12,13 +12,13 @@
                     <RouterLink class="nav-link" aria-current="page" to="/profile">Übersicht</RouterLink>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#">Nachweise</a>
+                    <a class="nav-link disabled" href="#">Nachweise</a>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link  text-primary active" href="#">Organisation</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#">Stammdaten</a>
+                    <a class="nav-link disabled" href="#">Stammdaten</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
     <div class="card cover-subtext bg-secondary-subtle shadow-sm">
         <div class="card-body ">
             <div class="d-flex justify-content-between  align-items-center ">
-                <h5>Über Uns</h5>
+                <h3>Über Uns</h3>
                 <button class="btn text-primary" @click="toggleEdit">
                     <template v-if="isEditable">
                         <i class="bi bi-check fs-2"></i>
@@ -90,7 +90,7 @@
         </div>
     </div>
     <div class="m-2">
-        <h5 class="m-1">Offene Aufgaben</h5>
+        <h3 class="m-1">Offene Aufgaben</h3>
         <CardCarousell></CardCarousell>
     </div>
     <br>
@@ -98,7 +98,7 @@
 
 
     <div class="accordion p-2" id="accordionExample">
-        <h5 class="m-1">Informationen</h5>
+        <h3 class="m-1">Informationen</h3>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"

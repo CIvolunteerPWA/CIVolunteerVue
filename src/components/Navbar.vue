@@ -1,17 +1,3 @@
-<script setup>
-import { useRoute, useRouter } from 'vue-router'
-import user from "@/assets/data/volunteer"
-
-const route = useRoute()
-const isHomePage = route.path === '/'
-
-const router = useRouter()
-const handleLogout = () => {
-  localStorage.removeItem('authToken');
-  localStorage.removeItem('userData');
-  router.push('/login');
-};
-</script>
 <style>
 .profil-img {
   position: absolute;
@@ -20,11 +6,6 @@ const handleLogout = () => {
 
 .user {
   line-height: 110%;
-
-}
-
-.navbar-brand {
-  font-size: 24px;
 }
 </style>
 <template>
@@ -46,14 +27,14 @@ const handleLogout = () => {
             <div class="col text-end me-5 ">
               <router-link class="navbar-brand  " to="/profile">
                 <img src="/src/assets/images/profile.jpg" width="70" height="70"
-                  class="d-inline-block align-top rounded-circle mb-1" alt="">
+                  class="d-inline-block align-top rounded-circle mb-1" alt="profile picture">
               </router-link>
             </div>
           </div>
 
           <div class="d-flex justify-content-between w-100">
             <router-link to="/qrCode">
-              <img src="/src/assets/images/qrCode.png" width="79" height="79" class="bg-light" alt="">
+              <img src="/src/assets/images/qrCode.png" width="79" height="79" class="bg-light" alt="QRCode">
             </router-link>
 
             <div class="d-flex  text-end d-flex align-items-start justify-content-end">
@@ -87,14 +68,35 @@ const handleLogout = () => {
   </nav>
 </template>
 
-<script>
-export default {
-  name: "Navbar",
-  props: {
-    title: {
-      type: String,
-      required: true, // Make sure the title is passed
-    },
-  },
+<script setup>
+import { useRoute, useRouter } from 'vue-router'
+import user from "@/assets/data/volunteer"
+import { computed } from 'vue'
+
+
+defineOptions({
+  name: "Navbar"
+});
+
+
+defineProps({
+  title: {
+    type: String,
+    required: true
+  }
+});
+
+
+const route = useRoute();
+const router = useRouter();
+
+
+const isHomePage = computed(() => route.path === '/');
+
+
+const handleLogout = () => {
+  localStorage.removeItem('authToken');
+  localStorage.removeItem('userData');
+  router.push('/login');
 };
 </script>

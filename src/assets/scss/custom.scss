@@ -1,8 +1,15 @@
-///Color
+// Color
 $primary: #0783cb;
 $dark: #001d2e;
-$white:    #fff;
-$form-range-thumb-bg:                      $primary;
+$white: #fff;
+
+// Theme Colors for Green
+$mint: #78c2ad;
+$dark-mint: #36584f;
+
+
+$form-range-track-bg: $white;
+$form-range-thumb-bg: $primary;
 
 //margins and paddings
 $spacer: 1rem !default;
@@ -16,11 +23,9 @@ $spacers: (0: 0,
 ) !default;
 
 
+$font-family-sans-serif: 'Open Sans',
+sans-serif;
 
-$font-family-sans-serif: 'Open Sans', sans-serif;
-
-
-//typography
 $font-size-base:1rem;
 $h1-font-size: $font-size-base * 2.5 !default;
 $h2-font-size: $font-size-base * 1.75 !default;
@@ -29,15 +34,50 @@ $h4-font-size: $font-size-base * 1 !default;
 $h5-font-size: $font-size-base * 0.75 !default;
 $h6-font-size: $font-size-base * 0.5 !default;
 
-$form-range-track-bg:             $white;
-
-$font-sizes: (1: $h1-font-size, 
-  2: $h2-font-size, 
-  3: $h3-font-size, 
-  4: $h4-font-size, 
+$font-sizes: (1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
   5: $h5-font-size,
   6: $h6-font-size);
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/_variables";
 
+[data-bs-theme="green"] {
+
+  --mint: $mint;
+  --dark-mint: $dark-mint;
+  --bs-primary: #78c2ad !important;
+  
+  .card {
+    background-color: lighten($mint, 30%)!important;
+  }
+
+  .bg-dark {
+    background-color: $dark-mint !important;
+  }
+
+  .btn-primary,
+  .btn-outline-primary:active,
+  .btn-outline-primary:hover,
+  .bg-primary {
+    background-color: $mint !important;
+    color: $white !important;
+  }
+
+  .btn-primary,
+  .btn-outline-primary,
+  .btn-outline-primary:active,
+  .btn-outline-primary:hover {
+    border-color: $mint !important;
+  }
+
+  .text-primary,
+  .nav-link:not(.disabled),
+  .btn-outline-primary {
+    color: $mint !important;
+  }
+}
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../../node_modules/bootstrap/scss/bootstrap";

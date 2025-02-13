@@ -1,5 +1,5 @@
 <template>
-    <div id="carouselExampleIndicators" class="space carousel slide">
+    <div id="carouselExampleIndicators" class="space carousel slide" data-bs-ride="carousel">
         <h2>{{title}}</h2>
         <div class="carousel-indicators">
             <button v-for="(item, index) in items" :key="index" :data-bs-target="'#carouselExampleIndicators'"
@@ -42,12 +42,12 @@
 
         <button class="carousel-control-prev bs-primary" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
-            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span class=" " aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next">
-            <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+            <span class=" text-dark" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
