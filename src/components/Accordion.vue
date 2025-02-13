@@ -210,7 +210,6 @@ import { ref } from "vue";
 import ToggleMode from "./ToggleMode.vue";
 import ChangeTheme from "./ChangeTheme.vue";
 import volunteer from "@/assets/data/volunteer.json";
-import ResizeText from "./ResizeText.vue";
 
 // Initialize the data model for user details
 const user = ref({
