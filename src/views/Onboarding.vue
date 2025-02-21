@@ -171,44 +171,39 @@
         </div>
     </nav>
 </template>
-<script>
-
+<script setup>
 import { ref } from "vue";
-export default {
 
-    data() {
-        return {
-            tabOrder: ["interests-page", "competences-page", "availability-page"],
-            currentIndex: 0,
-            isReady: ref(false),
-            orgValue: 50,
-            teamValue: 50,
-            learnValue: 50,
-            customisationValue: 50,
-            workValue: 50,
-        };
-    },
-    methods: {
-        goNext() {
-            if (this.currentIndex < this.tabOrder.length - 1) {
-                this.currentIndex++;
-                this.switchTab(this.tabOrder[this.currentIndex]);
-                this.isReady = this.currentIndex == 2;
-            }
-        },
-        switchTab(tabId) {
-            const nextTabButton = document.getElementById(tabId);
-            if (nextTabButton) {
-                nextTabButton.click(); // Triggers Bootstrap tab switching
-            }
-        },
-        updateCurrentIndex(index) {
-            this.currentIndex = index;
-            this.isReady = this.currentIndex == 2;
-        },
-        login() {
-            localStorage.setItem('authToken', 'your-auth-token');
-        }
-    },
+const tabOrder = ["interests-page", "competences-page", "availability-page"];
+const currentIndex = ref(0);
+const isReady = ref(false);
+const orgValue = ref(50);
+const teamValue = ref(50);
+const learnValue = ref(50);
+const customisationValue = ref(50);
+const workValue = ref(50);
+
+const goNext = () => {
+    if (currentIndex.value < tabOrder.length - 1) {
+        currentIndex.value++;
+        switchTab(tabOrder[currentIndex.value]);
+        isReady.value = currentIndex.value === 2;
+    }
+};
+
+const switchTab = (tabId) => {
+    const nextTabButton = document.getElementById(tabId);
+    if (nextTabButton) {
+        nextTabButton.click(); // Triggers Bootstrap tab switching
+    }
+};
+
+const updateCurrentIndex = (index) => {
+    currentIndex.value = index;
+    isReady.value = currentIndex.value === 2;
+};
+
+const login = () => {
+    localStorage.setItem('authToken', 'your-auth-token');
 };
 </script>

@@ -53,51 +53,45 @@
 
 </template>
 
-<script>
-// Import the JSON file
+<script setup>
+import { ref, onMounted, defineProps } from 'vue';
 import organizationData from '@/assets/data/activitylist.json';
 
-export default {
-  props: {
+defineProps({
     title: {
-      type: String,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      items: [],
-      loadedItemsCount: 0,
-      allItems: [],
-    };
-  },
-  created() {
-    // Mapping the JSON to your template format
-    this.allItems = organizationData.itemListElement.map(job => ({
-      club: job.hiringOrganization.name,
-      day: new Date(job.datePosted).getDate(),
-      month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),
-      location: job.jobLocation.address.addressLocality,
-      title: job.title,
-      jobs: '0/' + job.totalJobOpenings,
-      industry: job.industry,
-      id: job.identifier.value
-    }));
-    // Initially load 3 items
-    this.toggleLoadMore();
-  },
-  methods: {
-    toggleLoadMore() {
-      // Load more items by appending 3 new items to the list
-      const nextItems = this.allItems.slice(this.loadedItemsCount, this.loadedItemsCount + 3);
-      this.items.push(...nextItems);
-      this.loadedItemsCount += nextItems.length;
-    },
-    showLess() {
-      // Reduce the number of items displayed back to the initial 3
-      this.items = this.allItems.slice(0, 3);
-      this.loadedItemsCount = 3;
-    },
-  }
+        type: String,
+        required: true
+    }
+});
+
+const items = ref([]);
+const loadedItemsCount = ref(0);
+const allItems = ref([]);
+
+const toggleLoadMore = () => {
+    const nextItems = allItems.value.slice(loadedItemsCount.value, loadedItemsCount.value + 3);
+    items.value.push(...nextItems);
+    loadedItemsCount.value += nextItems.length;
 };
+
+const showLess = () => {
+    items.value = allItems.value.slice(0, 3);
+    loadedItemsCount.value = 3;
+};
+
+onMounted(() => {
+    allItems.value = organizationData.itemListElement.map(job => ({
+        club: job.hiringOrganization.name,
+        day: new Date(job.datePosted).getDate(),
+        month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),
+        location: job.jobLocation.address.addressLocality,
+        title: job.title,
+        jobs: '0/' + job.totalJobOpenings,
+        industry: job.industry,
+        id: job.identifier.value
+    }));
+    toggleLoadMore();
+});
+
+
 </script>

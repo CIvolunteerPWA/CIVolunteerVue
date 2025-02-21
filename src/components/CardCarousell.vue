@@ -1,6 +1,6 @@
 <template>
     <div id="carouselExampleIndicators" class="space carousel slide" data-bs-ride="carousel">
-        <h2>{{title}}</h2>
+        <h2>{{ title }}</h2>
         <div class="carousel-indicators">
             <button v-for="(item, index) in items" :key="index" :data-bs-target="'#carouselExampleIndicators'"
                 :data-bs-slide-to="index" :class="{ 'active': index === 0 }" class="form-check-input"
@@ -53,38 +53,28 @@
     </div>
 </template>
 
-<script>
+<script setup>
 // Import the JSON data
 import organizationData from '@/assets/data/activitylist.json';
+defineProps({
+    title: {
+        type: String,
+        required: true
+    }
+});
+const items = organizationData.itemListElement.map(job => ({
+    title: job.title,
+    description: job.description,
+    industry: job.industry,
+    location: job.jobLocation.address.addressLocality,
+    club: job.hiringOrganization.name,
+    day: new Date(job.datePosted).getDate(),  // Displaying day of the job posting
+    month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),  // Displaying the month
+    jobs: job.totalJobOpenings,
+    image: job.hiringOrganization.logo, // Assuming the logo represents the image
+    id: job.identifier.value
+}));
 
-export default {
-    props: {
-        title: {
-            type: String,
-            required: true,
-        },
-    },
-    data() {
-        return {
-            items: [], // Holds the carousel items dynamically
-        };
-    },
-    created() {
-        // Mapping the JSON data to fill the carousel
-        this.items = organizationData.itemListElement.map(job => ({
-            title: job.title,
-            description: job.description,
-            industry: job.industry,
-            location: job.jobLocation.address.addressLocality,
-            club: job.hiringOrganization.name,
-            day: new Date(job.datePosted).getDate(),  // Displaying day of the job posting
-            month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),  // Displaying the month
-            jobs: job.totalJobOpenings,
-            image: job.hiringOrganization.logo, // Assuming the logo represents the image
-            id: job.identifier.value
-        }));
-    },
-};
 </script>
 <style scoped>
 .carousel-indicators {
@@ -109,6 +99,7 @@ export default {
 .img-with-date {
     position: relative;
 }
+
 .date {
     position: absolute;
     bottom: 0;

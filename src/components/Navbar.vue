@@ -73,11 +73,9 @@ import { useRoute, useRouter } from 'vue-router'
 import user from "@/assets/data/volunteer"
 import { computed } from 'vue'
 
-
 defineOptions({
   name: "Navbar"
 });
-
 
 defineProps({
   title: {
@@ -86,14 +84,9 @@ defineProps({
   }
 });
 
-
 const route = useRoute();
 const router = useRouter();
-
-
 const isHomePage = computed(() => route.path === '/');
-
-
 const handleLogout = () => {
   localStorage.removeItem('authToken');
   localStorage.removeItem('userData');

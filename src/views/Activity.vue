@@ -4,8 +4,6 @@ import Navbar from '@/components/Navbar.vue';
 import activitylist from '@/assets/data/activitylist.json';
 
 const route = useRoute();
-
-// Find job posting by identifier from the route parameters
 const jobPosting = activitylist.itemListElement.find(a => a.identifier.value === route.params.itemId);
 </script>
 
