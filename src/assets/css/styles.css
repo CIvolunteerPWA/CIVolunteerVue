@@ -4,7 +4,46 @@
 
 .body {
   line-height: 125% !important;
+  height: 100vh !important;
 }
+
+.content-container {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 6rem;
+  padding-top: 1.75rem;
+}
+
+
+@media (min-width: 576px) {
+  .content-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .content-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content-container {
+    max-width: 1140px;
+  }
+}
+
 
 .bg-dark, .bg-primary, .btn-primary {
   color: var(--bs-light) !important; /* Weiß */
@@ -49,10 +88,15 @@ small {
 }
 
 /* Search Navbar */
-.scrollmenu {
+.tab-navigation {
   overflow-x: auto;
   width: 100%;
   white-space: nowrap;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding: 8px calc(var(--bs-gutter-x)* 0.5);
+  /*  background-color:var(--bs-gray-200);*/
 }
 
 .nav {

@@ -1,0 +1,280 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Organization",
+    "additionalType": "ItemList",
+    "name": "mima",
+    "description": "Test Beschreibung des Referrers",
+    "url": "https://www.fuer-uns.at",
+    "logo": "https://www.mima.at/assets/images/8/Logo%20mima%20ohne%20Sonne%20rgb-a8022249.png",
+    "identifier": {
+        "@type": "PropertyValue",
+        "value": "2024-05-13T00:00",
+        "name": "updatedAt"
+    },
+    "numberOfItems": 3,
+    "itemListElement": [
+        {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": "Ehrenamtlicher Helfer für Katastrophenschutz (m/w/d)",
+            "description": "Unterstützen Sie die Einsatzkräfte bei der Organisation und Durchführung von Einsätzen im Katastrophenschutz. Aufgaben umfassen Logistik, Erste Hilfe und Kommunikation.",
+            "occupationalCategory": "Katastrophenschutz",
+            "validThrough": "2025-12-31",
+            "datePosted": "2025-01-10",
+            "industry": "Rettungsdienst",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "KATA2025-001",
+                "name": "Gemeinde Graz"
+            },
+            "hiringOrganization": {
+                "@type": "Organization",
+                "name": "FFOÖ",
+                "sameAs": "https://www.katastrophenschutz.at",
+                "logo": "https://www.katastrophenschutz.at/logo.png"
+            },
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Hauptplatz 1",
+                    "addressLocality": "Graz",
+                    "postalCode": "8010",
+                    "addressCountry": "Österreich",
+                    "addressRegion": "Steiermark"
+                }
+            },
+            "applicationContact": {
+                "@type": "ContactPoint",
+                "email": "info@katastrophenschutz.at",
+                "telephone": "+43-316-123456",
+                "url": "https://www.katastrophenschutz.at/apply"
+            },
+            "employmentType": [
+                "VOLUNTEER"
+            ],
+            "workHours": "flexible Einsatzzeiten",
+            "responsibilities": "Unterstützung der Einsatzleitung, Logistikkoordination, Erste Hilfe.",
+            "skills": "Teamarbeit, Organisationstalent, Grundkenntnisse in Erster Hilfe",
+            "qualifications": "Keine besonderen Anforderungen, Schulungen werden bereitgestellt.",
+            "directApply": true,
+            "totalJobOpenings": 2,
+            "status": "Verification Requested"
+        },
+        {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": "Ehrenamtlicher Unterstützer im Tierheim (m/w/d)",
+            "description": "Pflege und Betreuung von Tieren im Tierheim, Unterstützung bei Reinigungsarbeiten und Organisation von Adoptionstagen.",
+            "occupationalCategory": "Tierschutz",
+            "validThrough": "2025-12-31",
+            "datePosted": "2025-01-15",
+            "industry": "Tierschutz",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "TIER2025-002",
+                "name": "Tierschutzverein Wien"
+            },
+            "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Tierschutzverein Wien",
+                "sameAs": "https://www.tierschutzwien.at",
+                "logo": "https://www.tierschutzwien.at/logo.png"
+            },
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Tierheimstraße 7",
+                    "addressLocality": "Wien",
+                    "postalCode": "1230",
+                    "addressCountry": "Österreich",
+                    "addressRegion": "Wien"
+                }
+            },
+            "applicationContact": {
+                "@type": "ContactPoint",
+                "email": "info@tierschutzwien.at",
+                "telephone": "+43-1-7654321",
+                "url": "https://www.tierschutzwien.at/apply"
+            },
+            "employmentType": [
+                "VOLUNTEER"
+            ],
+            "workHours": "flexible Einsatzzeiten, mindestens 4 Stunden pro Woche",
+            "responsibilities": "Betreuung von Tieren, Reinigung der Gehege, Unterstützung bei Veranstaltungen.",
+            "skills": "Tierliebe, Geduld, Teamfähigkeit",
+            "qualifications": "Mindestalter 18 Jahre, Bereitschaft zur Arbeit mit Tieren.",
+            "directApply": true,
+            "totalJobOpenings": 2,
+            "status": "Certified Proof"
+        },
+        {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": "Ehrenamtlicher Sprachlehrer für Geflüchtete (m/w/d)",
+            "description": "Helfen Sie geflüchteten Menschen, Deutsch zu lernen. Unterstützung bei der Sprachförderung in kleinen Gruppen oder Einzelunterricht.",
+            "occupationalCategory": "Bildung",
+            "validThrough": "2025-12-31",
+            "datePosted": "2025-01-18",
+            "industry": "Sozialarbeit",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "SPRACH2025-003",
+                "name": "Sprachhilfe Österreich"
+            },
+            "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Sprachhilfe Österreich",
+                "sameAs": "https://www.sprachhilfe.at",
+                "logo": "https://www.sprachhilfe.at/logo.png"
+            },
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Lernstraße 10",
+                    "addressLocality": "Linz",
+                    "postalCode": "4020",
+                    "addressCountry": "Österreich",
+                    "addressRegion": "Oberösterreich"
+                }
+            },
+            "applicationContact": {
+                "@type": "ContactPoint",
+                "email": "info@sprachhilfe.at",
+                "telephone": "+43-732-654321",
+                "url": "https://www.sprachhilfe.at/apply"
+            },
+            "employmentType": [
+                "VOLUNTEER"
+            ],
+            "workHours": "nach Vereinbarung, 2-6 Stunden pro Woche",
+            "responsibilities": "Unterrichtsgestaltung, Unterstützung beim Spracherwerb, Motivation und Begleitung der Teilnehmenden.",
+            "skills": "Kommunikationsfähigkeit, Geduld, pädagogisches Geschick",
+            "qualifications": "Deutschkenntnisse auf Muttersprachenniveau, Erfahrung im Unterrichten von Vorteil.",
+            "directApply": true,
+            "totalJobOpenings": 1,
+            "status": "Certified"
+        },
+        {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": "Feuerwehrübung Überschwemmung",
+            "description": "Feuerwehrübung im Rahmen der Katastrophenhilfe bei Überschwemmung in Linz.",
+            "occupationalCategory": "Test Kategorie",
+            "validThrough": "2024-11-11",
+            "datePosted": "2024-05-13",
+            "industry": "Feuerwehr",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "Test Identifier Id",
+                "name": "FFOÖ"
+            },
+            "hiringOrganization": {
+                "@type": "Organization",
+                "name": "FFOÖ",
+                "sameAs": "https://www.example.com",
+                "logo": "https://www.example.com/logo.png"
+            },
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Firmenstraße 2",
+                    "addressLocality": "Linz",
+                    "postalCode": "4020",
+                    "addressCountry": "Österreich",
+                    "addressRegion": "Oberösterreich"
+                }
+            },
+            "applicationContact": {
+                "@type": "ContactPoint",
+                "email": "info@example.com",
+                "telephone": "+43-664-1234567",
+                "url": "https://www.example.com/application"
+            },
+            "baseSalary": {
+                "@type": "MonetaryAmount",
+                "value": {
+                    "@type": "QuantitativeValue",
+                    "unitText": "HOUR",
+                    "minValue": 10,
+                    "maxValue": 20
+                },
+                "currency": "EUR"
+            },
+            "employmentType": [
+                "VOLUNTEER"
+            ],
+            "workHours": "Mo-Fr 08:00-12:00",
+            "responsibilities": "Test Zuständigkeiten",
+            "skills": "Skill1, Skill2, Skill3",
+            "qualifications": "Qualifikation1, Qualifikation2, Qualifikation3",
+            "educationRequirements": [
+                {
+                    "@type": "EducationalOccupationalCredential",
+                    "credentialCategory": "bachelor degree"
+                },
+                {
+                    "@type": "EducationalOccupationalCredential",
+                    "credentialCategory": "postgraduate degree"
+                }
+            ],
+            "experienceRequirements": {
+                "@type": "OccupationalExperienceRequirements",
+                "monthsOfExperience": "36"
+            },
+            "directApply": false,
+            "totalJobOpenings": 3,
+            "status": "Verification Requested"
+        },
+        {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": "Essensauslieferung in Lasberg",
+            "description": "Wir suchen eine Person, die Montags von 13:00 bis 15:00 Uhr Essenslieferungen in Lasberg durchführen kann.",
+            "occupationalCategory": "Freiwilligenarbeit",
+            "validThrough": "2024-12-31",
+            "datePosted": "2024-01-23",
+            "industry": "Freiwilligenarbeit",
+            "identifier": {
+              "@type": "PropertyValue",
+              "value": "Essensauslieferung-2024-01",
+              "name": "FA Lasberg"
+            },
+            "hiringOrganization": {
+              "@type": "Organization",
+              "name": "FO Linz",
+              "sameAs": "https://www.example-organization.com",
+              "logo": "https://www.example-organization.com/logo.png"
+            },
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Essensstraße 5",
+                    "addressLocality": "Lasberg",
+                    "postalCode": "4040",
+                    "addressCountry": "Österreich"
+                }
+            },
+            "applicationContact": {
+                "@type": "ContactPoint",
+                "email": "info@example-organization.com",
+                "telephone": "+43-664-9876543",
+                "url": "https://www.example-organization.com/apply"
+            },
+            "employmentType": [
+                "VOLUNTEER"
+            ],
+            "workHours": "Montag, 13:00 - 15:00 Uhr",
+            "responsibilities": "Essenslieferung an bedürftige Haushalte.",
+            "skills": "Organisationstalent, Zuverlässigkeit",
+            "qualifications": "Keine speziellen Qualifikationen erforderlich.",
+            "directApply": true,
+            "totalJobOpenings": 5,
+            "status": "Verification Requested"
+        }
+    ]
+}

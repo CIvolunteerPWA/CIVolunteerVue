@@ -31,9 +31,9 @@ import Navbar from '@/components/Navbar.vue';
         </div>
     </nav>
 
-    <!-- Suchfeld -->
-    <div class="container p-2">
-        <!-- Vorschläge -->
+ 
+    <div class="content-container space">
+  
         <h3 class="mt-1">Aktivitäten die du mögen könntest</h3>
         <ul class="mb-3 tags gap-2">
             <li class="btn badge bg-light text-dark">#Soziales</li>
@@ -42,9 +42,8 @@ import Navbar from '@/components/Navbar.vue';
             <li class="btn badge bg-light text-dark">#Kommunikation</li>
         </ul>
 
-        <!-- Kategorien -->
+   
         <h3>Kategorien</h3>
-
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">

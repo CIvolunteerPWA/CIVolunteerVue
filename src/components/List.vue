@@ -9,13 +9,14 @@
 }
 </style>
 <template>
-  <div class="list-group list-group-flush space">
-    <!--in vierteln denken -->
+  <div class="list-group list-group-flush ">
+
     <h2>{{ title }}</h2>
 
     <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }" v-for="(item, index) in items" :key="index"
       class="list-group-item list-group-item-action align-content-stretch d-flex " aria-current="true">
-      <div class="date-box col-3"> <!-- Hintergrund-->
+      
+      <div class="date-box col-3"> 
         <small>{{ item.club }}</small>
         <h1>{{ item.day }}</h1>
         <small>{{ item.month }}</small>

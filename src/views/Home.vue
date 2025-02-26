@@ -1,4 +1,6 @@
 <script setup>
+import CardBody from '@/components/CardBody.vue';
+import CardBodyVolunteer from '@/components/CardBodyVolunteer.vue';
 import CardCarousell from '@/components/CardCarousell.vue';
 import Footer from '@/components/Footer.vue';
 import List from '@/components/List.vue';
@@ -10,7 +12,9 @@ import StatNavbar from '@/components/StatNavbar.vue';
   <Navbar title="Home"></Navbar>
   <StatNavbar></StatNavbar>
 
-  <div class="container mb-6">
+  <div class="content-container">
+    <CardBody></CardBody>
+    <CardBodyVolunteer></CardBodyVolunteer>
     <div class="space">
       <h1>Du warst diese Woche top engagiert!</h1>
       <img src="/src/assets/images/statistik.png" alt="statistic" class="mx-auto d-block img-fluid">

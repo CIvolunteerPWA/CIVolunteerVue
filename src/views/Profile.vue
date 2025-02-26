@@ -18,8 +18,7 @@ const toggleEdit = () => {
 
 <template>
     <Navbar title="Profil"></Navbar>
-    <nav class="navbar ">
-        <div class="container scrollmenu">
+    <div class="tab-navigation">
             <div class="nav nav-underline d-inline-flex">
                 <div class="nav-item">
                     <RouterLink class="nav-link" to="/search">
@@ -47,7 +46,7 @@ const toggleEdit = () => {
 
             </div>
         </div>
-    </nav>
+ 
 
     <div class="cover bg-primary">
         <div class="row">

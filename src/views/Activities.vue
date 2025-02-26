@@ -8,28 +8,26 @@ import Footer from '@/components/Footer.vue';
 
 <template>
     <Navbar title="Aktivitäten"></Navbar>
-    <nav class="navbar ">
-        <div class="container scrollmenu">
-            <div class="nav nav-underline d-inline-flex">
-                <div class="nav-item">
-                    <RouterLink class="nav-link" to="/search">
-                        <i class="bi bi-search"></i>
-                    </RouterLink>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link text-primary  active" aria-current="page" href="#">Meine Aktivitäten</a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link" href="#">Empfehlungen</a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link" href="#">Abgeschlossen</a>
-                </div>
+    <div class="tab-navigation">
+        <div class="nav nav-underline d-inline-flex">
+            <div class="nav-item">
+                <RouterLink class="nav-link" to="/search">
+                    <i class="bi bi-search"></i>
+                </RouterLink>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link text-primary  active" aria-current="page" href="#">Meine Aktivitäten</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Empfehlungen</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Abgeschlossen</a>
             </div>
         </div>
-    </nav>
+    </div>
     <StatNavbar></StatNavbar>
-    <div class="container mb-6">
+    <div class="content-container">
         <List title="Deine nächsten Aktivitäten"></List>
         <CardCarousell title="Offene Aufgaben"></CardCarousell>
     </div>
