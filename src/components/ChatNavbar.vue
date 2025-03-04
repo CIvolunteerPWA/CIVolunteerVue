@@ -8,7 +8,7 @@
                     {{ name }}
                 </span>
             </router-link>
-            <form class="d-flex col-4">
+            <form class="d-flex col-4 d-flex justify-content-end">
                 <button class="fs-2 py-0 btn btn-dark">
                     <i class="bi bi-camera-video"></i>
                 </button>

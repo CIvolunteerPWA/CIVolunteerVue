@@ -6,22 +6,27 @@ import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 
 const chats = ref([
-    { name: 'Red Cross', message: 'Emergency response update', time: 'Just now', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp', unread: 1 },
-    { name: 'Greenpeace', message: 'Climate action news', time: '5 mins ago', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-1.webp', unread: 0 },
-    { name: 'Doctors Without Borders', message: 'Medical relief update', time: 'Yesterday', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp', unread: 0 },
-    { name: 'UNICEF', message: 'Children aid program', time: 'Yesterday', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp', unread: 0 },
-    { name: 'WWF', message: 'Wildlife conservation update', time: 'Yesterday', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-4.webp', unread: 0 }
+    { name: 'Feuerwehr Stockerau', message: 'Nachweisanfrage', time: 'Gerade', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp', unread: 1 },
+    { name: 'Greenpeace', message: 'Nachrichten zur Klimaschutzaktion', time: 'vor 5 min.', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-1.webp', unread: 0 },
+    { name: 'Ärzte ohne Grenzen', message: 'Update zur medizinischen Hilfe', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp', unread: 0 },
+    { name: 'UNICEF', message: 'Programm zur Hilfe für Kinder', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp', unread: 0 },
+    { name: 'WWF', message: 'Update zum Artenschutz', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-4.webp', unread: 0 }
 ]);
+
 </script>
 
 <template>
     <Navbar title="Chat"></Navbar>
     <div class="tab-navigation" style="background-color: var(--bs-gray-200);">
         <div class="nav nav-underline d-inline-flex">
-            <div class="nav-item">
-                <RouterLink class="nav-link" to="/search">
-                    <i class="bi bi-search"></i>
-                </RouterLink>
+            <div class="d-flex align-items-center ">
+                <div class="position-relative ">
+                    <input type="text" class="form-control rounded-pill search-bar pe-5" placeholder="Search..."
+                        aria-label="Search">
+                    <button class="text-primary btn position-absolute top-50 end-0 translate-middle-y" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
             </div>
             <div class="nav-item">
                 <a class="nav-link text-primary active" aria-current="page" href="#">Übersicht</a>
@@ -63,4 +68,18 @@ const chats = ref([
 .chat-container {
     height: calc(100vh - 170px);
 }
+
+.search-bar {
+    transition: width 0.3s ease-in-out;
+    width: 0px;
+    background-color: transparent;
+    z-index: 100 !important;
+    position: relative;
+    border: 0;
+}
+
+.search-bar:focus {
+    width: 250px !important;
+}
+
 </style>

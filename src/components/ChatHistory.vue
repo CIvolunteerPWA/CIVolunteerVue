@@ -1,47 +1,50 @@
 <template>
 
-    <div v-for="(message, index) in messages" :key="index" class="mb-3">
-        <div v-if="message.special">
-            <div class="d-flex align-items-start"
-                :class="message.side === 'right' ? 'flex-row-reverse' : 'justify-content-start'">
-                <div class="my-auto">
-                    <img src="/src/assets/images/profile.png" alt="Avatar" class="chat-avatar">
-                </div>
-                <div class="card border-0 shadow ms-3">
-                    <div class="card-header fw-bold">{{ message.header }}</div>
-                    <div class="card-body d-flex justify-content-between align-items-center">
+    <div class="chat-container">
+        <div class="chat-scroll">
+            <div v-for="(message, index) in messages" :key="index" class="mb-3">
+                <div v-if="message.special">
+                    <div class="d-flex align-items-start"
+                        :class="message.side === 'right' ? 'flex-row-reverse' : 'justify-content-start'">
+                        <div class="my-auto">
+                            <img src="/src/assets/images/profile.png" alt="Avatar" class="chat-avatar">
+                        </div>
+                        <div class="card border-0 shadow ms-3">
+                            <div class="card-header fw-bold">{{ message.header }}</div>
+                            <div class="card-body d-flex justify-content-between align-items-center">
 
-                        <p class="mb-0">{{ message.text }}</p>
-                        <button class="btn btn-success  ">
-                            <i class="fs-1 bi bi-check2-circle"></i>
-                            <small>
-                                Annehmen
-                            </small>
-                        </button>
+                                <p class="mb-0">{{ message.text }}</p>
+                                <button class="btn btn-success  ">
+                                    <i class="fs-1 bi bi-check2-circle"></i>
+                                    <small>
+                                        Annehmen
+                                    </small>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div v-else class="d-flex align-items-start"
-            :class="message.side === 'right' ? 'flex-row-reverse' : 'justify-content-start'">
-            <div class="my-auto">
-                <img src="/src/assets/images/profile.png" alt="Avatar" class="chat-avatar">
-            </div>
-            <div class="message-container">
-                <div class="message shadow p-2 rounded"
-                    :class="message.side === 'right' ? 'bg-primary text-white ms-2' : 'bg-light me-2'">
-                    <strong v-if="message.name">{{ message.name }}</strong>
-                    <p class="mb-1">{{ message.text }}</p>
+                <div v-else class="d-flex align-items-start"
+                    :class="message.side === 'right' ? 'flex-row-reverse' : 'justify-content-start'">
+                    <div class="my-auto">
+                        <img src="/src/assets/images/profile.png" alt="Avatar" class="chat-avatar">
+                    </div>
+                    <div class="message-container">
+                        <div class="message shadow p-2 rounded"
+                            :class="message.side === 'right' ? 'bg-primary text-white ms-2' : 'bg-light me-2'">
+                            <strong v-if="message.name">{{ message.name }}</strong>
+                            <p class="mb-1">{{ message.text }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div :class="message.side === 'right' ? 'flex-row-reverse' : 'justify-content-start'"
+                    class="message-time d-flex">
+                    <small class="text-muted">{{ message.time }}</small>
                 </div>
             </div>
         </div>
-        <div :class="message.side === 'right' ? 'flex-row-reverse' : 'justify-content-start'"
-            class="message-time d-flex">
-            <small class="text-muted">{{ message.time }}</small>
-        </div>
     </div>
-
 
     <div class="message-box">
         <input v-model="newMessage" type="text" class="form-control" placeholder="Nachricht eingeben..."
@@ -77,8 +80,8 @@ const sendMessage = () => {
 
 const scrollToBottom = () => {
     nextTick(() => {
-        const chatHistory = document.querySelector('.chat-history');
-        chatHistory.scrollTop = chatHistory.scrollHeight;
+        const chat = document.querySelector('.chat-scroll');
+        chat.scrollTop = chat.scrollHeight;
     });
 };
 
@@ -89,7 +92,7 @@ onMounted(() => {
 
 <style>
 .chat-container {
-    height: calc(100vh - 320px);
+    height: calc(100vh - 230px);
     display: flex;
     flex-direction: column;
 }
