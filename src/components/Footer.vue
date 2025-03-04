@@ -19,7 +19,7 @@
           <div class="fs-4">Aktivitäten</div>
         </i>
       </router-link>
-      <router-link to="/chat" class="navbar-brand text-center position-relative" active-class="active-link">
+      <router-link to="/chatarchiv" class="navbar-brand text-center position-relative" active-class="active-link">
         <span class="badge badge-sm">
           1
           <span class="visually-hidden">unread messages</span>
@@ -37,7 +37,7 @@
   </nav>
 </template>
 
-<style scoped>
+<style >
 .navbar-brand {
   color: white;
   text-decoration: none;
@@ -46,6 +46,7 @@
 .active-link {
   color: var(--bs-primary) /* Bootstrap primary color */
 }
+
 .badge-sm{
   position: absolute;
   font-size: 0.75rem;

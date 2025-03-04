@@ -31,3 +31,5 @@ coverage
 
 dev-dist/
 .vscode
+
+.vercel

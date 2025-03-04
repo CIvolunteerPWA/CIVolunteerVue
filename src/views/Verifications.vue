@@ -1,26 +1,12 @@
 <template>
     <Navbar title="Nachweise"></Navbar>
-    <div class="tab-navigation">
-        <div class="nav nav-underline d-inline-flex">
-            <div class="nav-item">
-                <RouterLink class="nav-link" to="/search">
-                    <i class="bi bi-search"></i>
-                </RouterLink>
-            </div>
-            <div class="nav-item">
-                <a class="nav-link text-primary  active" aria-current="page" href="#">Meine Nachweise</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-link" href="#">Nachweisanträge</a>
-            </div>
-
-        </div>
-    </div>
+    
 
     <div class="content-container ">
-        <List2 title="Offene Anfragen" :items="requested"></List2>
-        <List2 title="Zertifizierte Nachweise" :items="certified"></List2>
-        <List2 title="Bestätigten Nachweise" :items="confirmed"></List2>
+        <h1 class="p-2">Ihre Nachweise auf einem Blick</h1>
+        <SwipeList title="Offene Anfragen" :items="requested"></SwipeList>
+        <SwipeList title="Zertifizierte Nachweise" :items="certified"></SwipeList>
+        <SwipeList title="Bestätigten Nachweise" :items="confirmed"></SwipeList>
         <div class="justify-content-center gap-1 d-flex space">
             <button class="btn btn-lg btn-outline-primary">
                 <i class="fs-1 bi bi-printer"></i>
@@ -37,7 +23,7 @@
 import { ref, onMounted } from 'vue';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
-import List2 from '@/components/List2.vue';
+import SwipeList from '@/components/SwipeList.vue';
 import verifications from '@/assets/data/verifications.json';
 
 const certified = ref([]);

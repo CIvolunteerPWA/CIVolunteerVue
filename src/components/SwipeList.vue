@@ -10,9 +10,9 @@
 }
 </style>
 <template>
-    <div class="list-group list-group-flush ">
+    <div class="space list-group list-group-flush ">
 
-        <h2>{{ title }}</h2>
+        <h3>{{ title }}</h3>
 
         <div v-for="(item, index) in props.items" :key="index" class="list-group-item text-decoration-none"
             aria-current="true">
@@ -35,7 +35,7 @@
 
                     <div bottom class="action d-flex align-items-center pt-2 pb-2 text-muted gap-6">
                         <small class="col-8">
-                            <img src="/src/assets/images/profile.jpg" alt="twbs" width="20" height="20"
+                            <img src="/src/assets/images/profile.png" alt="twbs" width="20" height="20"
                                 class="rounded-circle flex-shrink-0">
                             {{ item.contact }}
                         </small>
@@ -101,7 +101,7 @@ const toggleLoadMore = () => {
 };
 
 const showLess = () => {
-    props.items = props.items.value.slice(0, 3);
+    props.items = props.items.slice(0, 3);
     loadedItemsCount.value = 3;
 };
 
@@ -112,7 +112,7 @@ const startTouch = (event, index) => {
 const moveTouch = (event, index) => {
     let touchMoveX = event.touches[0].clientX;
     if (startX.value - touchMoveX > 50) {
-        props.items.value[index].swiped = true;
+        props.items[index].swiped = true;
     }
 };
 
@@ -123,7 +123,7 @@ const endTouch = (index) => {
 };
 
 const deleteItem = (index) => {
-    items.value.splice(index, 1);
+    props.items.splice(index, 1);
 };
 
 </script>

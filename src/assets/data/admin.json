@@ -1,0 +1,67 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "Herbert Mayer",
+    "honorificPrefix": "Herr",
+    "givenName": "Herbert",
+    "familyName": "Mayer",
+    "additionalName": "herbertAdmin",
+    "url": "https://www.herbertmayer.at",
+    "image": "src/assets/images/profile2.png",
+    "birthDate": "15.04.1980",
+    "description": "Ich bin Herbert und seit vielen Jahren als Administrator einer Organisation tätig. Es ist mir eine Freude, Menschen zu unterstützen und unsere Organisation in den Bereichen Technik und Verwaltung zu leiten.",
+    "jobTitle": "Administrator",
+    "email": "herbert.mayer@organisation.at",
+    "telephone": "987654321",
+    "gender": "männlich",
+    "insuranceNumber": "9870",
+    "awards": ["Organisation Award 2023", "Admin Excellence 2021"],
+    "sameAs": [
+      "https://www.facebook.com/herbert.mayer",
+      "https://www.twitter.com/herbertmayer",
+      "https://www.linkedin.com/in/herbert-mayer"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Organisation XYZ"
+    },
+    "knowsAbout": ["IT-Infrastruktur", "Projektmanagement", "Teamführung"],
+    "knowsLanguage": ["Deutsch", "Englisch"],
+    "hasCredential": [
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalCredential",
+        "@id": "EducationalOccupationalCredential",
+        "educationalLevel": ["Informatik BSc", "https://www.universitaet.at/informatik-bsc"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalCredential",
+        "@id": "EducationalOccupationalCredential1",
+        "educationalLevel": ["Projektmanagement Zertifikat", "https://www.projectmanagement.at/zertifikat"]
+      }
+    ],
+    "hasOccupation": {
+      "@context": "https://schema.org",
+      "@type": "Occupation",
+      "@id": "Occupation",
+      "name": "Administrator",
+      "description": "Leitung der technischen und administrativen Bereiche einer Organisation.",
+      "occupationalCategory": "Technologie",
+      "qualifications": [
+        "IT-Infrastruktur Management",
+        "Netzwerksicherheit",
+        "Projektleitung"
+      ],
+      "skills": ["Technisches Wissen", "Organisationstalent", "Kommunikationsfähigkeit"]
+    },
+    "address": {
+      "@context": "https://schema.org",
+      "@type": "PostalAddress",
+      "addressCountry": "Österreich",
+      "addressRegion": "Wien",
+      "postalCode": "1020",
+      "streetAddress": "Hauptstraße 12"
+    }
+  }
+  
