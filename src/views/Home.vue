@@ -1,7 +1,6 @@
-
 <template>
   <Navbar title="Home" />
-  <StatNavbar />
+  <StatisticNavbar />
 
   <div class="content-container">
 
@@ -25,9 +24,9 @@
 </template>
 
 <script setup>
-import { ref,onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import Navbar from '@/components/Navbar.vue';
-import StatNavbar from '@/components/StatNavbar.vue';
+import StatisticNavbar from '@/components/StatisticNavbar.vue';
 import CardBody from '@/components/CardBody.vue';
 import CardBodyVolunteer from '@/components/CardBodyVolunteer.vue';
 import CardCarousell from '@/components/CardCarousell.vue';
@@ -42,28 +41,24 @@ const requested = ref([]);
 const confirmed = ref([]);
 
 onMounted(() => {
-    verifications.itemListElement.forEach(job => {
-        const item = {
-            club: job.hiringOrganization.name,
-            day: new Date(job.datePosted).getDate(),
-            month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),
-            location: job.jobLocation.address.addressLocality,
-            title: job.title,
-            jobs: '0/' + job.totalJobOpenings,
-            industry: job.industry,
-            id: job.identifier.value,
-            swiped: false, // Track swipe state
-            contact: "Liselotta Pulver",
-        };
+  verifications.itemListElement.forEach(job => {
+    const item = {
+      club: job.organization.name,
+      hours: job.hours,
+      requester: job.requester.name,
+      title: job.name,
+      id: job.identifier,
+      swiped: false, // Track swipe state
+    };
 
-        // Categorizing the items based on their status
-        if (job.status === 'Certified') {
-            certified.value.push(item);
-        } else if (job.status === 'Verification Requested') {
-            requested.value.push(item);
-        } else {
-            confirmed.value.push(item);
-        }
-    });
+    // Categorizing the items based on their status
+    if (job.status === 'Pending') {
+      requested.value.push(item);
+    } else if (job.status === 'Approved') {
+      confirmed.value.push(item);
+    } else {
+      certified.value.push(item);
+    }
+  });
 });
 </script>

@@ -37,7 +37,7 @@ const router = createRouter({
   },
 });
 
-// ✅ Add Role-Based Navigation Guard
+
 router.beforeEach((to, from, next) => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
@@ -51,7 +51,9 @@ router.beforeEach((to, from, next) => {
     next('/login'); // Redirect if not logged in
   } else if (to.meta.role && userRole !== to.meta.role) {
     next('/'); // Redirect if wrong role
-  } else {
+  } else if(to.name === "login" && isAuthenticated) {
+    next('/')
+  }else{
     next();
   }
 });

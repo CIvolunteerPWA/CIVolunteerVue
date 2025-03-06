@@ -51,7 +51,7 @@ const toggleEdit = () => {
     <div class="cover bg-primary">
         <div class="row">
             <div class="col-4 ">
-                <img src="/src/assets/images/profile.png" alt="profile picture" width="118"
+                <img src="/src/assets/images/liselotte.png" alt="profile picture" width="118"
                     class="profile-img rounded-circle">
             </div>
             <div class="col-8 ps-0 text-light">

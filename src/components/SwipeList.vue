@@ -22,30 +22,29 @@
 
                 <div class="date-box col-3">
                     <small>{{ item.club }}</small>
-                    <h1>{{ item.day }}</h1>
-                    <small>{{ item.month }}</small>
+                    <h1>{{ item.hours }}</h1>
+                    <small>Stunden</small>
                 </div>
 
                 <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }"
                     class="text-decoration-none container col-8 h-100">
                     <div>
-                        <small class="opacity-50">{{ item.location }}, {{ item.industry }}</small>
+                        <small class="opacity-50">{{ item.club }}</small>
                         <h4>{{ item.title }}</h4>
                     </div>
 
                     <div bottom class="action d-flex align-items-center pt-2 pb-2 text-muted gap-6">
                         <small class="col-8">
-                            <img src="/src/assets/images/profile.png" alt="twbs" width="20" height="20"
+                            <img src="/src/assets/images/liselotte.png" alt="twbs" width="20" height="20"
                                 class="rounded-circle flex-shrink-0">
-                            {{ item.contact }}
+                            {{ item.requester }}
                         </small>
-
                     </div>
 
                 </RouterLink>
-                <div class="col-1 message-col">
-                    <i class="bi bi-chat me-1"></i>
-                </div>
+                <RouterLink :to="{ name: 'chat', params: { name: item.requester } }"  class="col-1 message-col">
+                        <i class="bi bi-chat me-1"></i>
+                </RouterLink>
             </div>
             <div class="swipe-actions  " v-if="item.swiped">
                 <button class="fs-1 btn btn-danger" @click="deleteItem(index)"><i class="bi bi-trash"></i></button>
@@ -53,7 +52,13 @@
                 </button>
             </div>
         </div>
-
+        <div v-if="props.items.length == 0">
+            <div class="list-group-item list-group-item-action">
+                <div class="text-center nav-item text-secondary m-2 ">
+                    Keine Anfragen gefunden.
+                </div>
+            </div>
+        </div>
         <a v-if="loadedItemsCount < items.length" class="list-group-item list-group-item-action"
             @click.prevent="toggleLoadMore">
             <div class="text-center nav-item text-secondary m-2 ">
@@ -70,7 +75,7 @@
 
 </template>
 <script setup>
-import { ref, defineProps } from 'vue';
+import { ref } from 'vue';
 
 import RequestModal from './RequestModal.vue';
 const props = defineProps({
@@ -86,22 +91,25 @@ const props = defineProps({
 
 const modalRef = ref(null);
 
+// Ref to keep track of visible items
+const visibleItems = ref(props.items.slice(0, 3));  // Initially show 3 items
+const loadedItemsCount = ref(3);
+const startX = ref(0);
+
 const openModal = () => {
     modalRef.value.openModal();
 };
 
-const loadedItemsCount = ref(0);
-
-const startX = ref(0);
-
+// Load more items
 const toggleLoadMore = () => {
     const nextItems = props.items.slice(loadedItemsCount.value, loadedItemsCount.value + 3);
-    props.items.push(...nextItems);
+    visibleItems.value.push(...nextItems);
     loadedItemsCount.value += nextItems.length;
 };
 
+// Show less items
 const showLess = () => {
-    props.items = props.items.slice(0, 3);
+    visibleItems.value = props.items.slice(0, 3);  // Reset to first 3 items
     loadedItemsCount.value = 3;
 };
 
@@ -156,7 +164,7 @@ const deleteItem = (index) => {
 }
 
 .swipe-actions button {
-    padding: 5px 10px;
+    padding: 3px 10px;
     border: none;
     cursor: pointer;
 }

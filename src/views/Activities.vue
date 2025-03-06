@@ -1,6 +1,6 @@
 <script setup>
 import Navbar from '@/components/Navbar.vue';
-import StatNavbar from '@/components/StatNavbar.vue';
+import StatisticNavbar from '@/components/StatisticNavbar.vue';
 import List from '@/components/List.vue';
 import CardCarousell from '@/components/CardCarousell.vue';
 import Footer from '@/components/Footer.vue';
@@ -26,7 +26,7 @@ import Footer from '@/components/Footer.vue';
             </div>
         </div>
     </div>
-    <StatNavbar></StatNavbar>
+    <StatisticNavbar></StatisticNavbar>
     <div class="content-container">
         <List title="Deine nächsten Aktivitäten"></List>
         <CardCarousell title="Offene Aufgaben"></CardCarousell>

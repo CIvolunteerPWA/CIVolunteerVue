@@ -2,9 +2,10 @@
 $primary: #0783cb;
 $dark: #001d2e;
 $white: #fff;
+$light:#F8F9FA;
 $error:#DC3545;
 // Theme Colors for Green
-$mint: #78c2ad;
+$mint: #6eb19e;
 $dark-mint: #36584f;
 
 
@@ -27,6 +28,7 @@ $font-family-sans-serif: 'Open Sans',
 sans-serif;
 
 $font-size-base:1rem;
+
 $h1-font-size: $font-size-base * 2.5 !default;
 $h2-font-size: $font-size-base * 1.75 !default;
 $h3-font-size: $font-size-base * 1.25 !default;
@@ -34,12 +36,14 @@ $h4-font-size: $font-size-base * 1 !default;
 $h5-font-size: $font-size-base * 0.75 !default;
 $h6-font-size: $font-size-base * 0.5 !default;
 
-$font-sizes: (1: $h1-font-size,
+$font-sizes: (
+  1: $h1-font-size,
   2: $h2-font-size,
   3: $h3-font-size,
   4: $h4-font-size,
   5: $h5-font-size,
-  6: $h6-font-size);
+  6: $h6-font-size
+  );
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/_variables";
 
@@ -47,7 +51,7 @@ $font-sizes: (1: $h1-font-size,
 
   --mint: $mint;
   --dark-mint: $dark-mint;
-  --bs-primary: #78c2ad !important;
+  --bs-primary: #6eb19e !important;
   
   .card {
     background-color: lighten($mint, 30%)!important;
@@ -76,8 +80,7 @@ $font-sizes: (1: $h1-font-size,
   .nav-link:not(.disabled),
   .btn-outline-primary {
     color: $mint !important;
-  }
-}
+  }}
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../../node_modules/bootstrap/scss/bootstrap";

@@ -70,7 +70,7 @@ const login = () => {
     // Store user info
     localStorage.setItem('authToken', 'your-auth-token'); // Fake token
     localStorage.setItem('userRole', role); // Store role
-
+    localStorage.setItem('username', username.value.toLowerCase()); // Store role
     router.push('/'); // Redirect to Home
 };
 </script>

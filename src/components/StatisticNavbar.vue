@@ -17,9 +17,8 @@ h1 {
                 <h4>Funktionen</h4>
             </div>
             <div>
-                <div class="d-flex align-items-baseline justify-content-center">
+                <div>
                     <h1>21</h1>
-                    <small>k</small>
                 </div>
                 <h4>Aktivitäten</h4>
             </div>

@@ -1,0 +1,59 @@
+{
+    "conversations": [
+      {
+        "id": 1,
+        "messages": [
+          {
+            "text": "Wir suchen dringend Freiwillige für einen Hochwassereinsatz.",
+            "time": "8:40",
+            "date": " 2025-02-16 08:40:10.662325",
+            "avatar": "/assets/images/herbert.png",
+            "sender": "Feuerwehr Stockerau"
+          },
+          {
+            "text": "Gerne, wo soll ich mich melden?",
+            "time": "8:41",
+            "date": " 2025-02-16 08:41:10.662325",
+            "avatar": "/assets/images/liselotte.png",
+            "sender": "Liselotte Pulver"
+          },
+          {
+            "text": "Bitte zum Einsatzkommando Stockerau kommen.",
+            "time": "8:42",
+            "date": " 2025-02-16 08:42:10.662325",
+            "avatar": "/assets/images/herbert.png",
+            "sender": "Feuerwehr Stockerau"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "messages": [
+          {
+            "text": "Liebe Liselotte, schick mir doch einfach eine Anfrage über einen Nachweis deiner Stunden.",
+            "time": "10:05",
+            "date": " 2025-10-16 10:05:10.662325",
+            "avatar": "/assets/images/herbert.png",
+            "sender": "FB-Club Mentator"
+          },
+          {
+            "text": "Gerne, ich weiß ich kann direkt aus meinem Profil die Anfrage senden.",
+            "time": "10:06",
+            "date": " 2025-10-16 10:06:10.662325",
+            "avatar": "/assets/images/liselotte.png",
+            "sender": "Liselotte Pulver"
+          },
+          {
+            "text": "Liselotte Pulver hat eine Anfrage über 400 Stunden beim Samariterbund bei der Event Organisation Unterstützung gesendet.",
+            "time": "18:40",
+            "date": " 2025-10-16 18:40:10.66325",
+            "header": "Anfrage Nachweis",
+            "type": "action",
+            "sender": "Liselotte Pulver"
+            }
+
+        ]
+      }
+    ]
+  }
+  

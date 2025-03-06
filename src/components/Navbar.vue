@@ -37,7 +37,7 @@
 
             <router-link class="navbar-brand picture" to="/profile">
               <img :src="user.image" width="60" height="60" class="d-inline-block align-top rounded-circle mb-1"
-                alt="profile picture">
+                alt="liselotte picture">
             </router-link>
 
             <div class=" d-flex  text-end d-flex align-items-end">

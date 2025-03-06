@@ -1,12 +1,11 @@
 <script setup>
 import { ref } from 'vue';
 
-import ChatNavbar from '@/components/ChatNavbar.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 
 const chats = ref([
-    { name: 'Feuerwehr Stockerau', message: 'Nachweisanfrage', time: 'Gerade', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp', unread: 1 },
+    { name: 'Feuerwehr Stockerau', message: 'Nachweisanfrage', time: 'Gerade', img: '/assets/images/liselotte.png', unread: 1 },
     { name: 'Greenpeace', message: 'Nachrichten zur Klimaschutzaktion', time: 'vor 5 min.', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-1.webp', unread: 0 },
     { name: 'Ärzte ohne Grenzen', message: 'Update zur medizinischen Hilfe', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp', unread: 0 },
     { name: 'UNICEF', message: 'Programm zur Hilfe für Kinder', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp', unread: 0 },

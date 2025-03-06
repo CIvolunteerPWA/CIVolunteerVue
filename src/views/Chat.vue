@@ -13,7 +13,7 @@ const route = useRoute();
   <ChatNavbar :name="route.params.name"></ChatNavbar>
 
   <div class="content-container">
-    <ChatHistory></ChatHistory>
+    <ChatHistory :name="route.params.name"></ChatHistory>
   </div>
   <Footer></Footer>
 </template>
