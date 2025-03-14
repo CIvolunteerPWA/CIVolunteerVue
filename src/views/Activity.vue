@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router';
 import Navbar from '@/components/Navbar.vue';
 import activitylist from '@/assets/data/activitylist.json';
+import Footer from '@/components/Footer.vue';
 
 const route = useRoute();
 const jobPosting = activitylist.itemListElement.find(a => a.identifier.value === route.params.itemId);
@@ -45,5 +46,7 @@ const jobPosting = activitylist.itemListElement.find(a => a.identifier.value ===
     <div v-else>
       <p class="text-danger">Diese Aktivität gibt es nicht!</p>
     </div>
+    
   </div>
+  <Footer/>
 </template>

@@ -55,7 +55,7 @@
         <div v-if="props.items.length == 0">
             <div class="list-group-item list-group-item-action">
                 <div class="text-center nav-item text-secondary m-2 ">
-                    Keine Anfragen gefunden.
+                    Keine Nachweise gefunden.
                 </div>
             </div>
         </div>

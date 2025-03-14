@@ -1,5 +1,5 @@
 <template>
-    <div class="card space">
+    <div class="card">
         <div class="card-body">
             <h2>
                 <span class="text-primary">1</span> abgeschlossene Aufgabe: <br>

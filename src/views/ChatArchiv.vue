@@ -1,17 +1,34 @@
 <script setup>
-import { ref } from 'vue';
 
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 
-const chats = ref([
-    { name: 'Feuerwehr Stockerau', message: 'Nachweisanfrage', time: 'Gerade', img: '/assets/images/liselotte.png', unread: 1 },
-    { name: 'Greenpeace', message: 'Nachrichten zur Klimaschutzaktion', time: 'vor 5 min.', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-1.webp', unread: 0 },
-    { name: 'Ärzte ohne Grenzen', message: 'Update zur medizinischen Hilfe', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp', unread: 0 },
-    { name: 'UNICEF', message: 'Programm zur Hilfe für Kinder', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp', unread: 0 },
-    { name: 'WWF', message: 'Update zum Artenschutz', time: 'Gestern', img: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-4.webp', unread: 0 }
-]);
+import { ref, computed } from 'vue';
+import conversationsData from '@/assets/data/conversations.json';
 
+// Simulated logged-in user (Replace with actual auth logic)
+const loggedInUser = ref(localStorage.getItem('username')).value; // Get role
+// Filter conversations where the logged-in user is a participant
+const chats = computed(() => {
+    
+    return conversationsData.conversations
+        .filter(conversation =>
+            conversation.messages.some(msg => msg.sender.toLowerCase() === loggedInUser)
+        )
+        
+        .map(conversation => {
+            const lastMessage = conversation.messages[conversation.messages.length - 1];
+            const otherParticipant = conversation.messages.find(msg => msg.sender.toLowerCase() !== loggedInUser);
+
+            return {
+                name: otherParticipant.sender,
+                message: lastMessage.text,
+                time: lastMessage.date,
+                img: 'assets/images/'+otherParticipant.sender.split(" ")[0].toLowerCase()+'.png',
+                unread: 1 // Modify based on unread logic
+            };
+        });
+});
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <template>
     <Navbar title="Organisation"></Navbar>
-    <nav class="navbar ">
-        <div class="container scrollmenu">
+
+        <div class="tab-navigation">
             <div class="nav nav-underline d-inline-flex">
                 <div class="nav-item">
                     <RouterLink class="nav-link" to="/search">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+
     <div class="cover bg-secondary">
         <div class="row">
             <div class="col-4 ">

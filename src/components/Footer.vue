@@ -14,12 +14,22 @@
           <div class="fs-4">Nachweise</div>
         </i>
       </router-link>
-      <router-link to="/activities" class="navbar-brand text-center position-relative" active-class="active-link">
+      <router-link to="/activities" class="navbar-brand text-center position-relative"  :class="{ 'active-link': isActivityRelated }">
         <i class="bi bi-zoom-in">
           <div class="fs-4">Aktivitäten</div>
         </i>
       </router-link>
-      <router-link to="/chatarchiv" class="navbar-brand text-center position-relative" active-class="active-link">
+     
+      <router-link to="/community" class="navbar-brand text-center position-relative" active-class="active-link">
+        <i class="bi bi-emoji-sunglasses">
+          <div class="fs-4">Community</div>
+        </i>
+      </router-link>
+      <router-link 
+        to="/chatarchiv" 
+        class="navbar-brand text-center position-relative"
+        :class="{ 'active-link': isChatActive }"
+      >
         <span class="badge badge-sm">
           1
           <span class="visually-hidden">unread messages</span>
@@ -28,14 +38,17 @@
           <div class="fs-4">Chat</div>
         </i>
       </router-link>
-      <router-link to="/community" class="navbar-brand text-center position-relative" active-class="active-link">
-        <i class="bi bi-emoji-sunglasses">
-          <div class="fs-4">Community</div>
-        </i>
-      </router-link>
     </div>
   </nav>
 </template>
+<script setup>
+import { useRoute } from 'vue-router';
+import {computed} from 'vue';
+
+const route = useRoute();
+const isChatActive = computed(() => route.path.startsWith("/chat"));
+const isActivityRelated = computed(() => route.path.startsWith("/activit") || route.path.startsWith("/search"));
+</script>
 
 <style >
 .navbar-brand {
