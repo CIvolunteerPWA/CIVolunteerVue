@@ -11,8 +11,7 @@
                     {{ formatDate(message.date) }}
                 </div>
                 <div v-if="message.type === 'action'">
-                    <MessageWithAction :message="message"
-                        @confirm-message="handleConfirmMessage" />
+                    <MessageWithAction :message="message" @confirm-message="handleConfirmMessage" />
                 </div>
                 <div v-else>
                     <Message :message="message" :sender="props.name" />
@@ -34,6 +33,7 @@ import MessageWithAction from "@/components/MessageWithAction.vue"
 const user = ref(localStorage.getItem('username')); // Get role
 import conversationsData from '@/assets/data/conversations.json'; // Update with the correct path
 import Message from '@/components/Message.vue';
+import { formatDate } from '@/assets/js/formatDate.js'; 
 
 const props = defineProps({
     name: {
@@ -62,21 +62,6 @@ const sendMessage = () => {
         scrollToBottom();
     }
 };
-
-
-    const formatDate = (timestamp) => {
-    const currentDate = new Date();
-    const messageDate = new Date(timestamp);
-
-    // Check if the message's date is today's date
-    if (currentDate.toLocaleDateString() === messageDate.toLocaleDateString()) {
-        return "Heute"; // Display "Heute" if the date is today
-    } else {
-        const options = { year: 'numeric', month: 'short', day: 'numeric' };
-        return messageDate.toLocaleDateString([], options); // Normal date format if not today
-    }
-};
-
 
 // Check if the message is the first one of the day
 const isFirstMessageOfDay = (message, index) => {

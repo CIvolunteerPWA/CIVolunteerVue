@@ -173,7 +173,8 @@
 </template>
 <script setup>
 import { ref } from "vue";
-
+import { useAuth } from '@/assets/js/auth';
+const { login } = useAuth();
 const tabOrder = ["interests-page", "competences-page", "availability-page"];
 const currentIndex = ref(0);
 const isReady = ref(false);
@@ -203,7 +204,5 @@ const updateCurrentIndex = (index) => {
     isReady.value = currentIndex.value === 2;
 };
 
-const login = () => {
-    localStorage.setItem('authToken', 'your-auth-token');
-};
+
 </script>

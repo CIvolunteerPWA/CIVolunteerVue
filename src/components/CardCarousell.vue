@@ -1,16 +1,17 @@
 <template>
-    <div id="carouselExampleIndicators" class="space carousel slide" data-bs-ride="carousel">
+    <div id="carouselIndicators" class="space carousel slide" data-bs-ride="carousel">
         <h2>{{ title }}</h2>
         <div class="carousel-indicators">
-            <button v-for="(item, index) in items" :key="index" :data-bs-target="'#carouselExampleIndicators'"
+            <button v-for="(item, index) in items" :key="index" :data-bs-target="'#carouselIndicators'"
                 :data-bs-slide-to="index" :class="{ 'active': index === 0 }" class="form-check-input"
                 :aria-label="'Slide ' + (index + 1)"></button>
         </div>
         <div class="carousel-inner">
-            <div v-for="(item, index) in items" :key="index" class="carousel-item" :class="{ 'active': index === 0 }">
+            <div v-for="(item, index) in items" :key="index" class="carousel-item"
+                :class="{ 'active': index === activeIndex }" @touchmove="moveTouch($event)">
                 <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }" class="card text-decoration-none">
                     <div class="img-with-date">
-                        <img src="/src/assets/images/imgPlaceholder.png" class="card-img-top img-fluid" height="auto">
+                        <img :src="item.image" class="card-img-top img-fluid" height="215">
                         <div class="date date-box col-3">
                             <small>{{ item.club }}</small>
                             <h1>{{ item.day }}</h1>
@@ -23,8 +24,8 @@
                             <h3>{{ item.title }}</h3>
                             <p>{{ item.description }}</p>
                         </div>
-                        <p class=""><small class="text-muted">Last updated 3 mins ago</small></p>
-
+                        <small class="text-muted">ORT: {{ item.location }}</small>
+                        <p><small class="text-muted">#keywords</small></p>
                         <div class="d-flex align-items-center text-muted gap-6">
                             <small class="col-3">
                                 <img src="/src/assets/images/liselotte.png" alt="twbs" width="20" height="20"
@@ -32,51 +33,55 @@
                                 {{ item.jobs }}+
                             </small>
                             <small>
-                                <i class="bi bi-chat me-1"></i>messages
+                                <i class="bi bi-chat me-1"></i>messages 100+
                             </small>
                         </div>
+                        <!-- Fortschrittsleiste -->
+                       <MatchBar :match="90-index*10"></MatchBar>
                     </div>
                 </RouterLink>
             </div>
         </div>
 
-        <button class="carousel-control-prev bs-primary" type="button" data-bs-target="#carouselExampleIndicators"
+        <button class="carousel-control-prev bs-primary" type="button" data-bs-target="#carouselIndicators"
             data-bs-slide="prev">
-            <span class=" " aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class=" text-dark" aria-hidden="true"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+            <span class="text-dark" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
 </template>
 
 <script setup>
-// Import the JSON data
-import organizationData from '@/assets/data/activitylist.json';
+
+import { ref } from "vue";
+import MatchBar from "@/components/MatchBar.vue"
+
 defineProps({
     title: {
         type: String,
         required: true
+    },
+    items: {
+        type: Array,
+        required: true
     }
 });
-const items = organizationData.itemListElement.map(job => ({
-    title: job.title,
-    description: job.description,
-    industry: job.industry,
-    location: job.jobLocation.address.addressLocality,
-    club: job.hiringOrganization.name,
-    day: new Date(job.datePosted).getDate(),  // Displaying day of the job posting
-    month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),  // Displaying the month
-    jobs: job.totalJobOpenings,
-    image: job.hiringOrganization.logo, // Assuming the logo represents the image
-    id: job.identifier.value
-}));
+
+
+const activeIndex = ref(0);
+let touchEndX = 0;
+const moveTouch = (event) => {
+    touchEndX = event.touches[0].clientX;
+};
 
 </script>
+
 <style scoped>
+
 .carousel-indicators {
     margin-bottom: -1.5rem;
 }
@@ -113,6 +118,14 @@ const items = organizationData.itemListElement.map(job => ({
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-text h3 {
+    height: 2.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

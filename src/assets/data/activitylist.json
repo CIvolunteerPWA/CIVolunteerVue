@@ -31,7 +31,7 @@
                 "@type": "Organization",
                 "name": "FFOÖ",
                 "sameAs": "https://www.katastrophenschutz.at",
-                "logo": "https://www.katastrophenschutz.at/logo.png"
+                "logo": "/assets/images/imgPlaceholder.png"
             },
             "jobLocation": {
                 "@type": "Place",
@@ -78,7 +78,7 @@
                 "@type": "Organization",
                 "name": "Tierschutzverein Wien",
                 "sameAs": "https://www.tierschutzwien.at",
-                "logo": "https://www.tierschutzwien.at/logo.png"
+                "logo": "/assets/images/imgPlaceholder.png"
             },
             "jobLocation": {
                 "@type": "Place",
@@ -125,7 +125,7 @@
                 "@type": "Organization",
                 "name": "Sprachhilfe Österreich",
                 "sameAs": "https://www.sprachhilfe.at",
-                "logo": "https://www.sprachhilfe.at/logo.png"
+                "logo": "/assets/images/imgPlaceholder.png"
             },
             "jobLocation": {
                 "@type": "Place",
@@ -172,7 +172,7 @@
                 "@type": "Organization",
                 "name": "FFOÖ",
                 "sameAs": "https://www.example.com",
-                "logo": "https://www.example.com/logo.png"
+                "logo": "/assets/images/imgPlaceholder.png"
             },
             "jobLocation": {
                 "@type": "Place",
@@ -243,7 +243,7 @@
               "@type": "Organization",
               "name": "FO Linz",
               "sameAs": "https://www.example-organization.com",
-              "logo": "https://www.example-organization.com/logo.png"
+             "logo": "/assets/images/imgPlaceholder.png"
             },
             "jobLocation": {
               "@type": "Place",

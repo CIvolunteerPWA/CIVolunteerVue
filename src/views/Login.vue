@@ -36,42 +36,8 @@
 <script setup>
 import RegisterCard from '@/components/RegisterCard.vue';
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
-
-const loginForm = ref(null);
-const username = ref('');
+import { useAuth } from '@/assets/js/auth';
+const { loginForm, username, login } = useAuth();
 const password = ref('');
-
-const login = () => {
-    const formElement = loginForm.value;
-    const usernameInput = document.getElementById('inputUsername');
-    
-    // Define user roles
-    const users = {
-        'herbert mayer': 'admin',
-        'liselotte pulver': 'volunteer'
-    };
-
-    // Check if username is valid
-    const role = users[username.value.toLowerCase()];
-    if (!role) {
-        usernameInput.setCustomValidity('Invalid username');
-    } else {
-        usernameInput.setCustomValidity('');
-    }
-
-    if (!formElement.checkValidity()) {
-        formElement.classList.add('was-validated');
-        return;
-    }
-
-    // Store user info
-    localStorage.setItem('authToken', 'your-auth-token'); // Fake token
-    localStorage.setItem('userRole', role); // Store role
-    localStorage.setItem('username', username.value.toLowerCase()); // Store role
-    router.push('/'); // Redirect to Home
-};
 </script>
 

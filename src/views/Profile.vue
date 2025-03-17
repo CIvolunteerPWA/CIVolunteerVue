@@ -19,34 +19,34 @@ const toggleEdit = () => {
 <template>
     <Navbar title="Profil"></Navbar>
     <div class="tab-navigation">
-            <div class="nav nav-underline d-inline-flex">
-                <div class="nav-item">
-                    <RouterLink class="nav-link" to="/search">
-                        <i class="bi bi-search"></i>
-                    </RouterLink>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link text-primary  active" aria-current="page" href="#">Übersicht</a>
-                </div>
-
-                <div class="nav-item">
-                    <a class="nav-link disabled" href="#">Nachweise</a>
-                </div>
-                <div class="nav-item">
-                    <RouterLink class="nav-link" to="/organisation">
-                        Organisation
-                    </RouterLink>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link disabled" href="#">Stammdaten</a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link disabled" href="#">Einstellungen</a>
-                </div>
-
+        <div class="nav nav-underline d-inline-flex">
+            <div class="nav-item">
+                <RouterLink class="nav-link" to="/search">
+                    <i class="bi bi-search"></i>
+                </RouterLink>
             </div>
+            <div class="nav-item">
+                <a class="nav-link text-primary  active" aria-current="page" href="#">Übersicht</a>
+            </div>
+
+            <div class="nav-item">
+                <a class="nav-link disabled" href="#">Nachweise</a>
+            </div>
+            <div class="nav-item">
+                <RouterLink class="nav-link" to="/organisation">
+                    Organisation
+                </RouterLink>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link disabled" href="#">Stammdaten</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link disabled" href="#">Einstellungen</a>
+            </div>
+
         </div>
- 
+    </div>
+
 
     <div class="cover bg-primary">
         <div class="row">
@@ -117,9 +117,9 @@ const toggleEdit = () => {
             <br>
             <small>
                 erstellt am 14.6.2024, gültig bis 14.8.2024;
-                Marianne Lechner; 18051978; marianne.lechner@kunstuni-linz.at; +436506006670; 2411;
-                Strafregisterauszug super!; Gruppenleiterin St. Isidor; 1= Führerschein B, 12= Sprengmeisterin,
-                Englisch, Deutsch
+                Liselotte Pulver; 18051978; lise@email.at; +436506006670; 2411;  Strafregisterauszug super!;
+                Gruppenleiterin
+                St. Isidor; 1= Führerschein B, 12= Sprengmeisterin, Englisch, Deutsch
             </small>
         </div>
     </div>

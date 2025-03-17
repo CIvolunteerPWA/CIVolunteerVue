@@ -16,7 +16,7 @@
         <img src="/src/assets/images/statistik.png" alt="statistic" class="mx-auto d-block img-fluid">
       </div>
       <List title="Deine aktuellen Aktivitäten" />
-      <CardCarousell title="Deine aktuellen Aktivitäten" />
+      <CardCarousell title="Deine aktuellen Aktivitäten" :items="items" />
     </template>
   </div>
 
@@ -34,12 +34,23 @@ import List from '@/components/List.vue';
 import SwipeList from '@/components/SwipeList.vue';
 import Footer from '@/components/Footer.vue';
 import verifications from '@/assets/data/verifications.json';
-
+import activities from '@/assets/data/activitylist.json';
 const userRole = ref(localStorage.getItem('userRole')); // Get role
 const certified = ref([]);
 const requested = ref([]);
 const confirmed = ref([]);
-
+const items = activities.itemListElement.map(job => ({
+    title: job.title,
+    description: job.description,
+    industry: job.industry,
+    location: job.jobLocation.address.addressLocality,
+    club: job.hiringOrganization.name,
+    day: new Date(job.datePosted).getDate(),
+    month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),
+    jobs: job.totalJobOpenings,
+    image: job.hiringOrganization.logo,
+    id: job.identifier.value
+}));
 onMounted(() => {
   verifications.itemListElement.forEach(job => {
     const item = {

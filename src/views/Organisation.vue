@@ -26,7 +26,7 @@
     <div class="cover bg-secondary">
         <div class="row">
             <div class="col-4 ">
-                <img src="/src/assets/images/liselotte.png" alt="profile picture" width="118"
+                <img src="/src/assets/images/fireflyVolunteer.png" alt="profile picture" width="118" height="121"
                     class="profile-img rounded-circle">
             </div>
             <div class="col-8 ps-0 text-light">
@@ -90,8 +90,7 @@
         </div>
     </div>
     <div class="m-2">
-        <h3 class="m-1">Offene Aufgaben</h3>
-        <CardCarousell></CardCarousell>
+        <CardCarousell :items="items" :title="'Empfohlene Aktivitäten'"></CardCarousell>
     </div>
     <br>
 
@@ -149,7 +148,7 @@
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <strong>Liste aller Mitglieder</strong>
+                    <TableSearch/>
                 </div>
             </div>
         </div>
@@ -171,6 +170,8 @@
 <script setup>
 import Navbar from "@/components/Navbar.vue";
 import org from "@/assets/data/organisation.json";
+import TableSearch from "@/components/TableSearch.vue";
+import activities from "@/assets/data/firedepActivities.json";
 import CardCarousell from "@/components/CardCarousell.vue";
 import { ref } from 'vue';
 
@@ -180,5 +181,17 @@ const toggleEdit = () => {
     isEditable.value = !isEditable.value;
 };
 
+const items = activities.itemListElement.map(job => ({
+    title: job.title,
+    description: job.description,
+    industry: job.industry,
+    location: job.jobLocation.address.addressLocality,
+    club: job.hiringOrganization.name,
+    day: new Date(job.datePosted).getDate(),
+    month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),
+    jobs: job.totalJobOpenings,
+    image: job.hiringOrganization.logo,
+    id: job.identifier.value
+}));
 
 </script>

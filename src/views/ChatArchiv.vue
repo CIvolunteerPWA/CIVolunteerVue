@@ -1,5 +1,5 @@
 <script setup>
-
+import { formatDate } from '@/assets/js/formatDate.js'; 
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 
@@ -10,7 +10,6 @@ import conversationsData from '@/assets/data/conversations.json';
 const loggedInUser = ref(localStorage.getItem('username')).value; // Get role
 // Filter conversations where the logged-in user is a participant
 const chats = computed(() => {
-    
     return conversationsData.conversations
         .filter(conversation =>
             conversation.messages.some(msg => msg.sender.toLowerCase() === loggedInUser)
@@ -61,14 +60,14 @@ const chats = computed(() => {
                         class=" text-decoration-none d-flex justify-content-between">
                         <div class="col-9 d-flex flex-row">
                             <img :src="chat.img" alt="avatar"
-                                class="rounded-circle d-flex align-self-center me-2 shadow-1-strong" width="60">
+                                class="rounded-circle d-flex align-self-center me-2 shadow-1-strong" width="60" height="60">
                             <div class="col-8 pt-1">
                                 <p class="text-truncate fw-bold mb-0">{{ chat.name }}</p>
                                 <p class="text-truncate  small text-muted">{{ chat.message }}</p>
                             </div>
                         </div>
                         <div class="col-3  pt-1">
-                            <p class="small text-end text-muted mb-1">{{ chat.time }}</p>
+                            <p class="small text-end text-muted mb-1">{{ formatDate(chat.time) }}</p>
                             <span v-if="chat.unread > 0" class="badge bg-primary  float-end">{{ chat.unread }}</span>
                         </div>
                     </RouterLink>
@@ -81,6 +80,7 @@ const chats = computed(() => {
 </template>
 
 <style scoped>
+
 .chat-container {
     height: calc(100vh - 170px);
 }

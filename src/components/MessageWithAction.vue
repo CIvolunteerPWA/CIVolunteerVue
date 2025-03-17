@@ -46,7 +46,8 @@ const sendConfirmMessage = () => {
         text: "Nachweis erfolgreich bestätigt.",
         sender: user.value,
         avatar: "/assets/images/" + user.value.split(" ")[0] + ".png",
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        date: new Date()
     };
 
     emit("confirm-message", confirmMessage); // Send message to parent

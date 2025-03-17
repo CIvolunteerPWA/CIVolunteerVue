@@ -10,7 +10,7 @@
 
     </template>
     <template v-if="userRole === 'volunteer'">
-      <h1 class="p-2">Ihre Nachweise auf einem Blick</h1>
+      <h1>Ihre Nachweise auf einem Blick</h1>
       <SwipeList title="Offene Anfragen" :items="requested"></SwipeList>
       <SwipeList title="Zertifizierte Nachweise" :items="certified"></SwipeList>
       <SwipeList title="Bestätigten Nachweise" :items="confirmed"></SwipeList>
@@ -38,8 +38,8 @@ import verifications from '@/assets/data/verifications.json';
 import CardBody from '@/components/CardBody.vue';
 
 // Get logged-in user role & name
-const userRole = ref(localStorage.getItem('userRole'));
-const loggedInUser = ref(localStorage.getItem('username')); // e.g., 'Liselotte Pulver'
+const userRole = ref(localStorage.getItem('userRole')) || "volunteer";
+const loggedInUser = ref(localStorage.getItem('username')) || "Liselotte Pulver"; 
 
 // State for different verification categories
 const certified = ref([]);

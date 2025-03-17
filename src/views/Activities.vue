@@ -29,7 +29,22 @@ import Footer from '@/components/Footer.vue';
     <StatisticNavbar></StatisticNavbar>
     <div class="content-container">
         <List title="Deine nächsten Aktivitäten"></List>
-        <CardCarousell title="Offene Aufgaben"></CardCarousell>
+        <CardCarousell :items="items" title="Offene Aufgaben"></CardCarousell>
     </div>
     <Footer></Footer>
 </template>
+<script>
+import activities from "@/assets/data/activitylist.json";
+const items = activities.itemListElement.map(job => ({
+    title: job.title,
+    description: job.description,
+    industry: job.industry,
+    location: job.jobLocation.address.addressLocality,
+    club: job.hiringOrganization.name,
+    day: new Date(job.datePosted).getDate(),
+    month: new Date(job.datePosted).toLocaleString('default', { month: 'long' }),
+    jobs: job.totalJobOpenings,
+    image: job.hiringOrganization.logo,
+    id: job.identifier.value
+}));
+</script>

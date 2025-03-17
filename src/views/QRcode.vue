@@ -12,10 +12,11 @@ import Navbar from '@/components/Navbar.vue';
         <div class="text-center">
             <img src="/src/assets/images/qrCode.png" class="bg-light w-50 img-fluid">
             <p class="mt-3"> erstellt am 14.6.2024, gültig bis 14.8.2024;
-                Marianne Lechner; 18051978; marianne.lechner@kunstuni-linz.at; +436506006670; 2411; Strafregisterauszug
-                super!; Gruppenleiterin St. Isidor; 1= Führerschein B, 12= Sprengmeisterin, Englisch, Deutsch</p>
+                Liselotte Pulver; 18051978; lise@email.at; +436506006670; 2411;  Strafregisterauszug super!;
+                Gruppenleiterin St. Isidor; 1= Führerschein B, 12= Sprengmeisterin, Englisch, Deutsch</p>
 
-            <button type="button" class="btn btn-outline-primary "><i class="bi bi-arrow-clockwise fs-2 fw-bold "></i> <br>
+            <button type="button" class="btn btn-outline-primary "><i class="bi bi-arrow-clockwise fs-2 fw-bold "></i>
+                <br>
                 Aktualisieren</button>
             <div class="mt-4 d-grid gap-3">
                 <button class="btn btn-primary text-light" type="button">Zu meinem Phone Wallet hinzufügen</button>
