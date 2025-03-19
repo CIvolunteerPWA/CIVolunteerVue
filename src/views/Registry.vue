@@ -1,8 +1,10 @@
-<style scoped></style>
+<script setup>
+import Logo from '@/components/Logo.vue';
+</script>
 <template>
 
     <div class="container p-3">
-        <img src="/src/assets/images/logo.png " class="w-50">
+        <Logo/>
         <h1 class="mt-5">Registrierung</h1>
         <strong> Bitte registrieren Sie sich.</strong>
         <form class="mt-5 row text-primary">

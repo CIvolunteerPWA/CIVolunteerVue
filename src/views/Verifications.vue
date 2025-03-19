@@ -59,7 +59,7 @@ onMounted(() => {
         hours: job.hours,
         requester: name,
         title: job.name,
-        id: job.identifier,
+        id: job.identifier.value,
         swiped: false, // Track swipe state
       };
 

@@ -14,7 +14,9 @@ h1 {
             </div>
             <div>
                 <h1>6</h1>
-                <h4>Funktionen</h4>
+
+                <h4 v-if="userRole === 'volunteer'">Organisationen</h4>
+                <h4 v-if="userRole === 'admin'">Funktionen</h4>
             </div>
             <div>
                 <div>
@@ -25,3 +27,7 @@ h1 {
         </div>
     </nav>
 </template>
+<script setup>
+import { ref } from 'vue';
+const userRole = ref(localStorage.getItem('userRole')); 
+</script>

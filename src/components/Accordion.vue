@@ -78,7 +78,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div v-show="isAccordionOpen" class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end">
                         <button v-if="!isEditable" @click="toggleEdit" class="btn btn-primary">
                             <i class="bi bi-pen text-light"></i>
                         </button>
@@ -175,7 +175,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div v-show="isAccordionOpen" class="d-flex justify-content-end  me-2">
+                    <div class="d-flex justify-content-end  me-2">
                         <button v-if="!isEditable" @click="toggleEdit" class="btn btn-primary">
                             <i class="bi bi-pen text-light"></i>
                         </button>

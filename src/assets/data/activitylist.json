@@ -291,7 +291,73 @@
             },
             "directApply": true,
             "totalJobOpenings": 5
-          }
+          },
+          {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": "Event Organisation Unterstützung",
+            "description": "Bestätigung über die Unterstützung bei der Organisation eines Benefiz-Events.",
+            "occupationalCategory": "Eventmanagement",
+            "validThrough": "2025-12-31",
+            "datePosted": "2024-05-14",
+            "industry": "Soziales Engagement",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-002",
+                "name": "Gemeinde"
+            },
+            "hiringOrganization": {
+                "@type": "Organization",
+                "name": "FB-Klub Mentator",
+                "sameAs": "https://www.fbklub-mentator.at",
+                "logo": "/assets/images/imgPlaceholder.png"
+            },
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Eventstraße 5",
+                    "addressLocality": "Österreich",
+                    "postalCode": "1010",
+                    "addressCountry": "Österreich",
+                    "addressRegion": "Wien"
+                }
+            },
+            "applicationContact": {
+                "@type": "ContactPoint",
+                "email": "kontakt@fbklub-mentator.at",
+                "telephone": "+43-660-9876543",
+                "url": "https://www.fbklub-mentator.at/bewerbung"
+            },
+            "baseSalary": {
+                "@type": "MonetaryAmount",
+                "value": {
+                    "@type": "QuantitativeValue",
+                    "unitText": "HOUR",
+                    "minValue": 10,
+                    "maxValue": 15
+                },
+                "currency": "EUR"
+            },
+            "employmentType": ["VOLUNTEER"],
+            "workHours": "flexibel",
+            "responsibilities": "Unterstützung bei der Planung und Organisation eines Benefiz-Events.",
+            "skills": "Organisationstalent, Kommunikation, Teamarbeit",
+            "qualifications": "Keine spezifischen Qualifikationen erforderlich.",
+            "educationRequirements": [
+                {
+                    "@type": "EducationalOccupationalCredential",
+                    "credentialCategory": "None"
+                }
+            ],
+            "experienceRequirements": {
+                "@type": "OccupationalExperienceRequirements",
+                "monthsOfExperience": "0"
+            },
+            "directApply": true,
+            "totalJobOpenings": 1
+        }
+        
           
     ]
 }

@@ -10,7 +10,11 @@
             "@type": "RequestAction",
             "name": "Event Organisation Unterstützung",
             "description": "Bestätigung über die Unterstützung bei der Organisation eines Benefiz-Events.",
-            "identifier": "NACH2024-002",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-002",
+                "name": "Gemeinde"
+            },
             "requester": {
                 "@type": "Person",
                 "name": "Sabine Lorenz"
@@ -29,7 +33,11 @@
             "@type": "RequestAction",
             "name": "Event Organisation Unterstützung",
             "description": "Bestätigung über die Unterstützung bei der Organisation eines Benefiz-Events.",
-            "identifier": "NACH2024-005",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-002",
+                "name": "Gemeinde"
+            },
             "requester": {
                 "@type": "Person",
                 "name": "Liselotte Pulver"
@@ -48,7 +56,11 @@
             "@type": "RequestAction",
             "name": "Nachweis für Soziale Unterstützung",
             "description": "Bestätigung über die Unterstützung in der sozialen Betreuung für ältere Menschen.",
-            "identifier": "NACH2024-004",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-002",
+                "name": "Gemeinde"
+            },
             "requester": {
                 "@type": "Person",
                 "name": "Max Öllinger"
@@ -67,7 +79,11 @@
             "@type": "RequestAction",
             "name": "Aushilfsfahrer",
             "description": "Bestätigung über die Unterstützung in der sozialen Betreuung für ältere Menschen.",
-            "identifier": "NACH2024-003",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-005",
+                "name": "Gemeinde"
+            },
             "requester": {
                 "@type": "Person",
                 "name": "Traudi Huber"
@@ -86,7 +102,11 @@
             "@type": "RequestAction",
             "name": "Event Organisation Unterstützung",
             "description": "Bestätigung über die Unterstützung bei der Organisation eines Events.",
-            "identifier": "NACH2024-006",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-006",
+                "name": "Gemeinde"
+            },
             "requester": {
                 "@type": "Person",
                 "name": "Jonas Mitt"
@@ -105,7 +125,11 @@
             "@type": "RequestAction",
             "name": "Fahrdienste und Krankentransporte",
             "description": "Bestätigung über die Unterstützung bei Krankentransporten.",
-            "identifier": "NACH2024-007",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-007",
+                "name": "Gemeinde"
+            },
             "requester": {
                 "@type": "Person",
                 "name": "Liselotte Pulver"
@@ -124,7 +148,11 @@
             "@type": "RequestAction",
             "name": "Unterstützung bei den Hausaufgaben: Deutsch",
             "description": "Bestätigung über die Unterstützung von Schüler:innen bei Hausaufgaben in Deutsch.",
-            "identifier": "NACH2024-008",
+            "identifier": {
+                "@type": "PropertyValue",
+                "value": "NACH2024-008",
+                "name": "Gemeinde"
+            },
             "requester": {
                 "@type": "Person",
                 "name": "Liselotte Pulver"

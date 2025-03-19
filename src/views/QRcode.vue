@@ -1,12 +1,12 @@
 <script setup>
 import Navbar from '@/components/Navbar.vue';
+import Logo from '@/components/Logo.vue';
 </script>
 
 <template>
     <Navbar title="QR-Code"></Navbar>
     <div class="container py-2">
-        <img src="/src/assets/images/logo.png " class="w-50 ">
-
+        <Logo/>
         <h1 class="mt-4 text-left">Dein Code in der Krise</h1>
         <p> Hier findest du alle Kompetenzen die in deinem Freiwilligenpass freigegeben wurden.</p>
         <div class="text-center">

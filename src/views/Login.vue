@@ -1,6 +1,6 @@
 <template>
     <div class="container p-3 vh-100">
-        <img src="/src/assets/images/logo.png " class="w-50">
+        <Logo/>
         <h1 class="mt-5">Anmelden</h1>
         <strong> Wilkommen in der Freiwilligen App.</strong>
         <form ref="loginForm" class="mt-5 text-primary needs-validation" novalidate @submit.prevent="login">
@@ -37,6 +37,7 @@
 import RegisterCard from '@/components/RegisterCard.vue';
 import { ref } from 'vue';
 import { useAuth } from '@/assets/js/auth';
+import Logo from '@/components/Logo.vue';
 const { loginForm, username, login } = useAuth();
 const password = ref('');
 </script>
