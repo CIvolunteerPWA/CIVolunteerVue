@@ -2,7 +2,7 @@
     <div class="container p-3 vh-100">
         <Logo/>
         <h1 class="mt-5">Anmelden</h1>
-        <strong> Wilkommen in der Freiwilligen App.</strong>
+        <p>Freiwilliges Engagement hat in Österreich einen großen Stellenwert.</p>
         <form ref="loginForm" class="mt-5 text-primary needs-validation" novalidate @submit.prevent="login">
             <div class="form-group">
                 <label for="inputField">Benutzer</label>

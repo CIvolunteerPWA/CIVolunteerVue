@@ -8,7 +8,7 @@
         </div>
         <div class="carousel-inner">
             <div v-for="(item, index) in items" :key="index" class="carousel-item"
-                :class="{ 'active': index === activeIndex }" @touchmove="moveTouch($event)">
+                :class="{ 'active': index === activeIndex }">
                 <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }" class="card text-decoration-none">
                     <div class="img-with-date">
                         <img :src="item.image" class="card-img-top img-fluid" height="215">
@@ -56,8 +56,8 @@
 </template>
 
 <script setup>
-
-import { ref } from "vue";
+import { Carousel } from "bootstrap";
+import { ref,onMounted } from "vue";
 import MatchBar from "@/components/MatchBar.vue"
 
 defineProps({
@@ -70,13 +70,17 @@ defineProps({
         required: true
     }
 });
-
+onMounted(() => {
+    const carousel = document.querySelector('#carouselIndicators');
+    if (carousel) {
+        new Carousel(carousel, {
+            touch: true // Ensures touch support is enabled
+        });
+    }
+});
 
 const activeIndex = ref(0);
-let touchEndX = 0;
-const moveTouch = (event) => {
-    touchEndX = event.touches[0].clientX;
-};
+
 
 </script>
 

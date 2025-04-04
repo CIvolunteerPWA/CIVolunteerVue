@@ -18,7 +18,7 @@ const toggleEdit = () => {
 
 <template>
     <Navbar title="Profil"></Navbar>
-    <div class="tab-navigation">
+    <div class="tab-navigation bg-white">
         <div class="nav nav-underline d-inline-flex">
             <div class="nav-item">
                 <RouterLink class="nav-link" to="/search">

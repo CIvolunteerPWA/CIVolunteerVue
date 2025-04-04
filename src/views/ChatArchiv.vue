@@ -32,7 +32,7 @@ const chats = computed(() => {
 
 <template>
     <Navbar title="Chat"></Navbar>
-    <div class="tab-navigation" style="background-color: var(--bs-gray-200);">
+    <div class="tab-navigation" >
         <div class="nav nav-underline d-inline-flex">
             <div class="d-flex align-items-center ">
                 <div class="position-relative ">
