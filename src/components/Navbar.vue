@@ -35,7 +35,7 @@
           </router-link>
           <div class="d-flex align-items-end">
 
-            <router-link class="navbar-brand picture" to="/profile">
+            <router-link class="navbar-brand picture" :to="profileLink">
               <img :src="user.image" width="60" height="60" class="d-inline-block align-top rounded-circle mb-1"
                 alt="liselotte picture">
             </router-link>
@@ -99,6 +99,11 @@ const loadUserData = async () => {
 };
 
 onMounted(loadUserData);
+
+const profileLink = computed(() => {
+  const role = localStorage.getItem('userRole');
+  return role === 'admin' ? '/organisation' : '/profile';
+});
 
 const handleLogout = () => {
   localStorage.removeItem('authToken');

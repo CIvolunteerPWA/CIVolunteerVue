@@ -33,7 +33,7 @@ const toggleEdit = () => {
                 <a class="nav-link disabled" href="#">Nachweise</a>
             </div>
             <div class="nav-item">
-                <RouterLink class="nav-link" to="/organisation">
+                <RouterLink class="nav-link" to="">
                     Organisation
                 </RouterLink>
             </div>
@@ -117,7 +117,7 @@ const toggleEdit = () => {
             <br>
             <small>
                 erstellt am 14.6.2024, gültig bis 14.8.2024;
-                Liselotte Pulver; 18051978; lise@email.at; +436506006670; 2411;  Strafregisterauszug super!;
+                Liselotte Pulver; 18051978; lise@email.at; +436506006670; 2411;  Strafregisterauszug super!;
                 Gruppenleiterin
                 St. Isidor; 1= Führerschein B, 12= Sprengmeisterin, Englisch, Deutsch
             </small>

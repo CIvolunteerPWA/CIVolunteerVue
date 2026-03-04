@@ -13,7 +13,7 @@
 
     <h2>{{ title }}</h2>
 
-    <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }" v-for="(item, index) in items" :key="index"
+    <RouterLink :to="{ name: 'task', params: { itemId: item.id } }" v-for="(item, index) in items" :key="index"
       class="list-group-item list-group-item-action align-content-stretch d-flex " aria-current="true">
       
       <div class="date-box col-3"> 
@@ -56,7 +56,7 @@
 
 <script setup>
 import { ref, onMounted, defineProps } from 'vue';
-import organizationData from '@/assets/data/activitylist.json';
+import organizationData from '@/assets/data/tasklist.json';
 
 defineProps({
     title: {

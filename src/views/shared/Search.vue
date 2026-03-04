@@ -10,7 +10,7 @@ import Navbar from '@/components/Navbar.vue';
     flex-flow: wrap;
 }
 
-#activities-nearby::after {
+#tasks-nearby::after {
     content: "\f285";
     background-image: none;
     font-family: bootstrap-icons !important;
@@ -19,7 +19,7 @@ import Navbar from '@/components/Navbar.vue';
 }
 </style>
 <template>
-    <Navbar title="Aktivitäten Suche"></Navbar>
+    <Navbar title="Aufgaben Suche"></Navbar>
 
     <nav class="navbar bg-primary shadow">
         <div class="container py-2 p-0 ">
@@ -33,7 +33,7 @@ import Navbar from '@/components/Navbar.vue';
 
  
     <div class="content-container">
-        <h3 class="mt-1">Aktivitäten die du mögen könntest</h3>
+        <h3 class="mt-1">Aufgaben die du mögen könntest</h3>
         <ul class="mb-3 tags gap-2">
             <li class="btn badge bg-light text-dark">#Soziales</li>
             <li class="btn badge bg-light text-dark">#Organisatorisches</li>
@@ -45,11 +45,11 @@ import Navbar from '@/components/Navbar.vue';
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button href="#alle_Aktivitäten_in_der_Nähe"
+                    <button href="#alle_Aufgaben_in_der_Nähe"
                         class="text-decoration-none  accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        id="activities-nearby" data-bs-target="#flush-collapse" aria-expanded="false"
+                        id="tasks-nearby" data-bs-target="#flush-collapse" aria-expanded="false"
                         aria-controls="flush-collapse">
-                        Aktivitäten in der Nähe
+                        Aufgaben in der Nähe
                     </button>
                 </h2>
             </div>
@@ -62,7 +62,7 @@ import Navbar from '@/components/Navbar.vue';
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="list-group list-group-flush">
-                        <a href="#alle_Sport_Aktivitäten"
+                        <a href="#alle_Sport_Aufgaben"
                             class="list-group-item list-group-item-action d-flex justify-content-between">
                             Alle Anzeigen in Sport
                             <i class="bi bi-chevron-right"></i>
@@ -94,7 +94,7 @@ import Navbar from '@/components/Navbar.vue';
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="list-group list-group-flush">
-                        <a href="#alle_Musik_Aktivitäten"
+                        <a href="#alle_Musik_Aufgaben"
                             class="list-group-item list-group-item-action d-flex justify-content-between">
                             Alle Anzeigen in Musik <i class="bi bi-chevron-right"></i>
                         </a>
@@ -209,8 +209,8 @@ import Navbar from '@/components/Navbar.vue';
 
 </template>
 <script>
-import activities from "@/assets/data/activitylist.json";
-const items = activities.itemListElement.map(job => ({
+import tasks from "@/assets/data/tasklist.json";
+const items = tasks.itemListElement.map(job => ({
     title: job.title,
     description: job.description,
     industry: job.industry,

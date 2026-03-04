@@ -50,7 +50,7 @@ import { ref, computed } from "vue";
 
 const searchQuery = ref("");
 const currentPage = ref(1);
-const itemsPerPage = 2; // Anzahl der Elemente pro Seite
+const itemsPerPage = 4; // Anzahl der Elemente pro Seite
 
 const people = ref([
   { name: "Max Mustermann", address: "Musterstraße 1, Wien" },

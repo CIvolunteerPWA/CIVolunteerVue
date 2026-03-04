@@ -1,11 +1,30 @@
 <template>
     <div class="card">
         <div class="card-body">
-            <h2>
-                Sie haben <span class="text-primary">3</span> neue Nachweisanfragen, bitte geben Sie diese
-                frei.
-            </h2>
+            <h2 v-html="highlightNumbers(message)"></h2>
         </div>
     </div>
 </template>
+
+<script setup>
+import { defineProps } from 'vue';
+
+defineProps({
+    message: {
+        type: String,
+        required: true,
+        default: 'Sie haben 0 neue Nachweisanfragen.'
+    }
+});
+
+const highlightNumbers = (text) => {
+    if (!text) return '';
+    return text.replace(/(\d+)/g, '<span class="text-primary fw-bold">$1</span>');
+};
+</script>
+<style scoped>
+.card-body  {
+   margin: 0.50rem;
+}
+</style>
 

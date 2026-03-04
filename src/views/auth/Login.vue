@@ -41,4 +41,3 @@ import Logo from '@/components/Logo.vue';
 const { loginForm, username, login } = useAuth();
 const password = ref('');
 </script>
-

@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home.vue';
-import Login from '@/views/Login.vue';
-import Profile from '@/views/Profile.vue';
-import Registry from '@/views/Registry.vue';
-import QRcode from '@/views/QRcode.vue';
-import Organisation from '@/views/Organisation.vue';
-import Activities from '@/views/Activities.vue';
-import Verifications from '@/views/Verifications.vue';
-import Search from '@/views/Search.vue';
-import Chat from '@/views/Chat.vue';
-import Community from '@/views/Community.vue';
-import Activity from '@/views/Activity.vue';
-import Onboarding from '@/views/Onboarding.vue';
-import ChatArchiv from './views/ChatArchiv.vue';
+import Home from '@/views/shared/Home.vue';
+import Login from '@/views/auth/Login.vue';
+import Profile from '@/views/volunteer/Profile.vue';
+import Registry from '@/views/auth/Registry.vue';
+import QRcode from '@/views/shared/QRcode.vue';
+import Organisation from '@/views/admin/Organisation.vue';
+import Tasks from '@/views/volunteer/Tasks.vue';
+import Verifications from '@/views/admin/Verifications.vue';
+import Search from '@/views/shared/Search.vue';
+import Chat from '@/views/shared/Chat.vue';
+import Community from '@/views/shared/Community.vue';
+import Task from '@/views/volunteer/Task.vue';
+import Onboarding from '@/views/auth/Onboarding.vue';
+import ChatArchiv from '@/views/shared/ChatArchiv.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL || '/'),
@@ -27,8 +27,8 @@ const router = createRouter({
     { path: '/registry', name: 'registry', component: Registry },
     { path: '/onboarding', name: 'onboarding', component: Onboarding },
     { path: '/profile', name: 'profile', component: Profile, meta: { requiresAuth: true } },
-    { path: '/activities', name: 'activities', component: Activities, meta: { requiresAuth: true} },
-    { path: '/activity/:itemId', name: 'activity', component: Activity, meta: { requiresAuth: true }, props: true },
+    { path: '/tasks', name: 'tasks', component: Tasks, meta: { requiresAuth: true} },
+    { path: '/task/:itemId', name: 'task', component: Task, meta: { requiresAuth: true }, props: true },
     { path: '/verifications', name: 'verifications', component: Verifications, meta: { requiresAuth: true} },
     { path: '/organisation', name: 'organisation', component: Organisation, meta: { requiresAuth: true } },
   ],
@@ -46,6 +46,12 @@ router.beforeEach((to, from, next) => {
 
   const isAuthenticated = !!localStorage.getItem('authToken');
   const userRole = localStorage.getItem('userRole'); // Get user role
+
+  // special handling for profile route: admins should see organisation view
+  if (to.name === 'profile' && userRole === 'admin') {
+    next({ name: 'organisation' });
+    return;
+  }
 
   if (to.meta.requiresAuth && !isAuthenticated) {
     next('/login'); // Redirect if not logged in

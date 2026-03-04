@@ -1,3 +1,4 @@
+
 <template>
     <Navbar title="Organisation"></Navbar>
 
@@ -9,57 +10,62 @@
                     </RouterLink>
                 </div>
                 <div class="nav-item">
-                    <RouterLink class="nav-link" aria-current="page" to="/profile">Übersicht</RouterLink>
+                    <a class="nav-link" :class="{ 'active text-primary': currentTab==='Übersicht', 'text-secondary': currentTab!=='Übersicht' }" href="#" @click.prevent="selectTab('Übersicht')">Übersicht</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link disabled" href="#">Nachweise</a>
+                    <a class="nav-link" :class="{ 'active text-primary': currentTab==='Aufgaben', 'text-secondary': currentTab!=='Aufgaben' }" href="#" @click.prevent="selectTab('Aufgaben')">Aufgaben</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link  text-primary active" href="#">Organisation</a>
+                    <a class="nav-link" :class="{ 'active text-primary': currentTab==='Nachweise', 'text-secondary': currentTab!=='Nachweise' }" href="#" @click.prevent="selectTab('Nachweise')">Nachweise</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link disabled" href="#">Stammdaten</a>
+                    <a class="nav-link" :class="{ 'active text-primary': currentTab==='Mitglieder', 'text-secondary': currentTab!=='Mitglieder' }" href="#" @click.prevent="selectTab('Mitglieder')">Mitglieder</a>
                 </div>
             </div>
         </div>
 
-    <div class="cover bg-secondary">
-        <div class="row">
-            <div class="col-4 ">
-                <img src="/src/assets/images/fireflyVolunteer.png" alt="profile picture" width="118" height="121"
-                    class="profile-img rounded-circle">
-            </div>
-            <div class="col-8 ps-0 text-light">
-                <div class="p-2 text-center">
-                    <h3>{{ org.name }}</h3>
-                </div>
-                <div class="row pb-3 text-center">
-                    <div class="col">
-                        <i class="fs-2 bi bi-command"></i><br>
-                        <small>
-                            QR-Code
-                        </small>
-                    </div>
-                    <div class="col">
-                        <a class="text-white text-decoration-none" :href="'mailto:' + org.contactPoint.email">
-                            <i class="fs-2 bi bi-envelope-fill"></i><br>
-                            <small>Email</small>
-                        </a>
+    <!-- show overview by default -->
+    <div v-if="currentTab == 'Übersicht'">
+      <div class="cover bg-secondary">
+          <div class="row">
+              <div class="col-4 ">
+                  <img src="/src/assets/images/fireflyVolunteer.png" alt="profile picture" width="118" height="121"
+                      class="profile-img rounded-circle">
+              </div>
+              <div class="col-8 ps-0 text-light">
+                  <div class="p-2 text-center">
+                      <h3>{{ org.name }}</h3>
+                  </div>
+                  <div class="row pb-3 text-center">
+                      <div class="col">
+                          <i class="fs-2 bi bi-command"></i><br>
+                          <small>
+                              QR-Code
+                          </small>
+                      </div>
+                      <div class="col">
+                          <a class="text-white text-decoration-none" :href="'mailto:' + org.contactPoint.email">
+                              <i class="fs-2 bi bi-envelope-fill"></i><br>
+                              <small>Email</small>
+                          </a>
 
-                    </div>
-                    <div class="col">
-                        <a class="text-white text-decoration-none":href="'tel:' + org.contactPoint.telephone">
-                            <i class="fs-2 bi bi-telephone-fill"></i><br>
-                            <small>Phone</small>
-                        </a>
+                      </div>
+                      <div class="col">
+                          <a class="text-white text-decoration-none":href="'tel:' + org.contactPoint.telephone">
+                              <i class="fs-2 bi bi-telephone-fill"></i><br>
+                              <small>Phone</small>
+                          </a>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
 
-    <div class="card cover-subtext bg-secondary-subtle shadow-sm">
+  
+
+    <div v-if="currentTab === 'Übersicht'" class="card cover-subtext bg-secondary-subtle shadow-sm">
         <div class="card-body ">
             <div class="d-flex justify-content-between  align-items-center ">
                 <h3>Über Uns</h3>
@@ -89,14 +95,11 @@
             </small>
         </div>
     </div>
-    <div class="m-2">
-        <CardCarousell :items="items" :title="'Empfohlene Aktivitäten'"></CardCarousell>
-    </div>
-    <br>
+    <!-- additional overview content -->
 
+    <br v-if="currentTab === 'Übersicht'">
 
-
-    <div class="accordion p-2" id="accordionExample">
+    <div v-if="currentTab === 'Übersicht'" class="accordion p-2" id="accordionExample">
         <h3 class="m-1">Informationen</h3>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
@@ -140,19 +143,6 @@
             </div>
         </div>
         <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Mitglieder
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <TableSearch/>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -166,22 +156,60 @@
             </div>
         </div>
     </div>
+
+    <!-- Task View -->
+      <div v-if="currentTab === 'Aufgaben'">
+        <div class="m-4">
+            <h2 class="mb-3">Aufgaben der Organisation</h2>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary">Neue Aufgabe erstellen</button>
+            </div>
+        </div>
+
+        <CardBody :message="`9 Personen melden sich um 4 Aufgaben zu erledigen. Bitte bestätigen.`" class="mt-4"></CardBody>
+        <CardBody :message="`Sie haben ${items.length} neue Nachweisanfragen, bitte geben Sie diese frei.`" class="mt-2"></CardBody>
+        <List :items="items" :title="'Offene Aufgaben'" class="mt-4"></List>
+        <List :items="items" :title="'Abgeschlossene Aufgaben'" class="mt-4"></List>
+    </div>
+
+    <div v-if="currentTab === 'Nachweise'">
+        <h2 class="mt-4">Nachweise der Organisation</h2>
+        <CardBody :message="`Sie haben ${items.length} neue Nachweisanfragen, bitte geben Sie diese frei.`" class="mt-2"></CardBody>
+        <List :items="items" :title="'Offene Nachweise'" class="mt-4"></List>
+    </div>
+    <div v-if="currentTab === 'Mitglieder'">
+        <div class="mt-4">
+            <h2 class="mb-3">Mitglieder der Organisation</h2>
+            <TableSearch/>
+        </div>
+    </div>
 </template>
+
 <script setup>
 import Navbar from "@/components/Navbar.vue";
 import org from "@/assets/data/organisation.json";
 import TableSearch from "@/components/TableSearch.vue";
-import activities from "@/assets/data/firedepActivities.json";
+import tasks from "@/assets/data/firedeptasks.json";
 import CardCarousell from "@/components/CardCarousell.vue";
+import CardBody from "@/components/CardBody.vue";
+import List from "@/components/List.vue";
 import { ref } from 'vue';
+import { computed } from 'vue';
 
+const profileLink = computed(() => {
+  const role = localStorage.getItem('userRole');
+  return role === 'admin' ? '/organisation' : '/profile';
+});
 const isEditable = ref(false);
+// tab state for Organisation view
+const currentTab = ref('Übersicht');
+const selectTab = (tab) => { currentTab.value = tab; };
 
 const toggleEdit = () => {
     isEditable.value = !isEditable.value;
 };
 
-const items = activities.itemListElement.map(job => ({
+const items = tasks.itemListElement.map(job => ({
     title: job.title,
     description: job.description,
     industry: job.industry,

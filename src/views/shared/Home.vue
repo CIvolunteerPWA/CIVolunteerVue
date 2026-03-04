@@ -5,7 +5,7 @@
   <div class="content-container">
 
     <template v-if="userRole === 'admin'">
-      <CardBody />
+      <CardBody :message="`Sie haben ${requested.length} neue Nachweisanfragen, bitte geben Sie diese frei.`" />
       <SwipeList title="Anfragen Nachweise" :items="requested"></SwipeList>
     </template>
 
@@ -15,8 +15,8 @@
         <h1>Du warst diese Woche top engagiert!</h1>
         <img src="/src/assets/images/statistik.png" alt="statistic" class="mx-auto d-block img-fluid">
       </div>
-      <List title="Deine aktuellen Aktivitäten" />
-      <CardCarousell title="Deine aktuellen Aktivitäten" :items="items" />
+      <List title="Deine aktuellen Aufgaben" />
+      <CardCarousell title="Deine aktuellen Aufgaben" :items="items" />
     </template>
   </div>
 
@@ -34,12 +34,12 @@ import List from '@/components/List.vue';
 import SwipeList from '@/components/SwipeList.vue';
 import Footer from '@/components/Footer.vue';
 import verifications from '@/assets/data/verifications.json';
-import activities from '@/assets/data/activitylist.json';
+import tasks from '@/assets/data/tasklist.json';
 const userRole = ref(localStorage.getItem('userRole')); // Get role
 const certified = ref([]);
 const requested = ref([]);
 const confirmed = ref([]);
-const items = activities.itemListElement.map(job => ({
+const items = tasks.itemListElement.map(job => ({
     title: job.title,
     description: job.description,
     industry: job.industry,

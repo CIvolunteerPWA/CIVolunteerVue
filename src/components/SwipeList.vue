@@ -26,7 +26,7 @@
                     <small>Stunden</small>
                 </div>
 
-                <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }"
+                <RouterLink :to="{ name: 'task', params: { itemId: item.id } }"
                     class="text-decoration-none container col-8 h-100">
                     <div>
                         <small class="opacity-50">{{ item.club }}</small>

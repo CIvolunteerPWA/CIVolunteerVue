@@ -7,7 +7,7 @@ import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-    <Navbar title="Aktivitäten"></Navbar>
+    <Navbar title="Aufgaben"></Navbar>
     <div class="tab-navigation">
         <div class="nav nav-underline d-inline-flex">
             <div class="nav-item">
@@ -16,7 +16,7 @@ import Footer from '@/components/Footer.vue';
                 </RouterLink>
             </div>
             <div class="nav-item">
-                <a class="nav-link text-primary  active" aria-current="page" href="#">Meine Aktivitäten</a>
+                <a class="nav-link text-primary  active" aria-current="page" href="#">Meine Aufgaben</a>
             </div>
             <div class="nav-item">
                 <a class="nav-link" href="#">Empfehlungen</a>
@@ -28,13 +28,13 @@ import Footer from '@/components/Footer.vue';
     </div>
     <StatisticNavbar></StatisticNavbar>
     <div class="content-container">
-        <List title="Deine nächsten Aktivitäten"></List>
+        <List title="Deine nächsten Aufgaben"></List>
         <CardCarousell :items="items" title="Offene Aufgaben"></CardCarousell>
     </div>
     <Footer></Footer>
 </template>
 <script>
-import activities from "@/assets/data/activitylist.json";
+import activities from "@/assets/data/tasklist.json";
 const items = activities.itemListElement.map(job => ({
     title: job.title,
     description: job.description,

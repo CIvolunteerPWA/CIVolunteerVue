@@ -22,7 +22,7 @@ h1 {
                 <div>
                     <h1>21</h1>
                 </div>
-                <h4>Aktivitäten</h4>
+                <h4>Aufgaben</h4>
             </div>
         </div>
     </nav>

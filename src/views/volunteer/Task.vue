@@ -2,11 +2,11 @@
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import Navbar from '@/components/Navbar.vue';
-import activitylist from '@/assets/data/activitylist.json';
+import tasklist from '@/assets/data/tasklist.json';
 import Footer from '@/components/Footer.vue';
 
 const route = useRoute();
-const jobPosting = activitylist.itemListElement.find(a => a.identifier.value === route.params.itemId);
+const jobPosting = tasklist.itemListElement.find(a => a.identifier.value === route.params.itemId);
 
 // Application form data
 const application = ref({
@@ -31,11 +31,11 @@ textarea.form-control {
 </style>
 
 <template>
-  <Navbar title="Aktivität"></Navbar>
+  <Navbar title="Aufgabe"></Navbar>
   <div class="content-container">
     <div v-if="jobPosting">
       <!-- Job Title -->
-      <h1>{{ jobPosting ? jobPosting.title : 'Aktivität nicht gefunden' }} </h1>
+      <h1>{{ jobPosting ? jobPosting.title : 'Aufgabe nicht gefunden' }} </h1>
       <p class="text-secondary d-flex flex-column">
         <small>
           <i class="bi bi-geo-alt"></i> {{ jobPosting.jobLocation.address.streetAddress }}, {{
@@ -54,7 +54,7 @@ textarea.form-control {
       </p>
 
       <small class="text-secondary ">
-        <i class="bi bi-info-circle"></i> Aktivität Details
+        <i class="bi bi-info-circle"></i> Aufgabe Details
       </small>
 
       <div class="accordion accordion-flush" id="jobDetailsAccordion">
@@ -224,12 +224,12 @@ textarea.form-control {
       </div>
       <div class="card mx-0 mb-4 shadow-sm">
         <div class="card-header">
-          <div class="text-secondary"><i class="bi bi-info-circle"></i> Aktivität Zusammenfassung</div>
+          <div class="text-secondary"><i class="bi bi-info-circle"></i> Aufgabe Zusammenfassung</div>
         </div>
         <div class="card-body">
 
           <p class="card-text">
-            <strong>Aktivität:</strong> {{ jobPosting.title }} <br>
+            <strong>Aufgabe:</strong> {{ jobPosting.title }} <br>
             <strong>Ort:</strong> {{ jobPosting.jobLocation.address.streetAddress }}, {{
               jobPosting.jobLocation.address.addressLocality }} <br>
             <strong>Veröffentlicht am:</strong> {{ jobPosting.datePosted }} <br>
@@ -262,7 +262,7 @@ textarea.form-control {
     <!-- Error Message -->
     <div v-else>
       <div class="alert alert-danger" role="alert">
-        Diese Aktivität gibt es nicht!
+        Diese Aufgabe gibt es nicht!
       </div>
     </div>
 

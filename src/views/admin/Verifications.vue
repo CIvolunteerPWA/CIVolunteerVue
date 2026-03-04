@@ -4,7 +4,7 @@
 
   <div class="content-container ">
     <template v-if="userRole === 'admin'">
-      <CardBody />
+      <CardBody :message="`Sie haben ${requested.length} neue Nachweisanfragen, bitte geben Sie diese frei.`" />
       <SwipeList title="Anfragen Nachweise" :items="requested"></SwipeList>
       <SwipeList title="Archiv" :items="certified"></SwipeList>
 

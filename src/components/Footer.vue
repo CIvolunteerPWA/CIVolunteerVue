@@ -14,9 +14,9 @@
           <div class="fs-4">Nachweise</div>
         </i>
       </router-link>
-      <router-link to="/activities" class="navbar-brand text-center position-relative"  :class="{ 'active-link': isActivityRelated }">
+      <router-link to="/tasks" class="navbar-brand text-center position-relative"  :class="{ 'active-link': isTaskRelated }">
         <i class="bi bi-zoom-in">
-          <div class="fs-4">Aktivitäten</div>
+          <div class="fs-4">Aufgaben</div>
         </i>
       </router-link>
      
@@ -47,7 +47,7 @@ import {computed} from 'vue';
 
 const route = useRoute();
 const isChatActive = computed(() => route.path.startsWith("/chat"));
-const isActivityRelated = computed(() => route.path.startsWith("/activit") || route.path.startsWith("/search"));
+const isTaskRelated = computed(() => route.path.startsWith("/task") || route.path.startsWith("/tasks") || route.path.startsWith("/search"));
 </script>
 
 <style >

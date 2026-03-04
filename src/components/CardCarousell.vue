@@ -9,7 +9,7 @@
         <div class="carousel-inner">
             <div v-for="(item, index) in items" :key="index" class="carousel-item"
                 :class="{ 'active': index === activeIndex }">
-                <RouterLink :to="{ name: 'activity', params: { itemId: item.id } }" class="card text-decoration-none">
+                <RouterLink :to="{ name: 'task', params: { itemId: item.id } }" class="card text-decoration-none">
                     <div class="img-with-date">
                         <img :src="item.image" class="card-img-top img-fluid" height="215">
                         <div class="date date-box col-3">
